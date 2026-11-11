@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sugar Local MCP Desktop 0.5.0 · 安装与使用</title>
+<style>
+:root{color-scheme:light;--ink:#16303a;--muted:#526a74;--line:#dce7e9;--green:#176555;--paper:#fff;--wash:#f3f7f7}*{box-sizing:border-box}body{margin:0;background:var(--wash);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}main{max-width:1020px;margin:auto;padding:48px 24px 64px}.eyebrow{color:var(--green);font-size:13px;font-weight:700;letter-spacing:.05em}h1{font-size:clamp(30px,5vw,46px);line-height:1.2;margin:16px 0}h2{font-size:24px;margin:0 0 16px}h3{font-size:18px;margin:0 0 8px}p{margin:0 0 14px}.lead{max-width:780px;font-size:19px;color:var(--muted)}.version{display:inline-block;padding:3px 11px;border-radius:99px;background:#e2efea;font-size:13px;color:var(--green)}.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px;margin-top:24px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}.grid .card{margin:0}.steps{list-style:none;margin:0;padding:0;counter-reset:step}.steps li{counter-increment:step;position:relative;padding:0 0 22px 48px}.steps li:last-child{padding-bottom:0}.steps li:before{content:counter(step);position:absolute;left:0;top:2px;width:30px;height:30px;display:grid;place-items:center;background:#e5f0ed;color:var(--green);font-weight:700;border-radius:50%}.steps p{color:var(--muted);margin:4px 0 0}.note{border-left:3px solid #80b8a6;background:#eef6f3;padding:14px 18px;margin-top:20px}code{font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:#edf2f3;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}a{color:var(--green);text-underline-offset:3px}table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{font-weight:650;color:var(--muted)}ul{padding-left:22px;margin:8px 0}blockquote{margin:14px 0 0;padding:15px 18px;border-radius:9px;background:var(--wash);color:var(--muted)}footer{margin-top:28px;color:var(--muted);font-size:14px}@media(max-width:720px){main{padding:28px 16px 40px}.grid{grid-template-columns:1fr}.card{padding:20px}.steps li{padding-left:42px}table{font-size:13px}}
+</style>
+</head>
+<body><main>
+<header><div class="eyebrow">SUGAR LOCAL MCP DESKTOP</div><h1>本机开发，直接连接 ChatGPT</h1><p class="lead">Sugar 读写代码、运行前后端与测试；已连接的 ChatGPT Chrome 集成负责网页调试。</p><span class="version">0.5.0 · macOS</span></header>
+<section class="card" aria-labelledby="install"><h2 id="install">首次安装，五步完成</h2><ol class="steps">
+<li><strong>完整解压，双击 App</strong><p>打开 <code>Sugar Local MCP Desktop.app</code>。它安装到当前用户的 <code>~/Applications</code>，并在可用时创建桌面入口。以后直接双击即可。</p></li>
+<li><strong>等待运行环境准备</strong><p>首次需要联网下载 Python、MCP 依赖与缺少的官方隧道组件；无需创建虚拟环境。项目自己的 Node、Java、数据库等仍使用本机安装。</p></li>
+<li><strong>填写这台 Mac 的连接信息</strong><p>输入电脑名称、专属 Tunnel ID 和 Runtime API key。key 在隐藏框输入，保存在本机登录钥匙串，不需要发送到聊天。</p></li>
+<li><strong>添加项目目录与权限</strong><p>添加一个或多个目录，为每项设置文件写入与命令执行权限，核对后保存并连接。新项目默认可写、可执行。</p></li>
+<li><strong>在 ChatGPT 验证调用</strong><p>选择对应 Sugar 插件，让它列出工作区并读取一个 README。“本机隧道已就绪”是本地状态，实际工具调用成功才确认完整链路。</p></li>
+</ol><div class="note">如果预编译 App 无法使用，保留完整 <code>Source</code> 文件夹，双击 <code>Install_Sugar_Local_MCP.command</code>。这是一次性重建安装入口，会显示终端进度，无需输入命令。</div></section>
+<div class="grid"><section class="card"><h2>在哪里取得 key 和 ID</h2><p>在 <a href="https://platform.openai.com/settings/organization/tunnels">OpenAI 隧道设置</a> 创建或选择隧道，关联目标 ChatGPT 工作区，再从 <a href="https://platform.openai.com/settings/organization/api-keys">API keys</a> 管理适用的 Runtime key。</p><p>运行身份需要该隧道的 Tunnels Read + Use 权限。每台 Mac 使用不同 ID，同一 stdio 隧道保持一个活动客户端。</p><p>本应用连接已有隧道，不代替创建平台隧道或 ChatGPT 插件。</p></section>
+<section class="card"><h2>前后端可以分别添加</h2><p>共同根目录下的前后端，添加一个根目录即可。在不同位置时，分别添加 <code>frontend</code> 和 <code>backend</code>。</p><p>通过“配置 → 管理项目目录”继续添加、换目录、调整权限或移除条目。移除不删除本机代码。</p><p>保存变更会重启托管连接；先完成正在运行的任务，再让 ChatGPT 重新查询工作区。</p></section></div>
+<section class="card"><h2>用 Chrome 集成完成本地联调</h2><p>同一聊天中使用目标 Mac 的 Sugar 插件与 Chrome 集成：Sugar 启动项目、读取日志并改代码，Chrome 集成打开实际开发地址、操作表单并检查结果。</p><blockquote>检查 frontend 与 backend 的启动说明，启动并确认服务就绪；确认 Chrome 连接的是同一台 Mac，打开前端页面，检查交互与控制台，修复代码后重新测试。</blockquote><div class="note"><strong>两条连接需要对应同一台 Mac。</strong> 切换 Sugar 插件不会自动切换 Chrome 设备。开始前用目标 Mac 上含唯一标记的 <code>127.0.0.1</code> 测试页核对，不能只凭两边都显示 localhost 判断。</div><p style="margin-top:18px">这个流程无需授予 Sugar 屏幕录制或辅助功能。App 保留手动“系统权限检查（可选）”；Chrome 连接由 ChatGPT 独立管理。</p></section>
+<section class="card"><h2>日常入口与升级</h2><table><thead><tr><th>需要做什么</th><th>App 中的入口</th></tr></thead><tbody>
+<tr><td>保持后台在线</td><td>状态窗口点“完成”，连接继续运行</td></tr>
+<tr><td>重新启动后台</td><td>配置 → 重启连接；只重开窗口可能复用旧后台</td></tr>
+<tr><td>停止 Sugar</td><td>状态窗口 → 停止连接；Chrome 集成独立管理</td></tr>
+<tr><td>检查文档环境</td><td>配置 → Office 环境检测与验证</td></tr>
+</tbody></table><p style="margin-top:18px">升级保留项目、权限、隧道设置和钥匙串。重启连接后，在 ChatGPT 的 <strong>Plugins → 对应 Sugar 连接 → Refresh</strong> 刷新，再开新对话。写入与执行均启用时最多 15 个工具，纯只读时 4 个。网页操作使用 Chrome 集成。</p></section>
+<section class="card"><h2>实际使用范围</h2><p>命令使用当前用户的真实本机权限；项目目录不是进程沙箱。Office 检测和验证覆盖基础文件样例，真实文档的版式、公式和 PDF 导出需要另行检查。本版不提供通用原生桌面输入。</p><p>当前是 ad-hoc 签名的个人应用，未提供 Apple Developer ID 公证。若系统阻止打开，在确认来源后使用系统“隐私与安全性”允许打开。首次安装需要网络；没有提供离线依赖包。</p><p>发布构建、测试结果和未覆盖范围请看 <a href="VALIDATION.md">验证记录</a>，不要把历史版本记录当作本次通过。</p></section>
+<footer><a href="README.md">完整使用说明</a> · <a href="RELEASE_NOTES.md">0.5.0 更新</a> · <a href="docs_BOOTSTRAP.md">运行环境说明</a><p style="margin-top:10px">这是个人开发桥，使用官方 OpenAI tunnel-client；不是 OpenAI 官方客户端。</p></footer>
+</main></body></html>

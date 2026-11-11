@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sugar-local-mcp"
+version = "0.5.0"
+description = "A private, single-user MCP bridge for local project files and managed development processes"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["mcp==2.3.0"]
+
+[project.scripts]
+sugar-local-mcp = "sugar_local_mcp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

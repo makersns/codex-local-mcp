@@ -1,0 +1,10 @@
+{
+  "workspaces": [
+    {
+      "id": "project",
+      "root": "/replace/with/your/project/absolute/path",
+      "allow_write": false,
+      "allow_exec": false
+    }
+  ]
+}

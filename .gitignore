@@ -1,0 +1,34 @@
+# Local Python environments and generated build output
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.app/
+
+# Host-specific settings, credentials, and runtime data
+.env
+.env.*
+!.env.example
+!.env.sample
+settings.json
+workspaces.json
+tunnel-client.yaml
+runtime-info.json
+logs/
+*.log
+test-results.txt
+*.pid
+*.sock
+
+# macOS and editor metadata
+.DS_Store
+._*
+__MACOSX/
+.idea/
+.vscode/

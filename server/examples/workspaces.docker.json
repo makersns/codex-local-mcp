@@ -1,0 +1,11 @@
+{
+  "state_dir": "/state",
+  "workspaces": [
+    {
+      "id": "project",
+      "root": "/workspaces/project",
+      "allow_write": true,
+      "allow_exec": true
+    }
+  ]
+}

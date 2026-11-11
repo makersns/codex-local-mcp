@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "app_version": "0.5.0",
+  "service_version": "0.5.0",
+  "verified_on": "2026-11-10",
+  "platform": "macOS",
+  "uv": {
+    "version": "0.13.7",
+    "release": "https://github.com/astral-sh/uv/releases/tag/0.13.7",
+    "assets": {
+      "arm64": {
+        "filename": "uv-aarch64-apple-darwin.tar.gz",
+        "url": "https://releases.astral.sh/github/uv/releases/download/0.13.7/uv-aarch64-apple-darwin.tar.gz",
+        "sha256": "81b811b57e4624df7ed3aac148e0359100d9962f3d9dce00aec533dc2e086731",
+        "checksum_source": "https://releases.astral.sh/github/uv/releases/download/0.13.7/uv-aarch64-apple-darwin.tar.gz.sha256"
+      },
+      "x86_64": {
+        "filename": "uv-x86_64-apple-darwin.tar.gz",
+        "url": "https://releases.astral.sh/github/uv/releases/download/0.13.7/uv-x86_64-apple-darwin.tar.gz",
+        "sha256": "20c47e4c1f630b8abaff8c291fa9b9aa300fef92c4fbff95adf198b55287cda7",
+        "checksum_source": "https://releases.astral.sh/github/uv/releases/download/0.13.7/uv-x86_64-apple-darwin.tar.gz.sha256"
+      }
+    }
+  },
+  "python": {
+    "implementation": "cpython",
+    "minor_version": "3.12",
+    "provider": "uv-managed python-build-standalone",
+    "patch_policy": "Use the latest 3.12 patch in pinned uv 0.13.7's catalog on initial installation; retain the installed interpreter on reuse.",
+    "integrity": "uv validates managed-interpreter archives against its bundled distribution metadata.",
+    "documentation": "https://docs.astral.sh/uv/concepts/python-versions/"
+  },
+  "python_packages": {
+    "index": "https://pypi.org/simple",
+    "constraints": "server/constraints.txt",
+    "mcp": "2.3.0",
+    "integrity": "Exact dependency versions are constrained; dependency wheels are fetched by uv over HTTPS. This package does not provide a hash-locked offline wheelhouse."
+  },
+  "tunnel_client": {
+    "pinned_portable_version": "0.0.20",
+    "minimum_existing_version": "0.0.20",
+    "official_macos_install": "brew install openai/tools/tunnel-client",
+    "selection_order": ["working existing client", "native Homebrew", "verified official portable release"],
+    "release": "https://github.com/openai/tunnel-client/releases/tag/v0.0.20",
+    "checksum_source": "https://github.com/openai/tunnel-client/releases/download/v0.0.20/SHA256SUMS.txt",
+    "assets": {
+      "arm64": {
+        "filename": "tunnel-client-v0.0.20-darwin-arm64.zip",
+        "url": "https://github.com/openai/tunnel-client/releases/download/v0.0.20/tunnel-client-v0.0.20-darwin-arm64.zip",
+        "sha256": "f4689e75a835f69f1bbb9c59de9c4debb8e9c9cbbdd2721aa93378b4b048fd33"
+      },
+      "x86_64": {
+        "filename": "tunnel-client-v0.0.20-darwin-amd64.zip",
+        "url": "https://github.com/openai/tunnel-client/releases/download/v0.0.20/tunnel-client-v0.0.20-darwin-amd64.zip",
+        "sha256": "a8933a472c18409d137fbdece70673dbd23446754fea88eb9e5653d3244b93eb"
+      }
+    },
+    "macos_note": "The upstream release ZIP is not notarized. If macOS refuses execution, installation stops and directs the user to the official Homebrew route. No quarantine, Gatekeeper, or TLS settings are changed. The complete release bundle is retained, including cloudflared and its companion manifest."
+  }
+}
