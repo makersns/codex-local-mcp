@@ -1,8 +1,10 @@
-# Sugar Local MCP 0.5.0
+# Codex Local MCP 0.6.0
+
+作者：Sugar。Python 模块与旧命令保留兼容，新命令入口为 `codex-local-mcp`。
 
 让 ChatGPT 通过 MCP 使用真实本机项目：读取与修改代码、运行构建和测试、管理开发进程，并调用本机环境处理 Office 文件。网页调试使用独立的 **ChatGPT Chrome 集成**。
 
-macOS 日常使用推荐配套 **Sugar Local MCP Desktop 0.5.0**：双击 App，填写 Runtime key 和 Tunnel ID，选择一个或多个项目即可连接。下面保留源码安装、配置和工具说明。
+macOS 日常使用推荐配套 **Codex Local MCP 0.6.0**：双击 App，填写 Runtime key 和 Tunnel ID，选择一个或多个项目即可连接。下面保留源码安装、配置和工具说明。
 
 本项目使用 `mcp==2.3.0`，依赖版本由 `constraints.txt` 固定。本项目本身不调用模型 API；模型由 ChatGPT 或其他 MCP 客户端提供。连接方式见 [CONNECT_CHATGPT.md](docs/CONNECT_CHATGPT.md)，本版实际验证范围见 [VALIDATION.md](docs/VALIDATION.md)。
 
@@ -114,11 +116,11 @@ sugar-local-mcp tunnel --profile sugar-local
 
 ## Chrome 网页调试
 
-使用 Sugar 启动本机项目并检查端口就绪，使用 ChatGPT 已连接的 Chrome 集成打开该地址、操作页面并检查实际结果。Sugar 不管理 Chrome 的连接、标签页或登录资料。
+使用 Codex Local MCP 启动本机项目并检查端口就绪，使用 ChatGPT 已连接的 Chrome 集成打开该地址、操作页面并检查实际结果。Codex Local MCP 不管理 Chrome 的连接、标签页或登录资料。
 
-同一聊天需要分别选择正确的 Sugar 隧道与 Chrome 连接。尤其在两台 Mac 之间切换时，选择 MCP 不会自动选择 Chrome 设备。先用目标 Mac 上含唯一标记的 `127.0.0.1` 页面验证同机对应，再做真实项目操作。
+同一聊天需要分别选择正确的 Codex Local MCP 隧道与 Chrome 连接。尤其在两台 Mac 之间切换时，选择 MCP 不会自动选择 Chrome 设备。先用目标 Mac 上含唯一标记的 `127.0.0.1` 页面验证同机对应，再做真实项目操作。
 
-普通文件/终端与此浏览器流程不需要授予 Sugar 屏幕录制或辅助功能。两条连接分别管理；停止 Sugar 不等于停止 ChatGPT 的 Chrome 控制。
+普通文件/终端与此浏览器流程不需要授予 Codex Local MCP 屏幕录制或辅助功能。两条连接分别管理；停止 Codex Local MCP 不等于停止 ChatGPT 的 Chrome 控制。
 
 ## 可选系统权限与 Office 检测
 
@@ -148,7 +150,7 @@ sugar-local-mcp serve   --config "$HOME/.config/sugar-local-mcp/workspaces.json"
 
 ## 版本升级与验证
 
-启动 0.5.0 后，在 ChatGPT **Plugins → 对应 Sugar 连接 → Refresh**，核对工具再开新对话。后台版本变新不表示原聊天已经更新工具。官方流程见 [连接与测试](https://developers.openai.com/plugins/deploy/connect-chatgpt)。
+启动 0.6.0 后，在 ChatGPT **Plugins → 对应的 MCP 连接 → Refresh**，核对工具再开新对话。后台版本变新不表示原聊天已经更新工具。官方流程见 [连接与测试](https://developers.openai.com/plugins/deploy/connect-chatgpt)。
 
 测试和平台覆盖范围均按 [当前验证记录](docs/VALIDATION.md) 列示，历史报告单独保留。源码中的工具测试可以运行：
 

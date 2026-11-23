@@ -1,0 +1,21 @@
+{
+  "originalDirectory": "Sugar_Local_MCP_Desktop_0.5.0",
+  "reason": "Unique release-package documentation preserved before authorized duplicate-package cleanup. Original historical relative links refer to the original release package.",
+  "files": [
+    {
+      "original": "Source/README.md",
+      "archive": "README.md",
+      "sha256": "a76e5b028bd284519fc853ba4c2ab8d4c495116c0228f0e7a4c7f6a1225da2a2"
+    },
+    {
+      "original": "Source/VALIDATION.md",
+      "archive": "DESKTOP_VALIDATION.md",
+      "sha256": "612ec981a91f0fb7773d34ad222c270ba40bb7dd2ddc951f89cb7ea301b2545e"
+    },
+    {
+      "original": "Source/server/docs/VALIDATION.md",
+      "archive": "SERVER_VALIDATION.md",
+      "sha256": "6a1f3ce1fbb76c4ec66f7a17e8f7ade6c082a7d943dd565c394ac6901305a143"
+    }
+  ]
+}

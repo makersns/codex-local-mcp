@@ -45,7 +45,7 @@ class DesktopServerTests(unittest.IsolatedAsyncioTestCase):
                     self.assertTrue(tools[name].annotations.read_only_hint)
                 self.assertFalse(tools["macos_permissions_request"].annotations.read_only_hint)
                 workspaces = data(await client.call_tool("workspace_list", {}))
-                self.assertEqual(workspaces["server_version"], "0.5.0")
+                self.assertEqual(workspaces["server_version"], "0.6.0")
                 self.assertFalse(workspaces["execution_is_os_sandboxed"])
                 self.assertFalse(workspaces["local_browser_available"])
                 self.assertIn("Chrome integration", workspaces["local_browser_note"])

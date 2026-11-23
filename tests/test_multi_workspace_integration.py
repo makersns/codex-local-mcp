@@ -40,7 +40,8 @@ class MultiWorkspaceIntegrationTests(unittest.IsolatedAsyncioTestCase):
             parameters = StdioServerParameters(
                 command=sys.executable,
                 args=["-B", "-m", "sugar_local_mcp", "serve", "--config", str(support / "workspaces.json")],
-                env={"PYTHONDONTWRITEBYTECODE": "1"},
+                env={"PYTHONDONTWRITEBYTECODE": "1",
+                     "PYTHONPATH": str(Path(__file__).resolve().parents[1] / "server/src")},
             )
             async with asyncio.timeout(30):
                 async with stdio_client(parameters) as (read, write):

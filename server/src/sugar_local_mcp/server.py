@@ -127,7 +127,7 @@ def build_server(config: Config) -> MCPServer:
                     finally:
                         await anyio.to_thread.run_sync(processes.close)
 
-    server = MCPServer(name="Sugar Local MCP", version=__version__,
+    server = MCPServer(name="Codex Local MCP", version=__version__,
                        instructions=INSTRUCTIONS, lifespan=lifespan,
                        log_level="WARNING")
 

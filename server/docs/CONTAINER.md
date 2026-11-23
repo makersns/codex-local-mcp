@@ -1,6 +1,6 @@
 # 可选容器运行方案
 
-此配置用于把本地开发命令放在容器中执行。**本次没有 Docker 运行环境，镜像构建和容器内执行尚未实测。**先按 `VALIDATION.md` 验证范围理解此模板，使用前在你的机器构建并完成下面的验收。
+此配置用于把本地开发命令放在容器中执行。**本版没有进行 Docker 镜像构建和容器内执行验收。** 先按 `VALIDATION.md` 验证范围理解此模板，使用前在你的机器构建并完成下面的验收。
 
 ## 与直接在本机运行的区别
 
@@ -13,7 +13,7 @@
 在源码根目录执行：
 
 ```bash
-docker build -t sugar-local-mcp:0.5.0 .
+docker build -t codex-local-mcp:0.6.0 .
 ```
 
 Linux 的挂载目录若不属于 UID/GID 1000，可以用当前普通开发用户的 UID/GID 重建：
@@ -22,7 +22,7 @@ Linux 的挂载目录若不属于 UID/GID 1000，可以用当前普通开发用�
 docker build \
   --build-arg BRIDGE_UID="$(id -u)" \
   --build-arg BRIDGE_GID="$(id -g)" \
-  -t sugar-local-mcp:0.5.0 .
+  -t codex-local-mcp:0.6.0 .
 ```
 
 不要用 root 账户运行上面的自定义 UID/GID 构建。macOS/Windows 的 Docker Desktop 挂载权限行为不同，先用下文自检确认容器能读写项目。镜像内的服务账号不是 root。
@@ -46,7 +46,7 @@ exec docker run --rm -i --init \
   --tmpfs=/scratch:rw,nosuid,nodev,size=512m,mode=1777 \
   --mount=type=bind,src=/absolute/path/to/project-copy,dst=/workspaces/project \
   --mount=type=volume,src=sugar-local-mcp-state,dst=/state \
-  sugar-local-mcp:0.5.0
+  codex-local-mcp:0.6.0
 ```
 
 ```bash

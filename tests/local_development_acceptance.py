@@ -76,14 +76,14 @@ server.serve_forever()
 '''
 
 HTML = r'''<!doctype html><html lang="zh-CN"><meta charset="utf-8">
-<title>Sugar 0.5.0 · 本机开发验收</title>
+<title>Codex Local MCP 0.6.0 · 本机开发验收</title>
 <style>*{box-sizing:border-box}body{margin:0;background:#edf5f1;color:#193d32;font:17px/1.65 system-ui}
 main{max-width:800px;margin:42px auto;padding:34px;background:white;border:1px solid #c6ddcf;border-radius:20px}
 small{color:#476d60}h1{font-size:29px;margin:8px 0 20px}label{display:block;margin:14px 0}
 input[type=text]{display:block;font:inherit;padding:11px;width:100%;border:1px solid #94b5a4;border-radius:8px}
 button{font:inherit;background:#21664d;color:white;border:0;border-radius:8px;padding:11px 24px;cursor:pointer}
 output{display:block;margin-top:24px;padding:20px;background:#edf5f1;border-radius:10px;white-space:pre-wrap}
-code{font-size:13px}</style><main><small>SUGAR LOCAL MCP 0.5.0 + CHATGPT CHROME INTEGRATION</small>
+code{font-size:13px}</style><main><small>CODEX LOCAL MCP 0.6.0 + CHATGPT CHROME INTEGRATION</small>
 <h1>本机终端与本机 Chrome 开发联调</h1>
 <p>前端、后端由 Sugar 的两个项目目录启动；网页操作由 ChatGPT 的 Chrome 集成完成。</p>
 <p>本次唯一标记：<code id="nonce">NONCE_VALUE</code></p>
@@ -190,7 +190,7 @@ class Acceptance:
     async def checks(self, state):
         async with self.stage("version_tools_and_optional_permissions") as info:
             init = await self.session.initialize()
-            assert init.server_info.version == VERSION == "0.5.0"
+            assert init.server_info.version == VERSION == "0.6.0"
             names = sorted(x.name for x in (await self.session.list_tools()).tools)
             assert set(names) == TOOLS, names
             workspaces = await self.call("workspace_list")
@@ -243,7 +243,7 @@ class Acceptance:
                 "expected_sha256":"missing"})
             frontend = await self.service("frontend", nonce)
             connection = {"url":f"http://127.0.0.1:{frontend}/index.html", "nonce":nonce,
-                          "expected_text":"Sugar 0.5.0：Chrome 集成与本机前后端联调通过"}
+                          "expected_text":"Codex Local MCP 0.6.0：Chrome 集成与本机前后端联调通过"}
             (self.output/"connection.json").write_text(json.dumps(connection,ensure_ascii=False,indent=2))
             info.update(connection)
             self.save()

@@ -1,5 +1,5 @@
 #!/bin/bash
-# Sugar Local MCP Desktop 0.5.0: private, native macOS runtime bootstrap.
+# Codex Local MCP 0.6.0: private, native macOS runtime bootstrap.
 # Contract: bootstrap.sh ABSOLUTE_RESOURCES_DIRECTORY ABSOLUTE_SUPPORT_DIRECTORY
 # Success: the only stdout line is the absolute venv Python path.
 # Diagnostics: stderr and SUPPORT/logs/bootstrap.log. No runtime keys are read.
@@ -178,7 +178,7 @@ else
   # so installation never changes the signed .app bundle's Resources directory.
   /bin/cp -R "${server_root}" "${stage_dir}/server"
   run_uv pip install --python "${python_bin}" --default-index https://pypi.org/simple \
-    --no-deps "${stage_dir}/server" || die 'Sugar Local MCP 安装失败，请查看安装日志。'
+    --no-deps "${stage_dir}/server" || die 'Codex Local MCP 安装失败，请查看安装日志。'
   run_python - "${runtime_dir}/complete.json" "${source_digest}" <<'PY'
 import importlib.metadata, json, platform, sys
 from pathlib import Path

@@ -1,68 +1,51 @@
-# Sugar Local MCP 0.5.0 验证记录
+# Codex Local MCP 0.6.0 核心验证记录
 
-验证日期：2026-11-10。**本版核心功能已在独立 Mac 实例上完成验收。** 配套 Desktop 的实际 bootstrap、原生 App 构建、严格签名检查及归档完整性也已独立验证，结果概况见下文。
+验证日期：2026-11-23（Asia/Shanghai）。作者：Sugar。
 
-## 实际环境
+## 本轮结论
 
-macOS 15.5、arm64、Python 3.12.16。创建全新独立虚拟环境，从已验证本机缓存按 constraints 离线安装 28 个锁定依赖，再安装本次构建的 `sugar-local-mcp 0.5.0` wheel。实际 metadata 为 0.5.0 / MCP 2.3.0，未安装 websockets。
+当前 0.6.0 核心源码完整回归运行 **124 项：123 通过、1 跳过、0 失败，12.812 秒**。测试包含真实 stdio 初始化和中文文件读取、MCP 工具发现、文件写入冲突、受管进程、HTTP Host/Origin 防护、诊断 IPC、权限与 Office 检测。
 
-这是独立运行环境验收，不是新机首次联网冷下载。测试通过本版 stdio 实例进行，原生产 0.4.1 隧道未重启；安装后仍需在目标隧道重启后台、刷新 ChatGPT 工具清单并实际调用。
+本轮使用 macOS 15.5 / arm64 的既有 Python 3.12 依赖环境，通过 `PYTHONPATH=server/src` 加载本仓库 0.6.0 源码。没有替换该解释器中原有服务包，没有把源码回归称为全新机器安装验证。测试使用独立临时项目和本地进程，不使用用户文档或真实隧道凭据。
 
-## 自动测试
+执行上述隔离回归时，生产 MCP 连接仍在旧 0.4.0 运行；该回归没有停止或升级它。应用安装、原生窗口及正式发布验证另见仓库根目录的 [VALIDATION.md](../../VALIDATION.md) 和 [0.6.0 实施记录](../../docs/RELEASE_0.6.0.md)。
 
-完整核心套件运行 **124 项：123 通过、1 跳过，14.732 秒**。跳过项需要桥接运行时未安装的可选 Office 文档库；实际本机外部 Python 的三种 Office 格式另外完成了验证。
+## 可重现命令
 
-本报告记录 2026-11-10 的发布验收结果，原始运行日志未纳入公开源码仓库。套件涵盖配置、文件路径与哈希、进程输出与清理、工具与权限、真实只读 stdio 初始化/调用、IPC、Office 检测等。纯只读 stdio 测试实际核对 4 个工具，并读取中文文件。
+在具备 `server/constraints.txt` 所列依赖的 Python 环境中，从仓库根目录执行：
 
-## 独立真实 stdio 与 IPC 验收
+```bash
+PYTHONPATH=server/src python -B -m unittest discover -s server/tests -v
+```
 
-| 检查 | 实测结果 |
+实际本机原始日志留在维护仓库的私有测试目录 `.data/native-desktop-0.6.0/release-build/server-unittest-20261123-0815.log`，不作为应用数据或公开源码提交。
+
+## 验证范围
+
+| 范围 | 本轮结果 |
 | --- | --- |
-| 核心版本与 SDK | 0.5.0 / MCP 2.3.0 |
-| 写入及执行均开启的工具发现 | 15 个正式工具 |
-| 权限 IPC 与 MCP 权限工具 | 记录同一后台进程，socket 0600 |
-| 中文文件读取与修改 | 成功；旧 SHA-256 写入被拒绝 |
-| stdin 中文与 EOF | 成功 |
-| 1 秒超时任务 | 结束，退出码 -15，`cleanup_error: null` |
-| 多项目进程 | 两个临时工作区分别启动前端、后端 |
-| 调用超时参数 | MCP 2.3.0 的 float timeout 调用已实际验证 |
+| 版本与显示名称 | 源码 0.6.0；MCP 服务名为 Codex Local MCP |
+| 兼容入口 | 模块及旧命令 `sugar_local_mcp` / `sugar-local-mcp` 保留；新增 `codex-local-mcp` |
+| 工具发现 | 写入及执行开启时 15 个工具；纯只读时 4 个 |
+| 真实 stdio | 初始化、工具发现和中文文件读取通过 |
+| 文件可靠性 | 路径越界、符号链接、大小限制、旧哈希拒绝、修改备份通过 |
+| 受管进程 | 启停、stdin/EOF、超时、分页输出、退出清理及凭据环境隔离通过 |
+| HTTP | 非法 Host 与 Origin 拒绝；合法本机请求通过 |
+| 诊断 IPC | 请求大小、并发上限、所有权、超时与关闭清理通过 |
+| macOS 权限 | 仅检查不弹窗、明确请求、未知状态和异常脱敏通过 |
+| Office 检测 | 环境分离、格式分别选择解释器、缓存、取消与超时通过 |
 
-正式工具由文件 6、进程 5、macOS 权限 2、Office 2 组成。不包含自建浏览器、原生桌面输入或暂停工具。
+套件中的 `test_real_synthetic_edit_roundtrip_when_libraries_are_present` 按条件跳过，原因是运行测试的 MCP Python 没有可选 Office 文档库。此记录不将该项计为通过；也不继承历史版本的真实 Office、Chrome 联调或安装结果作为本轮证据。
 
-## ChatGPT Chrome 集成联调
+## 平台与发布边界
 
-独立 0.5.0 实例在两个临时工作区启动仅监听 `127.0.0.1` 的前后端，ChatGPT 的 Chrome / extension 集成访问实际页面，并核对随机 nonce，确认同机连接。
-
-中文表单填写和替换、复选框、按钮点击、提交、本机后端 POST 回显、控制台及网页截图均完成。结果验证网页业务行为，不证明原生系统键盘输入。没有使用用户文档或真实业务数据。
-
-Chrome 连接独立于 Sugar 隧道，多 Mac 需要另外确认 Chrome 设备；本测试不代表选择 MCP 插件即可自动选择对应浏览器。
-
-## Office 外部环境
-
-外部 Python 的 `.xlsx`、`.docx`、`.pptx` 合成样例全部 **verified**，覆盖创建、保存、重读、修改和再次读取，并核对中文单元格、表格或幻灯片内容。
-
-未请求 LibreOffice 可选探测。没有验证复杂文档布局、公式重算、PDF 转换或 Office 界面操作；运行时也未自动安装 Office 库。
-
-## 清理与范围
-
-4 个托管作业已停止，退出码为 -15 或 0，未返回清理错误；测试端口关闭、IPC 移除、临时项目删除、Chrome 测试页关闭。原生产 0.4.1 连接保留运行。
-
-本报告不涵盖 Intel 真机、原生 Windows、Docker、第二台 Mac 首次安装、用户真实项目全部工具链或升级后生产 ChatGPT 隧道调用。
-
-## 配套 Desktop 与打包验证
-
-Desktop 的 **71 项 GUI 测试全部通过，0.683 秒**；**10 条 AppleScript 模板**在 Mac 实际编译通过。
-
-真实 `bootstrap.sh` 在独立 support 目录运行两次：首次 **5.425 秒**新建并验证 0.5.0 arm64 运行环境，第二次 **1.127 秒**校验后复用。使用已有 uv、managed Python 与已验证依赖缓存，没有验证新机冷下载。
-
-原生 App 构建成功，bundle ID 为 `com.sugar.local-mcp.desktop`，两个版本字段均为 0.5.0；严格深度签名校验通过，`lipo` 确认 applet 包含 x86_64 与 arm64。67 个 Source 文件逐一与 App Resources 核对 SHA-256 一致。使用 `ditto` 打包并重新解压后，严格验签仍通过。
-
-这是 ad-hoc 签名，不是 Developer ID 公证；架构结构核对不等于 Intel 真机安装验证。最终文件摘要以安装包内 MANIFEST 和交付归档 SHA-256 为准。
+以上为当前 Mac 的源码与协议回归，不代表 Intel 真机、Windows、Docker、第二台 Mac 首次联网安装或生产 ChatGPT 隧道已验证。原生 App 构建的双架构结构、签名和安装应以对应的本轮桌面验证记录为准。
 
 ## 历史记录
 
+- [0.5.0](VALIDATION_0.5.0_HISTORY.md)
 - [0.4.1](VALIDATION_0.4.1_HISTORY.md)
 - [0.4.0](VALIDATION_0.4.0_HISTORY.md)
 - [0.3.0](VALIDATION_0.3.0_HISTORY.md)
 
-历史结果不计入 0.5.0 的通过数量。
+历史结果不计入 0.6.0 的通过数量。

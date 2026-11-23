@@ -1,10 +1,10 @@
 # 连接 ChatGPT 网页版
 
-Sugar Local MCP 0.5.0 使用 OpenAI Secure MCP Tunnel：本机 tunnel-client 主动连接 OpenAI，再把 MCP 调用转发给本地 stdio 服务。无需公开本机入站端口。
+Codex Local MCP 0.6.0 使用 OpenAI Secure MCP Tunnel：本机 tunnel-client 主动连接 OpenAI，再把 MCP 调用转发给本地 stdio 服务。无需公开本机入站端口。
 
-macOS 日常使用推荐配套 Desktop App：填写 Runtime key、Tunnel ID 和项目目录，保存并连接。以下手动配置供源码部署使用；不要让 App 与手动进程同时占用同一个 stdio 隧道。
+macOS 日常使用推荐配套 Codex Local MCP App：填写 Runtime key、Tunnel ID 和项目目录，保存并连接。以下手动配置供源码部署使用；不要让 App 与手动进程同时占用同一个 stdio 隧道。
 
-官方资料核对日期：2026-11-10。菜单、账号与工作区入口可能变化，以实际界面和[官方连接说明](https://developers.openai.com/plugins/deploy/connect-chatgpt)为准。
+官方资料核对日期：2026-11-23。菜单、账号与工作区入口可能变化，以实际界面和[官方连接说明](https://developers.openai.com/plugins/deploy/connect-chatgpt)为准。
 
 ## 1. 准备本地服务和隧道客户端
 
@@ -23,7 +23,7 @@ Linux、Windows 可从 [官方 Releases](https://github.com/openai/tunnel-client
 
 在 [Platform Tunnel Settings](https://platform.openai.com/settings/organization/tunnels) 创建或选择隧道，将它关联到目标 ChatGPT 工作区，并复制真实 ID。创建/编辑身份需要 Tunnels Read + Manage；运行身份需要该隧道的 Tunnels Read + Use。
 
-运行进程使用 Runtime API key，不使用 Admin key。Desktop 将 key 保存到本机登录钥匙串；源码启动可在本机隐藏输入。无需把 key 发送到 ChatGPT。
+运行进程使用 Runtime API key，不使用 Admin key。Codex Local MCP 将 key 保存到本机登录钥匙串；源码启动可在本机隐藏输入。无需把 key 发送到 ChatGPT。
 
 两台 Mac 各用独立 Tunnel ID。同一个 stdio 隧道只保持一个活动客户端，以免初始化与后续请求被路由到不同进程。
 
@@ -53,7 +53,7 @@ sugar-local-mcp tunnel --profile sugar-local
 ## 4. 在 ChatGPT 添加插件
 
 1. 打开 **Plugins → Add custom MCP server**。
-2. 设置可辨识的名称，例如 `Sugar · 家里 Mac`。
+2. 设置可辨识的名称，例如 `Codex · 家里 Mac`。
 3. Connection 选择 **Tunnel**，选择已关联的目标隧道。
 4. 本服务没有独立应用登录或 OAuth。在只授权自己使用的私有隧道中，使用无应用层认证选项，由隧道控制面限制访问；组织要求 OAuth 时，需要另行实现身份层。
 5. 检查工具清单，创建并启用插件，在新对话中选择它。
@@ -66,23 +66,23 @@ sugar-local-mcp tunnel --profile sugar-local
 
 网页调试使用 **ChatGPT 的 Chrome 集成**：
 
-1. Sugar 按项目说明启动前后端，读取日志并确认实际就绪地址。
+1. Codex Local MCP 按项目说明启动前后端，读取日志并确认实际就绪地址。
 2. 在 ChatGPT 中连接目标 Mac 的 Chrome。
 3. 在目标 Mac 上生成含唯一标记的临时回环测试页，用 Chrome 集成打开并核对标记，确认两条连接指向同一台电脑。
 4. 再打开真实开发页面，检查页面状态、表单、后端结果及集成提供的控制台信息。
 
-**选择 Sugar 的 Tunnel 不会自动切换 Chrome 设备。** 两台电脑都可能使用 `localhost:3000`，仅看 URL 不能证明同机。Sugar 不启动或控制浏览器，普通文件、终端和此 Chrome 流程无需给 Sugar 授予屏幕录制/辅助功能。
+**选择 Codex Local MCP 的 Tunnel 不会自动切换 Chrome 设备。** 两台电脑都可能使用 `localhost:3000`，仅看 URL 不能证明同机。Codex Local MCP 不启动或控制浏览器，普通文件、终端和此 Chrome 流程无需给 Codex Local MCP 授予屏幕录制/辅助功能。
 
 Office 需要先检测 `office_status`，必要时验证 `office_verify`。基础样例通过不代表真实文档版式、公式或 PDF 导出通过。实际验证范围见 [VALIDATION.md](VALIDATION.md)。
 
-## 升级为 0.5.0 后刷新工具
+## 升级为 0.6.0 后刷新工具
 
 1. 安装新版并在 App **重启连接**，或停止旧 CLI 进程再启动新版。
-2. 在 ChatGPT 的 Plugins 中打开对应 Sugar 连接，选择 **Refresh / 刷新**。
-3. 核对工具清单。写入和执行均开启时有 15 个工具，纯只读时有 4 个；已移除的 Sugar 浏览器、原生输入和暂停工具不应继续作为新工具使用。
+2. 在 ChatGPT 的 Plugins 中打开对应 Codex Local MCP 连接，选择 **Refresh / 刷新**。
+3. 核对工具清单。写入和执行均开启时有 15 个工具，纯只读时有 4 个；旧版已移除的内置浏览器、原生输入和暂停工具不应继续作为新工具使用。
 4. 开新对话，重新选择该插件并验证调用。
 
-后台返回 `0.5.0` 只证明请求到达该版本，不证明旧聊天已加载新工具。正常升级无需重建隧道或更换 key。刷新流程依据 [OpenAI 连接与测试文档](https://developers.openai.com/plugins/deploy/connect-chatgpt)。
+后台返回 `0.6.0` 只证明请求到达该版本，不证明旧聊天已加载新工具。正常升级无需重建隧道或更换 key。刷新流程依据 [OpenAI 连接与测试文档](https://developers.openai.com/plugins/deploy/connect-chatgpt)。
 
 ## 长任务和常见问题
 
@@ -98,7 +98,7 @@ Office 需要先检测 `office_status`，必要时验证 `office_verify`。基�
 | `npm`、`java` 找不到 | 本机工具是否安装、启动时 PATH；需要时使用绝对可执行路径 |
 | 项目代理或工具链变量缺失 | 作业环境只继承少量变量，不会默认透传所有 token、代理或 JAVA_HOME |
 | 日志仍未读完 | 按 `next_cursor` 分页，直到 `output_complete && !has_more`，检查退出码与清理错误 |
-| Chrome 打不开开发地址 | 检查 Chrome 集成设备与 Sugar 所在 Mac，核对本机服务与端口；没有必要因此申请 Sugar 屏幕权限 |
+| Chrome 打不开开发地址 | 检查 Chrome 集成设备与 Codex Local MCP 所在 Mac，核对本机服务与端口；没有必要因此申请 Codex Local MCP 屏幕权限 |
 | Office 依赖已安装却没检测到 | 查看各解释器的 `capabilities`，按格式使用对应 Python；可刷新缓存 |
 | LibreOffice 检查超时 | 只说明版本探测未完成，不能据此承诺转换或重算可用 |
 

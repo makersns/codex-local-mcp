@@ -127,7 +127,7 @@ class ServerTests(unittest.IsolatedAsyncioTestCase):
         async with stdio_client(parameters) as (read, write):
             async with ClientSession(read, write) as session:
                 initialized = await session.initialize()
-                self.assertEqual(initialized.server_info.name, "Sugar Local MCP")
+                self.assertEqual(initialized.server_info.name, "Codex Local MCP")
                 self.assertEqual(len((await session.list_tools()).tools), 4)
                 result = await session.call_tool("read_file", {"workspace": "demo", "path": "hello.txt"})
                 self.assertFalse(result.is_error)
@@ -148,7 +148,7 @@ class ServerTests(unittest.IsolatedAsyncioTestCase):
                 headers = {"Accept": "application/json, text/event-stream"}
                 valid = await client.post("/mcp", json=body, headers=headers)
                 self.assertEqual(valid.status_code, 200)
-                self.assertEqual(valid.json()["result"]["serverInfo"]["name"], "Sugar Local MCP")
+                self.assertEqual(valid.json()["result"]["serverInfo"]["name"], "Codex Local MCP")
                 invalid_host = await client.post("/mcp", json=body,
                     headers={**headers, "Host": "untrusted.example"})
                 self.assertEqual(invalid_host.status_code, 421)

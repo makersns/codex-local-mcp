@@ -47,6 +47,20 @@ class Keychain:
             self.security.SecKeychainItemFreeContent(None, data)
         return value, item
 
+    def exists(self):
+        """Check item existence without fetching password bytes or prompting."""
+        item = ctypes.c_void_p()
+        result = self.security.SecKeychainFindGenericPassword(
+            None, len(self.service), self.service, len(self.account), self.account,
+            None, None, ctypes.byref(item))
+        if item:
+            self.core.CFRelease(item)
+        if result == -25300:
+            return False
+        if result != 0:
+            raise CredentialError(f"无法检查登录钥匙串（系统状态 {result}）。请解锁后重试。")
+        return True
+
     def get(self):
         value, item = self._find()
         if item:

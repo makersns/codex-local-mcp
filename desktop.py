@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Native-dialog setup and lifecycle for Sugar Local MCP Desktop 0.5.0."""
+"""Compatible connection lifecycle and fallback dialogs for Codex Local MCP 0.6.0."""
 from __future__ import annotations
 
 import argparse
@@ -32,9 +32,9 @@ from workspace_config import (
     validate_document,
 )
 
-VERSION = "0.5.0"
+VERSION = "0.6.0"
 LABEL = "com.sugar.local-mcp.desktop.runtime"
-APP_TITLE = "Sugar Local MCP"
+APP_TITLE = "Codex Local MCP"
 TUNNEL_RE = re.compile(r"tunnel_(?:[a-z0-9]{4}_)?[a-z0-9]{32}\Z")
 SUPPORT = Path.home() / "Library/Application Support/Sugar Local MCP Desktop"
 RESOURCES = Path(__file__).resolve().parent
@@ -524,8 +524,8 @@ def system_permissions():
         document, _ = load_workspace_document()
         status = permissions.permission_status(document)
         prompt = (permissions.format_permission_status(status)
-                  + "\n\n这是可选检查。普通项目文件、命令和 ChatGPT Chrome 集成无需给 Sugar 授予屏幕录制或辅助功能权限。"
-                  + "\n\n请按系统设置实际列出的程序条目授权，名称不一定是 Sugar。"
+                  + "\n\n这是可选检查。普通项目文件、命令和 ChatGPT Chrome 集成无需给 Codex Local MCP 授予屏幕录制或辅助功能权限。"
+                  + "\n\n请按系统设置实际列出的程序条目授权，名称不一定是 Codex Local MCP。"
                   + "\n更换应用或 Python 运行环境后，macOS 可能需要重新授权。")
         selected = choose_list(options, prompt)
         if selected is None or selected == 7:
@@ -563,11 +563,11 @@ def chrome_integration_guide():
     computer_name = cfg.get("computer_name") or socket.gethostname().split(".")[0]
     message(f"Chrome 集成使用说明\n本机：{computer_name}\n\n"
             "1. 在 ChatGPT 当前会话中启用 Chrome 集成，连接这台 Mac 的 Chrome。\n"
-            "2. 选择对应的 Sugar Local MCP，让 ChatGPT 在项目目录启动开发服务。\n"
+            "2. 选择对应的 Codex Local MCP，让 ChatGPT 在项目目录启动开发服务。\n"
             "3. 使用 Chrome 集成打开服务地址，例如 http://127.0.0.1:3000，再操作和调试网页。\n\n"
-            "多台 Mac 同时使用时，请确认所选 Sugar MCP 与 Chrome 集成连接的是同一台 Mac。\n"
+            "多台 Mac 同时使用时，请确认所选 Codex Local MCP 与 Chrome 集成连接的是同一台 Mac。\n"
             "Chrome 集成的连接状态请在 ChatGPT 中确认。\n\n"
-            "普通项目文件、命令和 Chrome 集成无需给 Sugar 授予屏幕录制或辅助功能权限。")
+            "普通项目文件、命令和 Chrome 集成无需给 Codex Local MCP 授予屏幕录制或辅助功能权限。")
 
 
 def office_environment():
@@ -748,7 +748,7 @@ def gui():
     while True:
         cfg = load_settings()
         document, _ = load_workspace_document(cfg)
-        summary = f"{connection_status_text(result)}\n\n本机：{cfg['computer_name']}\nTunnel ID：{cfg['tunnel_id']}\n\n{workspace_summary(document)}\n\n在 ChatGPT 中选择对应连接，通过项目 ID 指定目录。\nSugar 提供本机文件和终端，网页操作请使用 ChatGPT 的 Chrome 集成。\n可在“配置”中查看 Chrome 说明、检查 Office 环境或重启连接。"
+        summary = f"{connection_status_text(result)}\n\n本机：{cfg['computer_name']}\nTunnel ID：{cfg['tunnel_id']}\n\n{workspace_summary(document)}\n\n在 ChatGPT 中选择对应连接，通过项目 ID 指定目录。\nCodex Local MCP 提供本机文件和终端，网页操作请使用 ChatGPT 的 Chrome 集成。\n可在“配置”中查看 Chrome 说明、检查 Office 环境或重启连接。"
         choice = message(summary, ("停止连接", "配置", "完成"), default="完成")
         if choice == "停止连接":
             message(stop())
@@ -781,7 +781,7 @@ def main():
             fcntl.flock(control_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             control_lock.close()
-            detail = "另一 Sugar Local MCP 窗口正在配置或连接。请先完成或关闭该窗口。"
+            detail = "另一 Codex Local MCP 窗口正在配置或连接。请先完成或关闭该窗口。"
             if args.action in {"gui", "configure"}:
                 message(detail)
             else:

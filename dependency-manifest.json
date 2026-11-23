@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "app_version": "0.5.0",
-  "service_version": "0.5.0",
+  "app_version": "0.6.0",
+  "service_version": "0.6.0",
   "verified_on": "2026-11-10",
   "platform": "macOS",
   "uv": {
@@ -40,7 +40,11 @@
     "pinned_portable_version": "0.0.20",
     "minimum_existing_version": "0.0.20",
     "official_macos_install": "brew install openai/tools/tunnel-client",
-    "selection_order": ["working existing client", "native Homebrew", "verified official portable release"],
+    "selection_order": [
+      "working existing client",
+      "native Homebrew",
+      "verified official portable release"
+    ],
     "release": "https://github.com/openai/tunnel-client/releases/tag/v0.0.20",
     "checksum_source": "https://github.com/openai/tunnel-client/releases/download/v0.0.20/SHA256SUMS.txt",
     "assets": {
@@ -56,5 +60,15 @@
       }
     },
     "macos_note": "The upstream release ZIP is not notarized. If macOS refuses execution, installation stops and directs the user to the official Homebrew route. No quarantine, Gatekeeper, or TLS settings are changed. The complete release bundle is retained, including cloudflared and its companion manifest."
+  },
+  "product": "Codex Local MCP",
+  "author": "Sugar",
+  "minimum_macos": "13.0",
+  "native_ui": {
+    "technology": "SwiftUI + AppKit",
+    "architectures": [
+      "arm64",
+      "x86_64"
+    ]
   }
 }

@@ -137,7 +137,7 @@ class PermissionGuideFlowTests(unittest.TestCase):
         request.assert_not_called()
         settings.assert_not_called()
         self.assertIn("可选检查", choose.call_args.args[1])
-        self.assertIn("无需给 Sugar 授予屏幕录制或辅助功能权限", choose.call_args.args[1])
+        self.assertIn("无需给 Codex Local MCP 授予屏幕录制或辅助功能权限", choose.call_args.args[1])
 
     def test_explicit_request_calls_only_the_selected_permission(self):
         with patch.object(guide, "permission_status", return_value=self.normalized(screen_capture=False)), \

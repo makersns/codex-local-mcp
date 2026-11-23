@@ -9,6 +9,8 @@ __pycache__/
 .ruff_cache/
 build/
 dist/
+.data/
+.swift-module-cache/
 *.app/
 
 # Host-specific settings, credentials, and runtime data
