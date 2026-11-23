@@ -1,99 +1,130 @@
-# Codex Local MCP 0.6.0 实施与交接记录
+# Codex Local MCP 0.6.0 发布与验收记录
 
-更新日期：2026-11-23（Asia/Shanghai）
+完成日期：2026-11-23（Asia/Shanghai）。作者：[Sugar](https://sugar.makersns.com/)。
 
-## 本次接续范围
+**状态：已实施、测试、安装、完成真实回连、推送 GitHub 并公开发布。** 本轮使用的实施分支已合并到 main 后删除。唯一维护仓库为 [makersns/codex-local-mcp](https://github.com/makersns/codex-local-mcp)。
 
-唯一维护仓库为 `/Users/sugar/temporaryFolder/codex-local-mcp`，远端为 `makersns/codex-local-mcp`，当前实施分支 `feat/native-desktop-0.6.0`。接续基线为 `ea6c57a292f8b9461b5defe1c20afa552783b209`；上轮尚未提交的改动完整保留。产品显示名称为 **Codex Local MCP**，作者 **Sugar**。
+[0.6.0 Release](https://github.com/makersns/codex-local-mcp/releases/tag/v0.6.0) · [下载 macOS 客户端](https://github.com/makersns/codex-local-mcp/releases/download/v0.6.0/Codex_Local_MCP_0.6.0_macos_universal.zip) · [SHA-256 校验文件](https://github.com/makersns/codex-local-mcp/releases/download/v0.6.0/SHA256SUMS.txt)
 
-已确认用户要求：完成原生单窗口界面、便捷配置、实施和测试、安装打包、同步 GitHub；无远端旧发布包在保存独有文档且核验无引用后清理。后端内部兼容标识不因品牌调整而变更。
+正式发布时间：2026-11-23 18:16:40（Asia/Shanghai）。GitHub Release 为公开正式版本，已标为 Latest。
 
-## 追加要求与当前发布状态
+## 已交付功能
 
-已完成两轮候选构建。包含原创图标的 a6f11a5 候选版已安装到 `~/Applications/Codex Local MCP.app`，0.6.0 运行环境已准备，两个原有文件夹、权限和钥匙串状态保留；原生产 0.4.0 后台尚未重启。候选版不是最终发布版。
+| 范围 | 完成结果 |
+| --- | --- |
+| 原生桌面 | SwiftUI + AppKit 单窗口，概览、文件夹、连接、环境检查、运行记录和帮助 |
+| 便捷配置 | 原生文件夹选择器、自动项目标识、通俗权限说明、同页首次配置、未保存草稿保护 |
+| 会话活动 | 当前正在调用的会话、近 10 分钟活跃会话、运行中任务，以及按需展开的匿名明细 |
+| 四语客户端 | English、简体中文、繁體中文、日本語；默认随系统，可保存手动选择 |
+| 语言切换 | 保留名称和连接 ID 草稿、保存状态与后台连接；菜单、帮助、校验及常见错误一起本地化 |
+| 作者主页 | 侧栏、帮助和关于中的 Sugar 署名可打开 https://sugar.makersns.com/ |
+| 原创图标 | C 形本机窗口与薄荷色连接点，自绘路径，16–1024 像素完整图标；侧栏使用同一图形 |
+| GitHub 展示 | 英文首页、三份语言说明、8 张真实应用预览截图、下载入口、使用要求和项目 topics |
 
-用户随后追加以下范围，这些追加功能现已完成源码与原生交互验收，最终分发包、安装与回连按下方记录收尾：
+截图使用明确标注的示例数据，不公开实际用户文件夹或连接信息。四语目录共 554 条，其中 173 条覆盖后端已知用户提示；用户输入、文件路径和原始诊断内容保持原样。
 
-- [x] 概览会话活动：正在调用、近 10 分钟活跃、运行中任务，未知来源与统计边界明确。
-- [x] 客户端英文、简体中文、繁體中文、日本語；默认跟随系统、可手动切换、保留草稿和连接。
-- [x] 侧栏、关于和帮助中的作者 Sugar 链接至 https://sugar.makersns.com。
-- [x] GitHub 英文首页与三份语言文档、8 张真实最终截图、下载入口及清晰介绍。
-- [ ] 完成后合并 main、推送远端、发布最终客户端，并清理已合并过程分支和可重建临时文件。
+## 验证结果
 
-根 README 已写英文版，简体中文、繁體中文及日文文档已新增。会话后端与原生概览、554 条四语文案、语言切换和作者入口均已完成；原生自测 77 / 77 与新增真实窗口检查 22 项通过。8 张公开截图已统一为原创图标版，并核对各语言文档的图片路径。
-
-旧的无远端发布目录已通过再次完整核验并移入 `~/.Trash/Sugar_Local_MCP_Desktop_0.5.0`。150 个原文件及新增 Finder 元数据均保持一致；3 份独有文档和 2 份原始测试日志已经保留。旧安装 App 与生产运行环境未清理。
-
-## 接续时实际状态
-
-- 原生 `macos/` 已有模型、通信、设计变量，尚缺 App 入口和页面，不能视为完整 UI。
-- `desktop_api.py` 已有协议实现，尚需专项验证及修复。
-- 构建与安装脚本已改造，但尚无本轮完整原生 App 验收。
-- 本次会话仍由已安装 **0.4.0** 后台提供连接；不得把源码或安装包版本视为当前服务版本。
-- 发现其他工程仍通过同一 MCP 执行作业，真实后台切换安排在最后核查之后。
-- 本机剩余空间约 1.52 GiB，编译缓存及 QA 安装副本按需使用，只清理本任务自己创建的可重建内容。
-
-## 源码与界面验收结果
-
-| 范围 | 当前结果 | 证据 |
+| 检查 | 真实结果 | 主要证据 |
 | --- | --- | --- |
-| 仓库身份 | main 基线与唯一 origin 核对完成 | git status / remote / worktree |
-| 旧包独有文档 | 3 份已归档，旧包文件摘要已保存 | docs/archive/0.5.0-release/；本机私有 inventory |
-| 桌面回归 | 124 项全部通过（含 API 32 项、安装 14 项及活动状态分支） | .data/native-desktop-0.6.0/activity-desktop-regression.txt |
-| 原生 Swift 自测 | 77 / 77 通过，含 35 项四语专项 | ui/i18n-self-test-results.json；最终 App 将分别运行两种架构 |
-| 新增原生交互 | 22 项通过：会话数字与匿名明细、语言切换草稿保留、作者主页入口 | ui/native-i18n-acceptance-final.json；原始 AX 回执分别保留 |
-| 四语文案 | 554 条，UI 必要文案及 173 条后端提示完整，格式占位符一致 | release-build/localization-source-validation.json；localization-backend-coverage.json |
-| 实际原生交互 | 17 / 17 通过，真实按钮和 Unicode 键盘事件，连接为隔离预览 | ui/native-ax-results-2.json |
-| 首次配置真实交互 | 12 / 12 通过：中文空格目录选择、默认权限与保存读回 | ui/native-first-setup-results-3.json |
-| 首轮完整 App | universal、严格签名、86 份源码资源一致；arm64 / Rosetta 各 21 项自测、隔离安装及重复安装通过 | release-build 私有回执；最终包补齐历史文档并采用专属图标 |
-| 原生页面渲染 | 初版 7 场景；四语追加 12 个渲染场景，8 张最终公开截图采用原创图标 | ui/i18n-render-results.json；ui/i18n-branded-render-results.json；docs/images/ |
-| 隔离 bootstrap | 首次 5.490 秒，复用 0.816 秒；使用已有缓存 | release-build/bootstrap-verification.json |
-| 现有配置兼容 | 两个文件夹与权限保留，密钥仅查元数据，配置文件 SHA-256 未变 | 只读 snapshot 与 upgrade-readonly-review.json |
-| 核心回归 | 140 项运行：139 通过，1 跳过，0 失败 | .data/native-desktop-0.6.0/activity-core-regression.txt |
-| 可选 Office 跳过 | 测试 MCP Python 未安装可选文档库；不冒充完整 Office 验收 | 上述测试日志 |
-| 当前系统权限 | 既有 MCP 进程 accessibility / screen_capture / post_event 均为 true | 只读权限检查；未申请新权限 |
-| 连接指引 | 官方入口、Runtime API key 和隧道权限说明复核完成 | 见下方官方资料 |
+| 桌面完整 Python 回归 | 124 项全部通过 | activity-desktop-regression.txt |
+| MCP 核心完整回归 | 140 项运行：139 通过、1 项可选 Office 条件跳过 | activity-core-regression.txt |
+| 正式 App：Apple Silicon | 77 / 77 原生自测通过 | final-packaged-self-test-arm64.json |
+| 正式 App：Intel 二进制 | 77 / 77 经 Rosetta 通过 | final-packaged-self-test-x86_64.json |
+| 四语专项 | 35 项，已包含在上述 77 项中 | macos/LocalizationSelfTests.swift |
+| 原始真实 UI 操作 | 17 项通过 | ui/native-ax-results-2.json |
+| 首次配置真实操作 | 12 项通过，含中文空格目录选择与默认权限读回 | ui/native-first-setup-results-3.json |
+| 新增语言/活动/作者交互 | 22 项通过 | ui/native-i18n-acceptance-final.json |
+| 四语与窄窗口渲染 | 12 场景，最终公开图 8 张 | ui/i18n-render-results.json；ui/published-screenshot-receipt.json |
+| 正式发行物 | 33 项通过，含严格签名、资源、隔离安装和 ZIP 解压复验 | release-build/final-artifact-verification.json |
+| 包内当前文档链接 | 93 项，零断链 | 同上 |
+| 提交前当前文档链接 | 113 项，零断链 | release-source-incremental-audit.json |
 
-## 实施分工
+完整说明见 [验证记录](../VALIDATION.md)。Apple Silicon 在实际 Mac 上运行；Intel 二进制经 Rosetta 运行，不将此称为 Intel 真机验收。可选 Office 跳过项不计为通过。
 
-- 原生界面：`macos/` 的 App 入口、五页、帮助、可访问性标识、首次配置、预览、自测和窗口截图。
-- 后端：配置完整文档保留、revision 冲突、事务回滚、密钥元数据、生命周期所有权、隔离测试、日志脱敏及 Python 回归。
-- 构建：安装完整性与防降级、重复安装修复、双架构、运行环境、服务器品牌和测试记录。
-- 集成：真实 UI/后端核对、用户文档、发布包、旧目录清理、Git 提交与远端验证。
+## 真实安装与连接
 
-## 验收清单
+正式 App 已安装到 `~/Applications/Codex Local MCP.app`。先向旧界面发送正常退出请求，确认退出后安装；没有强制结束界面或丢弃草稿。
 
-- [x] 原生窗口和页面完整实现并编译。
-- [x] 配置 API 专项及完整桌面回归。
-- [x] 首次使用与已有配置两条模型路径；首次选择器的真实操作单独验收。
-- [x] 原生实际按钮、取消编辑、未保存保护与错误恢复。
-- [x] 首次配置的原生文件夹选择与保存完整流程。
-- [x] 正常及最小窗口尺寸截图检查；四语长文案与草稿保护追加验收。
-- [ ] 双架构 App、签名、隔离安装及防降级。
-- [x] 图标候选版安装到本机，核对已有文件夹和权限保留；追加功能后的最终版还需更新安装。
-- [x] 旧发布包核查后清理。
-- [ ] 源码提交、同步远端、发布物核对。
-- [ ] 在不影响其他工程作业的前提下切换后台并核对实际回连版本。
+两项原有文件夹及其读写/执行权限保留。settings.json 和 workspaces.json 的 SHA-256 在安装及准备过程中保持不变，钥匙串状态为已保存。验证只读取密钥的存在状态，不把真实密钥打印或写入回执。
 
-## 新增客户端图标要求
+准备阶段确认：
 
-用户进一步要求专属客户端应用图标。图标采用自绘原生路径，结合 C 形本机窗口和向外连接，沿用靛紫色并以薄荷色标识连接端点；支持 16–1024 像素原生图标尺寸，纳入最终 App 的 AppIcon.icns。图标已纳入 a6f11a5 候选版并安装，AppIcon.icns 与 Info.plist 引用核对通过；新增功能后的最终包继续使用同一原创图标。
+- 已安装 App 版本为 0.6.0，源码绑定 ca446d2e1ad43349971906023984483b39094620。
+- 新运行环境的 source_digest 与正式 App 内的服务器源码匹配，避免把同为 0.6.0 的旧候选环境误认为最终环境。
+- 启动新界面时原后台 PID 保留；直到当前受管作业为空，才执行明确的后台切换。
 
-## 会话监测结论
+切换后，实际 ChatGPT 工具调用返回 **server_version: 0.6.0**。本机状态为 ready、managed:true、upgrade_pending:false。当前正式后台与 MCP 子进程分别为本次验收观察到的 25063 和 25066；PID 仅是当时的验收值，不是固定配置。
 
-初始候选版尚未加入会话计数。用户再次提出需求后，本轮已将活动监测纳入实施：按官方匿名 `openai/session` 元数据与 MCP SDK 2.3.0 聚合当前及近期活动，独立报告本机任务。无法从无请求的空闲期精确判断聊天窗口在线或断开；未知来源不能误报为零。详细口径见 [会话活动监测设计](SESSION_MONITORING_DESIGN.md) 和 [API 契约](DESKTOP_API_V1.md)。
+真实 `workspace_list` 与 README `read_file` 串行调用均通过；随后两项并发调用也成功，在同一轮中返回版本 0.6.0 和预期 README SHA-256。工作区数量为 2。
 
-## 正式构建记录方式
+### 实际会话统计
 
-App 将绑定完成上述验收的干净源码提交，构建信息记录 `source_revision` 与 `source_modified: false`。正式构建和安装完成后，仅更新发布证据文档；后续文档提交与 App 的代码提交分别标明，避免把未经核验的工作区产物称为正式版。
+2026-11-23 18:08:42（Asia/Shanghai）的真实快照显示：
 
-## 官方资料复核
+| 字段 | 观察值 |
+| --- | --- |
+| available | true |
+| metadata_seen | true |
+| recent_sessions | 3 |
+| active_sessions | 0 |
+| unknown_active_calls / unknown_recent_calls | 0 / 0 |
+| coverage_complete | true |
+| capacity_limited | false |
+| window_seconds | 600 |
 
-复核日期：2026-11-23。运行使用具备目标隧道 Tunnels Read + Use 权限的 Runtime API key；创建/编辑隧道另需 Read + Manage，并应关联目标 ChatGPT 工作区。本机 readiness 不能替代 ChatGPT 实际工具调用。
+这证明本次真实连接会传递匿名会话元数据，并能聚合多个会话。数字随活动与时间窗口变化，不是固定值或精确在线人数。运行中任务的快照会包含用于验收的命令本身，不能将该数视为额外会话。详见 [活动口径](SESSION_MONITORING_DESIGN.md)。
+
+### 升级编排中遇到的情况
+
+回连期间有两次工具请求超时，随后串行和并发请求均已复核成功。本次临时升级任务通过 launchctl submit 注册后，被系统重复拉起；一次性 gate 已被消费，后续执行在业务动作前退出，没有重复执行升级。该临时任务已移除，移除前后正式后台 PID 相同。
+
+临时升级脚本只用于这次安装编排，没有包含在公开客户端中；相关失败记录、任务移除回执与最终真实调用证据均保留。不存在仍注册的本次临时升级任务。
+
+## 构建、来源和发布附件
+
+App 和 v0.6.0 标签绑定：
+
+```text
+source_revision: ca446d2e1ad43349971906023984483b39094620
+source_modified: false
+version: 0.6.0
+architectures: arm64 + x86_64
+minimum_macos: 13.0
+resource_sha256: b88008d02fe9d187c680da739df7a384750d7795bc55af10ad1252f1020f05d1
+```
+
+最终构建耗时 112.18 秒。App 为 11,185,784 bytes，包含 111 个资源文件；其中 109 个源码资源逐字节匹配上述干净提交。后续 main 上的验收文档提交不改变已发布 App 的代码来源。
+
+ZIP 为 5,889,393 bytes，外层只有 App、INSTALL.html 和 README.txt，完整源码及说明位于 App Resources。包内当前文档、四语资源、10 个标准 ICNS 尺寸均已核对。没有运行配置、日志、虚拟环境、缓存或私有过程目录进入分发包。
+
+ZIP SHA-256：
+
+```text
+9a2264dc97ffb7e8006e6c8792eeed758bf83d45895e35bd2cc00fd8aa247ad3
+```
+
+公开 Release 只附带 ZIP 与 SHA256SUMS.txt。GitHub 返回的两项资产摘要、文件大小和 uploaded 状态与本地文件一致；发布后再次确认 draft:false、prerelease:false、Latest 为本版本。
+
+## 合并与清理
+
+- 实施分支 feat/native-desktop-0.6.0 已快进合并到 main，源码与 v0.6.0 标签已推送并核对远端。
+- 已删除本地已合并实施分支，当前仅保留 main；没有创建远端过程分支。
+- 已删除旧 be980f7 / a6f11a5 候选包、过期 wheel、测试二进制、图标中间文件与编译缓存。
+- 本轮可重建过程产物合计约 381.6 MB；最终分发文件、精简验证回执和回滚快照保留。
+- 原无远端的 Sugar_Local_MCP_Desktop_0.5.0 是旧发布目录，已核验后移入 macOS 废纸篓。150 个原文件与 Finder 元数据逐项核对；3 份独有文档和 2 份原始测试日志已保留。
+- 唯一维护仓库、新版安装 App、当前运行环境和其他工程未作为清理对象。
+
+## 保留的验证边界
+
+当前为 ad-hoc 签名，没有 Apple Developer ID 公证。未验证 Intel Mac 真机、另一台全新 Mac 的首次联网冷下载、独立隧道与 Chrome 同机配对，或复杂 Office 文档的完整保真。Chrome 仍是独立的 ChatGPT 集成。
+
+历史 0.5.0 文档保留原文；其中旧相对链接不作为本版验证证据。
+
+## 证据位置与官方说明
+
+机器上的完整回执保存在 Git 忽略的 `.data/native-desktop-0.6.0/`，包括构建、原生 UI、真实安装、end-to-end-tool-calls.json、github-release-verification.json 和 final-cleanup-receipt.json。公开仓库只保留源码、说明和无敏感数据的截图。
 
 - [Secure MCP Tunnel](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels)
 - [连接与测试插件](https://developers.openai.com/plugins/deploy/connect-chatgpt)
-
-## 记录约定
-
-后续在本文件追加实际验收结果与最终路径。只把真实执行结果标为通过；预览样例、隔离测试和生产连接分别记录。日志、个人配置、真实密钥、工作路径清单不进入公开源码。最终 App 的构建信息需绑定已提交源码；不将工作区未提交状态描述为发布完成。
+- [OpenAI Plugins Reference](https://developers.openai.com/plugins/reference)
