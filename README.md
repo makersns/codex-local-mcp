@@ -1,142 +1,173 @@
-# Codex Local MCP
+<p align="center">
+  <img src="docs/images/app-icon-0.6.0.png" alt="Codex Local MCP app icon" width="112" height="112">
+</p>
 
-<img src="docs/images/app-icon-0.6.0.png" alt="Codex Local MCP 应用图标" width="96" height="96">
+<h1 align="center">Codex Local MCP</h1>
 
-**让 AI 使用你自己的 Mac，处理文件、运行项目和完成本机任务。**
+<p align="center"><strong>Your Mac. Your projects. Connected to ChatGPT.</strong></p>
 
-作者：**Sugar** · 桌面版本：**0.6.0** · macOS 13 及以上
+<p align="center">
+  A native macOS app for project folders, local tasks, and a connection you can understand.
+</p>
 
-Codex Local MCP 提供原生 macOS 桌面界面，用于管理本机连接与授权文件夹。选择文件夹、设置可用能力、保存连接信息，都可以在同一个窗口完成。网页操作使用 ChatGPT 独立连接的 Chrome 集成。
+<p align="center">
+  <a href="https://github.com/makersns/codex-local-mcp/releases/latest"><strong>Download for macOS</strong></a> ·
+  <a href="#quick-start">Quick start</a> ·
+  <a href="#screenshots">Screenshots</a> ·
+  <a href="https://github.com/makersns/codex-local-mcp/issues">Report an issue</a>
+</p>
 
-这是 Sugar 开发的社区项目，并非 OpenAI 官方客户端。应用使用官方隧道组件连接已有隧道；项目本身不调用模型 API。
+<p align="center">
+  <a href="https://github.com/makersns/codex-local-mcp/releases"><img src="https://img.shields.io/github/v/release/makersns/codex-local-mcp?color=635bee" alt="Latest release"></a>
+  <img src="https://img.shields.io/badge/macOS-13%2B-20222b" alt="macOS 13 or later">
+  <img src="https://img.shields.io/badge/Apple%20Silicon%20%2B%20Intel-universal-635bee" alt="Universal macOS app">
+  <img src="https://img.shields.io/badge/author-Sugar-635bee" alt="Author Sugar">
+</p>
 
-![Codex Local MCP 原生连接概览](docs/images/desktop-overview-0.6.0.png)
+<p align="center">
+  <strong>English</strong> · <a href="docs/README.zh-CN.md">简体中文</a> ·
+  <a href="docs/README.zh-TW.md">繁體中文</a> · <a href="docs/README.ja.md">日本語</a>
+</p>
 
-*原生应用实际渲染，图中为明确标注的示例预览数据。*
+---
 
-## 开始使用
+Codex Local MCP gives your local connection a proper desktop home. Choose the folders AI may work with, decide which capabilities to allow, and manage the connection from one native window.
 
-1. 打开 **Codex Local MCP.app**。应用安装到当前用户的 Applications，首次运行自动准备所需环境。
-2. 在“连接设置”填写电脑名称、连接 ID 和连接密钥。页面提供获取指引，密钥保存在 macOS 登录钥匙串。
-3. 点击“选择文件夹”，添加允许 AI 访问的本地文件夹。项目 ID 自动生成，可以在“更多设置”中调整。
-4. 选择是否允许编辑文件、运行本机任务，点击“保存并连接”。
-5. 本机就绪后，在 ChatGPT 中选择对应连接，让它读取一个项目文件，确认整条连接可用。
+Built by [**Sugar**](https://sugar.makersns.com). This is an independent community project, not an official OpenAI application. It connects through the official Secure MCP Tunnel components.
 
-已有用户直接进入概览，原来的文件夹、权限和密钥继续使用。关闭窗口后，后台连接继续运行。
+## Why use it?
 
-## 日常操作
+- **Configure with a native app.** Folder pickers, readable permissions, a single setup page, and useful recovery messages.
+- **Work across projects.** Add up to 32 folders, each with its own file editing and command execution settings.
+- **Understand connection activity.** See current tool activity, recently active conversations, and local tasks separately.
+- **Keep credentials out of ordinary settings.** Runtime keys are stored in the macOS login Keychain. Existing keys can be reused.
+- **Make changes deliberately.** Save changes together; drafts survive routine refreshes, and unsaved edits are protected when navigating or closing.
+- **Troubleshoot in one place.** Check the local environment and view bounded, redacted runtime information.
 
-| 想做什么 | 去哪里 |
+Use ChatGPT to inspect a codebase, edit authorized files, run a test suite, start a development server, or work with local document tools. The capabilities available to a project depend on the permissions you enable and the software installed on your Mac.
+
+## Screenshots
+
+![Connection overview in Codex Local MCP](docs/images/desktop-overview-0.6.0.png)
+
+*Actual native app rendering with clearly marked example data. Both the app and the documentation support English, Simplified Chinese, Traditional Chinese, and Japanese.*
+
+<details>
+<summary><strong>Project folders and connection settings</strong></summary>
+
+### Give each folder the access it needs
+
+![Project folder permissions](docs/images/desktop-folders-0.6.0.png)
+
+### Set up once, reuse your saved connection
+
+![Connection settings with a stored Keychain credential](docs/images/desktop-connection-0.6.0.png)
+
+</details>
+
+## Quick start
+
+### 1. Download and open the app
+
+Get the universal macOS ZIP from [Releases](https://github.com/makersns/codex-local-mcp/releases/latest), extract it, and open **Codex Local MCP.app**.
+
+The app installs into `~/Applications` and prepares its runtime. Prebuilt-app users do not need a compiler or terminal commands. Initial runtime preparation requires an internet connection.
+
+### 2. Enter your connection information
+
+Give your Mac a recognizable name, then enter the Tunnel ID and Runtime key. The app provides links and instructions.
+
+You need an OpenAI Secure MCP Tunnel associated with the intended ChatGPT workspace. The Runtime key needs **Tunnels Read + Use** access for that tunnel. See the [official setup guide](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels) and [plugin connection guide](https://developers.openai.com/plugins/deploy/connect-chatgpt). The app does not create the cloud tunnel or ChatGPT plugin for you.
+
+### 3. Choose a project folder
+
+Use the native folder picker. New folders allow file editing by default; command execution starts **off**. Existing permissions are preserved during upgrades. Project identifiers are generated automatically and can be adjusted under advanced settings.
+
+### 4. Save and verify from ChatGPT
+
+Click **Save and connect**. Select the matching connection in ChatGPT and ask it to list your configured workspaces or read a project README.
+
+“Locally ready” confirms the Mac-side connection. A successful tool call confirms the complete path from ChatGPT to your Mac.
+
+## Permissions, clearly separated
+
+| Capability | What it allows | Default for a new folder |
+| --- | --- | --- |
+| Read files | Browse and read files through the workspace file tools | On |
+| Edit files | Create and change files through those tools | On |
+| Run local tasks | Execute commands, tests, development servers, and installed document tools | Off |
+
+Commands run with the current macOS user's permissions and can modify files. Turning off file editing does not make an enabled command runner read-only. A configured workspace is not an operating-system sandbox.
+
+Removing a folder removes its configured access; it does not delete the folder. Saving connection or folder changes can restart the connection, so finish running tasks first.
+
+## Know what is active
+
+The overview distinguishes three useful signals:
+
+| Indicator | Meaning |
 | --- | --- |
-| 查看本机是否就绪、开始或重启连接 | 连接概览 |
-| 添加、更换、移除可访问的文件夹 | 项目文件夹 |
-| 修改电脑名称、连接 ID 或密钥 | 连接设置 |
-| 检查 Office 文件处理能力、可选系统权限 | 环境检查 |
-| 查看脱敏运行信息、复制问题详情 | 运行记录 |
-| 查看连接步骤、Chrome 使用方法、版本与作者 | 使用帮助 / 关于 |
+| Currently calling | Distinct identified conversations with a tool request still executing |
+| Active in the last 10 minutes | Distinct identified conversations with recent or ongoing tool activity |
+| Running tasks | Managed local commands that are still running |
 
-### 文件夹权限
+These are activity measurements, not a promise that every idle chat window is still online. Missing conversation metadata is reported as an unidentified source instead of a misleading zero. Statistics begin with the current background service and reset when it restarts.
 
-每个文件夹都可以单独设置：
+The activity view uses anonymous local labels. It does not need conversation titles or chat contents. See the [activity design and limitations](docs/SESSION_MONITORING_DESIGN.md).
 
-- **读取文件**：查看目录和文本内容。
-- **编辑文件**：允许文件工具创建、修改文件。
-- **运行本机任务**：允许运行命令、开发服务和文档处理程序。运行的程序也可能修改文件，因此关闭“编辑文件”不等于限制命令只能读取。
+## A few practical details
 
-新增文件夹默认允许编辑、不默认运行命令；已有文件夹保持原设置。移除访问只移除连接中的条目，不删除磁盘文件。最多可配置 32 个文件夹，中文名称和带空格的路径可用。
+**Change the language without losing your work.** The app follows your system language by default. Use the language menu to choose English, Simplified Chinese, Traditional Chinese, or Japanese; your choice is remembered, drafts are preserved, and the background connection keeps running.
 
-配置变更在保存后生效。保存按钮会明确说明是否需要重启连接；正在执行的项目任务可能被中断，请先结束相关工作。发现配置被其他窗口或程序修改时，应用会提示重新加载，不直接覆盖。
+**Closing the window keeps the connection running.** Stop it explicitly from the overview when needed.
 
-### 连接信息与密钥
+**Chrome is a separate integration.** Use ChatGPT's Chrome integration for webpage interaction and debugging. With multiple Macs, confirm that Chrome and the local connection point to the same device.
 
-连接设置提供 [隧道设置](https://platform.openai.com/settings/organization/tunnels) 和 [官方连接指南](https://developers.openai.com/api/docs/guides/secure-mcp-tunnels) 的入口。连接密钥使用具备目标隧道 Tunnels Read + Use 权限的 Runtime API key。每台电脑使用独立的 Tunnel ID；同一个 stdio 隧道只运行一个客户端实例。应用不会替用户创建平台隧道或 ChatGPT 插件。
+**Office checks are optional.** Environment checks and synthetic document tests help identify installed capabilities. They do not install Office or open your documents automatically.
 
-密钥只在本机输入并写入登录钥匙串，不进入命令行参数、普通配置或 UI 响应。已有密钥无需重新填写；需要变更时使用“更换密钥”。“本机已就绪”仅表示本机隧道状态，不能替代 ChatGPT 的实际工具调用验证。
+**Upgrades keep existing configuration.** Folder access, connection settings, and Keychain identities remain compatible. Opening a new app version prepares its runtime without interrupting an existing connection. Apply it with an explicit restart after current work finishes.
 
-### Chrome 与 Office
+**Each Mac needs its own tunnel.** Run one client instance for each stdio tunnel.
 
-Chrome 连接由 ChatGPT 独立管理，本应用提供使用指南。多台 Mac 时，应确认本机工具和 Chrome 连接对应同一台电脑。普通文件、终端和 Chrome 集成流程不要求本应用获得屏幕录制或辅助功能权限。
+## Requirements and release status
 
-Office 检查会区分检测到依赖与基础读写验证。基础验证使用样例，不打开用户文档；不会自动安装 Office 或文档库。复杂版式、公式重算、PDF 导出等需要针对实际文件另外验证。
+| Item | Support |
+| --- | --- |
+| macOS | 13 or later |
+| App architectures | Apple Silicon `arm64` and Intel `x86_64` |
+| Hardware exercised | Apple Silicon; Intel binary also tested through Rosetta |
+| App interface | English, 简体中文, 繁體中文, 日本語; follows the system or your saved choice |
+| Documentation | English, 简体中文, 繁體中文, 日本語 |
+| Signing | Ad-hoc signed; not Developer ID notarized |
 
-## 安装与构建
+If macOS blocks opening a downloaded build, use the normal **Privacy & Security → Open Anyway** flow after checking its source. The app does not disable macOS security controls.
 
-源码仓库是唯一维护入口：
+The [validation report](VALIDATION.md) separates automated tests, native interaction checks, packaged-app verification, and limitations. [Release notes](RELEASE_NOTES.md) describe version changes.
 
-https://github.com/makersns/codex-local-mcp
+## Build from source
 
-从源码构建需要 macOS Command Line Tools（Swift 编译器与 SDK）。预编译 App 的使用者无需安装开发工具。首次准备运行环境需要网络；实际测试覆盖范围见 [VALIDATION.md](VALIDATION.md)。
+Source builds require the macOS Command Line Tools, including Swift and the SDK.
 
-~~~bash
+```bash
 git clone https://github.com/makersns/codex-local-mcp.git
 cd codex-local-mcp
 /bin/bash ./Install_Codex_Local_MCP.command
-~~~
+```
 
-源码安装器完成构建、安装并打开应用。安装目标为：
+To build without installing, provide a new absolute output path:
 
-~~~text
-~/Applications/Codex Local MCP.app
-~~~
-
-只构建、不安装：
-
-~~~bash
+```bash
 /bin/bash ./build-macos.sh "$PWD/dist/Codex Local MCP.app"
-~~~
+```
 
-输出必须是尚不存在的绝对 .app 路径。安装会验证应用标识与签名，保留可回退副本；不会因打开新窗口自动停止旧连接。
+The UI uses **SwiftUI + AppKit**. A bounded local JSON bridge connects it to the Python management layer; the app does not open a management HTTP port. The original Python module and command remain compatible, with an additional `codex-local-mcp` command.
 
-当前构建使用 ad-hoc 签名，未提供 Apple Developer ID 公证。在新 Mac 上遇到系统打开限制时，请按 macOS 的正常允许打开流程操作。
+For standalone MCP server setup, fixed Python dependencies, and transport options, see [server/README.md](server/README.md). For the scope of file and command permissions, see [security notes](server/docs/SECURITY.md).
 
-## 从旧版本升级
+## Feedback and contributions
 
-0.6.0 将用户可见名称统一为 **Codex Local MCP**，作者署名 **Sugar**。
+[Open an issue](https://github.com/makersns/codex-local-mcp/issues) with your macOS version, app version, steps to reproduce, and redacted diagnostic information. UI feedback and improvements to the translations are welcome. Keep Runtime keys and private project contents out of reports.
 
-为了保留已有配置，内部继续使用旧版的 Application Support 目录、Keychain 服务标识和受管连接标识。无需复制密钥或重新添加文件夹。旧 Python 模块和命令保留兼容，同时提供 codex-local-mcp 命令入口。
+If Codex Local MCP makes your local workflow easier, **a star helps other people find the project**.
 
-~~~text
-~/Library/Application Support/Sugar Local MCP Desktop/
-~~~
-
-新界面读取现有配置，并显示是否需要重启后台。完成正在运行的任务后，通过“重启连接”应用新后台。必要时在 ChatGPT 刷新该连接的工具清单，再实际调用 workspace_list 核对版本和目录。
-
-## 技术结构
-
-| 路径 | 用途 |
-| --- | --- |
-| macos/ | SwiftUI / AppKit 原生界面、状态与交互 |
-| desktop_api.py | stdin / stdout JSON 控制接口 |
-| desktop.py | 既有连接生命周期与兼容逻辑 |
-| workspace_config.py | 完整配置校验、并发检查、原子保存 |
-| security_store.py | macOS 登录钥匙串 |
-| bootstrap.sh | 独立运行环境准备与校验 |
-| build-macos.sh、install-app.sh | 构建、验签和安装 |
-| server/ | MCP 核心服务、文件及进程工具 |
-| tests/、server/tests/ | 配置、连接、核心与发布测试 |
-| docs/IMPLEMENTATION_PLAN_0.6.0.md | 本轮实施方案与验收要求 |
-| docs/DESKTOP_API_V1.md | 原生界面与后台接口契约 |
-
-原生界面使用短生命周期子进程连接控制 API，不开放管理 HTTP 端口。不同文件夹或聊天之间不构成操作系统进程沙箱；命令使用当前 macOS 用户权限。工具边界详见 [核心说明](server/README.md) 与 [安全说明](server/docs/SECURITY.md)。
-
-## MCP 核心单独使用
-
-核心仍支持 Python 3.11 及以上，使用固定依赖。把服务源码、运行环境与配置放在待开发项目目录之外：
-
-~~~bash
-cd server
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -c constraints.txt -e .
-codex-local-mcp --version
-~~~
-
-完整配置、stdio、进程管理及 Office 使用方式见 [server/README.md](server/README.md)。旧命令 sugar-local-mcp 保留兼容。
-
-## 验证与问题反馈
-
-测试数量、构建校验、实际原生窗口截图与未覆盖的平台，以 [当前验证记录](VALIDATION.md) 为准。旧版本记录独立保留，不计入新版通过结果。
-
-问题反馈请附版本、macOS 版本、操作步骤与脱敏错误。不要公开 Runtime key 或私有项目内容。先查看界面内的恢复建议，必要时从“运行记录”打开本机日志目录。
-
-[更新说明](RELEASE_NOTES.md) · [0.6.0 实施方案](docs/IMPLEMENTATION_PLAN_0.6.0.md) · [历史验证](VALIDATION_0.5.0_HISTORY.md)
+[App icon and source artwork](docs/APP_ICON.md) · [Implementation notes](docs/IMPLEMENTATION_PLAN_0.6.0.md) · [Release verification](docs/RELEASE_0.6.0.md)

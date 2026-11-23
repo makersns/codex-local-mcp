@@ -1,0 +1,3330 @@
+{
+  "schema_version": 1,
+  "source_language": "zh-Hans",
+  "strings": {
+    "无法读取应用配置，请检查文件权限后重试。": {
+      "en": "Unable to read the app configuration. Check file permissions and try again.",
+      "zh-Hans": "无法读取应用配置，请检查文件权限后重试。",
+      "zh-Hant": "無法讀取應用程式設定，請檢查檔案權限後再試。",
+      "ja": "アプリの設定を読み取れません。ファイルのアクセス権を確認して、もう一度お試しください。"
+    },
+    "应用配置必须是当前用户拥有的普通文件。": {
+      "en": "The app configuration must be a regular file owned by the current user.",
+      "zh-Hans": "应用配置必须是当前用户拥有的普通文件。",
+      "zh-Hant": "應用程式設定必須是目前使用者擁有的一般檔案。",
+      "ja": "アプリの設定には、現在のユーザーが所有する通常のファイルを使用してください。"
+    },
+    "配置文件过大，请检查后重新打开应用。": {
+      "en": "The configuration file is too large. Check it, then reopen the app.",
+      "zh-Hans": "配置文件过大，请检查后重新打开应用。",
+      "zh-Hant": "設定檔過大，請檢查後重新開啟應用程式。",
+      "ja": "設定ファイルが大きすぎます。内容を確認してから、アプリを開き直してください。"
+    },
+    "此操作包含不支持的选项，请重新打开应用后重试。": {
+      "en": "This operation includes unsupported options. Reopen the app and try again.",
+      "zh-Hans": "此操作包含不支持的选项，请重新打开应用后重试。",
+      "zh-Hant": "此操作包含不支援的選項，請重新開啟應用程式後再試。",
+      "ja": "この操作には対応していないオプションが含まれています。アプリを開き直して、もう一度お試しください。"
+    },
+    "请选择有效的操作选项。": {
+      "en": "Select a valid option.",
+      "zh-Hans": "请选择有效的操作选项。",
+      "zh-Hant": "請選擇有效的操作選項。",
+      "ja": "有効なオプションを選択してください。"
+    },
+    "请选择开启或关闭。": {
+      "en": "Choose on or off.",
+      "zh-Hans": "请选择开启或关闭。",
+      "zh-Hant": "請選擇開啟或關閉。",
+      "ja": "オンまたはオフを選択してください。"
+    },
+    "收到的请求不是有效的配置数据，请重试。": {
+      "en": "The request does not contain valid configuration data. Try again.",
+      "zh-Hans": "收到的请求不是有效的配置数据，请重试。",
+      "zh-Hant": "收到的要求不是有效的設定資料，請再試一次。",
+      "ja": "受信したリクエストの設定データが無効です。もう一度お試しください。"
+    },
+    "应用配置目录不能是符号链接。": {
+      "en": "The app configuration folder cannot be a symbolic link.",
+      "zh-Hans": "应用配置目录不能是符号链接。",
+      "zh-Hant": "應用程式設定目錄不能是符號連結。",
+      "ja": "アプリの設定フォルダにはシンボリックリンクを使用できません。"
+    },
+    "应用配置目录必须属于当前用户。": {
+      "en": "The app configuration folder must belong to the current user.",
+      "zh-Hans": "应用配置目录必须属于当前用户。",
+      "zh-Hant": "應用程式設定目錄必須屬於目前使用者。",
+      "ja": "アプリの設定フォルダは、現在のユーザーが所有している必要があります。"
+    },
+    "配置锁文件异常，请重新打开应用。": {
+      "en": "There is a problem with the configuration lock file. Reopen the app.",
+      "zh-Hans": "配置锁文件异常，请重新打开应用。",
+      "zh-Hant": "設定鎖定檔異常，請重新開啟應用程式。",
+      "ja": "設定のロックファイルに問題があります。アプリを開き直してください。"
+    },
+    "另一项设置操作正在进行，请稍后重试。": {
+      "en": "Another settings operation is in progress. Try again shortly.",
+      "zh-Hans": "另一项设置操作正在进行，请稍后重试。",
+      "zh-Hant": "另一項設定操作正在進行，請稍後再試。",
+      "ja": "別の設定操作が進行中です。しばらくしてから、もう一度お試しください。"
+    },
+    "无法保存设置，请检查配置目录权限。": {
+      "en": "Unable to save settings. Check the configuration folder permissions.",
+      "zh-Hans": "无法保存设置，请检查配置目录权限。",
+      "zh-Hant": "無法儲存設定，請檢查設定目錄權限。",
+      "ja": "設定を保存できません。設定フォルダのアクセス権を確認してください。"
+    },
+    "连接设置格式不正确，请从备份恢复后重试。": {
+      "en": "The connection settings format is invalid. Restore a backup and try again.",
+      "zh-Hans": "连接设置格式不正确，请从备份恢复后重试。",
+      "zh-Hant": "連線設定格式不正確，請從備份還原後再試。",
+      "ja": "接続設定の形式が正しくありません。バックアップから復元して、もう一度お試しください。"
+    },
+    "已保存的连接 ID 不完整，请检查连接设置。": {
+      "en": "The saved connection ID is incomplete. Check the connection settings.",
+      "zh-Hans": "已保存的连接 ID 不完整，请检查连接设置。",
+      "zh-Hant": "已儲存的連線 ID 不完整，請檢查連線設定。",
+      "ja": "保存されている接続 ID が不完全です。接続設定を確認してください。"
+    },
+    "已保存的电脑名称无效，请检查连接设置。": {
+      "en": "The saved computer name is invalid. Check the connection settings.",
+      "zh-Hans": "已保存的电脑名称无效，请检查连接设置。",
+      "zh-Hant": "已儲存的電腦名稱無效，請檢查連線設定。",
+      "ja": "保存されているコンピュータ名が無効です。接続設定を確認してください。"
+    },
+    "设置刚被另一项操作更新，请重新加载后重试。": {
+      "en": "Another operation just updated the settings. Reload and try again.",
+      "zh-Hans": "设置刚被另一项操作更新，请重新加载后重试。",
+      "zh-Hant": "設定剛被另一項操作更新，請重新載入後再試。",
+      "ja": "別の操作によって設定が更新されました。再読み込みして、もう一度お試しください。"
+    },
+    "配置版本信息已失效，请重新加载后保存。": {
+      "en": "The configuration version is out of date. Reload before saving.",
+      "zh-Hans": "配置版本信息已失效，请重新加载后保存。",
+      "zh-Hant": "設定版本資訊已失效，請重新載入後儲存。",
+      "ja": "設定のバージョン情報が古くなっています。再読み込みしてから保存してください。"
+    },
+    "请重新加载最新设置。": {
+      "en": "Reload the latest settings.",
+      "zh-Hans": "请重新加载最新设置。",
+      "zh-Hant": "請重新載入最新設定。",
+      "ja": "最新の設定を再読み込みしてください。"
+    },
+    "设置已被其他操作修改。请重新加载最新内容，再保存你的更改。": {
+      "en": "Another operation changed the settings. Reload the latest version, then save your changes.",
+      "zh-Hans": "设置已被其他操作修改。请重新加载最新内容，再保存你的更改。",
+      "zh-Hant": "設定已被其他操作修改。請重新載入最新內容，再儲存你的變更。",
+      "ja": "別の操作によって設定が変更されました。最新の内容を再読み込みしてから、変更を保存してください。"
+    },
+    "运行环境尚未准备好，请在应用中重新准备。": {
+      "en": "The runtime is not ready. Run setup again in the app.",
+      "zh-Hans": "运行环境尚未准备好，请在应用中重新准备。",
+      "zh-Hant": "執行環境尚未準備好，請在應用程式中重新準備。",
+      "ja": "実行環境の準備ができていません。アプリで準備をやり直してください。"
+    },
+    "隔离测试模式": {
+      "en": "Isolated test mode",
+      "zh-Hans": "隔离测试模式",
+      "zh-Hant": "隔離測試模式",
+      "ja": "分離テストモード"
+    },
+    "此配置目录不会读取密钥或控制日常连接。": {
+      "en": "This configuration folder will not read keys or control your regular connection.",
+      "zh-Hans": "此配置目录不会读取密钥或控制日常连接。",
+      "zh-Hant": "此設定目錄不會讀取金鑰或控制日常連線。",
+      "ja": "この設定フォルダでは、キーの読み取りや普段の接続の操作は行いません。"
+    },
+    "暂时无法读取连接状态": {
+      "en": "Connection status is temporarily unavailable",
+      "zh-Hans": "暂时无法读取连接状态",
+      "zh-Hant": "暫時無法讀取連線狀態",
+      "ja": "接続状態を一時的に取得できません"
+    },
+    "请稍后刷新，或在运行记录中检查启动结果。": {
+      "en": "Refresh shortly, or check the startup result in the logs.",
+      "zh-Hans": "请稍后刷新，或在运行记录中检查启动结果。",
+      "zh-Hant": "請稍後重新整理，或在執行記錄中檢查啟動結果。",
+      "ja": "しばらくしてから更新するか、ログで起動結果を確認してください。"
+    },
+    "连接端口正被占用": {
+      "en": "The connection port is in use",
+      "zh-Hans": "连接端口正被占用",
+      "zh-Hant": "連線連接埠正被占用",
+      "ja": "接続ポートが使用中です"
+    },
+    "另一个程序正在使用此端口，请先结束原连接后再试。": {
+      "en": "Another app is using this port. Stop the existing connection and try again.",
+      "zh-Hans": "另一个程序正在使用此端口，请先结束原连接后再试。",
+      "zh-Hant": "另一個程式正在使用此連接埠，請先結束原連線後再試。",
+      "ja": "別のアプリがこのポートを使用しています。既存の接続を停止してから、もう一度お試しください。"
+    },
+    "本机已就绪": {
+      "en": "Ready on this Mac",
+      "ja": "この Mac は準備完了です",
+      "zh-Hans": "本机已就绪",
+      "zh-Hant": "本機已就緒"
+    },
+    "新版本已准备好，重启连接后生效。": {
+      "en": "The new version is ready. Restart the connection to apply it.",
+      "zh-Hans": "新版本已准备好，重启连接后生效。",
+      "zh-Hant": "新版本已準備好，重新啟動連線後生效。",
+      "ja": "新しいバージョンの準備ができました。接続を再起動すると適用されます。"
+    },
+    "在 ChatGPT 中选择此连接并调用工具，确认可以使用。": {
+      "en": "Select this connection in ChatGPT and call a tool to confirm it works.",
+      "zh-Hans": "在 ChatGPT 中选择此连接并调用工具，确认可以使用。",
+      "zh-Hant": "在 ChatGPT 中選擇此連線並呼叫工具，確認可以使用。",
+      "ja": "ChatGPT でこの接続を選び、ツールを呼び出して動作を確認してください。"
+    },
+    "完成设置即可连接": {
+      "en": "Complete setup to connect",
+      "zh-Hans": "完成设置即可连接",
+      "zh-Hant": "完成設定即可連線",
+      "ja": "設定を完了すると接続できます"
+    },
+    "填写连接信息，再选择一个允许访问的文件夹。": {
+      "en": "Enter the connection details, then choose a folder to allow access.",
+      "zh-Hans": "填写连接信息，再选择一个允许访问的文件夹。",
+      "zh-Hant": "填寫連線資訊，再選擇一個允許存取的資料夾。",
+      "ja": "接続情報を入力し、アクセスを許可するフォルダを選択してください。"
+    },
+    "连接正在准备中": {
+      "en": "Preparing the connection",
+      "zh-Hans": "连接正在准备中",
+      "zh-Hant": "連線正在準備中",
+      "ja": "接続を準備しています"
+    },
+    "请稍候；如果长时间没有就绪，可查看运行记录。": {
+      "en": "Please wait. If it takes too long, check the logs.",
+      "zh-Hans": "请稍候；如果长时间没有就绪，可查看运行记录。",
+      "zh-Hant": "請稍候；如果長時間沒有就緒，可查看執行記錄。",
+      "ja": "しばらくお待ちください。準備に時間がかかる場合は、ログを確認してください。"
+    },
+    "当前未连接": {
+      "en": "Not connected",
+      "zh-Hans": "当前未连接",
+      "zh-Hant": "目前未連線",
+      "ja": "接続されていません"
+    },
+    "设置已保留，点击“开始连接”即可继续使用。": {
+      "en": "Your settings are saved. Click “Start connection” to continue.",
+      "zh-Hans": "设置已保留，点击“开始连接”即可继续使用。",
+      "zh-Hant": "設定已保留，按一下「開始連線」即可繼續使用。",
+      "ja": "設定は保持されています。「接続を開始」をクリックすると、引き続き利用できます。"
+    },
+    "隔离模式未连接日常后台，无法读取会话活动。": {
+      "en": "Isolated mode is not connected to the regular background service, so session activity is unavailable.",
+      "zh-Hans": "隔离模式未连接日常后台，无法读取会话活动。",
+      "zh-Hant": "隔離模式未連接日常背景服務，無法讀取對話活動。",
+      "ja": "分離モードでは普段のバックグラウンドサービスに接続しないため、セッションのアクティビティを取得できません。"
+    },
+    "连接就绪后，这里会显示会话活动。": {
+      "en": "Session activity will appear here once the connection is ready.",
+      "zh-Hans": "连接就绪后，这里会显示会话活动。",
+      "zh-Hant": "連線就緒後，這裡會顯示對話活動。",
+      "ja": "接続の準備ができると、ここにセッションのアクティビティが表示されます。"
+    },
+    "后台暂时无法提供会话统计，请稍后刷新或更新并重新连接。": {
+      "en": "Session statistics are temporarily unavailable. Refresh shortly, or update and reconnect.",
+      "zh-Hans": "后台暂时无法提供会话统计，请稍后刷新或更新并重新连接。",
+      "zh-Hant": "背景服務暫時無法提供對話統計，請稍後重新整理，或更新並重新連線。",
+      "ja": "セッション統計を一時的に取得できません。しばらくしてから更新するか、アプリを更新して再接続してください。"
+    },
+    "会话统计暂时无法读取，请稍后刷新。": {
+      "en": "Session statistics cannot be read right now. Refresh shortly.",
+      "zh-Hans": "会话统计暂时无法读取，请稍后刷新。",
+      "zh-Hant": "暫時無法讀取對話統計，請稍後重新整理。",
+      "ja": "セッション統計を一時的に読み取れません。しばらくしてから更新してください。"
+    },
+    "当前后台尚不支持会话统计，更新并重新连接后即可查看。": {
+      "en": "The current background service does not support session statistics yet. Update and reconnect to view them.",
+      "zh-Hans": "当前后台尚不支持会话统计，更新并重新连接后即可查看。",
+      "zh-Hant": "目前的背景服務尚不支援對話統計，更新並重新連線後即可查看。",
+      "ja": "現在のバックグラウンドサービスは、セッション統計に対応していません。更新して再接続すると表示できます。"
+    },
+    "暂时无法更新会话统计，请稍后刷新；未把旧数据作为实时结果。": {
+      "en": "Session statistics could not be refreshed. Try again shortly; old data is not shown as live.",
+      "zh-Hans": "暂时无法更新会话统计，请稍后刷新；未把旧数据作为实时结果。",
+      "zh-Hant": "暫時無法更新對話統計，請稍後重新整理；舊資料不會當成即時結果顯示。",
+      "ja": "セッション統計を更新できません。しばらくしてから再試行してください。以前のデータを現在の結果として表示することはありません。"
+    },
+    "本次连接启动后统计；会话活动不代表聊天窗口持续在线。": {
+      "en": "Counted since this connection started. Session activity does not mean a chat stays online.",
+      "zh-Hans": "本次连接启动后统计；会话活动不代表聊天窗口持续在线。",
+      "zh-Hant": "自本次連線啟動後開始統計；對話活動不代表聊天視窗持續在線。",
+      "ja": "この接続の開始後から集計しています。セッションのアクティビティは、チャット画面が常時オンラインであることを示しません。"
+    },
+    "活动较多，部分来源未纳入统计；显示的是当前可识别的会话数。": {
+      "en": "Some sources could not be counted because activity is high. The total includes only sessions currently identified.",
+      "zh-Hans": "活动较多，部分来源未纳入统计；显示的是当前可识别的会话数。",
+      "zh-Hant": "活動較多，部分來源未納入統計；顯示的是目前可識別的對話數。",
+      "ja": "アクティビティが多いため、一部の呼び出し元を集計できませんでした。現在識別できているセッション数を表示しています。"
+    },
+    "部分调用未携带会话标识；已识别会话数未包含这些来源。": {
+      "en": "Some calls lack session information. Their sources are not included in the identified session count.",
+      "zh-Hans": "部分调用未携带会话标识；已识别会话数未包含这些来源。",
+      "zh-Hant": "部分呼叫未攜帶對話識別資訊；已識別的對話數未包含這些來源。",
+      "ja": "一部の呼び出しにはセッションの識別情報がないため、その呼び出し元は識別済みのセッション数に含まれていません。"
+    },
+    "本次连接启动后尚未收到工具调用。": {
+      "en": "No tool calls have been received since this connection started.",
+      "zh-Hans": "本次连接启动后尚未收到工具调用。",
+      "zh-Hant": "本次連線啟動後尚未收到工具呼叫。",
+      "ja": "この接続の開始後、まだツールの呼び出しを受信していません。"
+    },
+    "最近 10 分钟暂无工具调用。": {
+      "en": "No tool calls in the last 10 minutes.",
+      "zh-Hans": "最近 10 分钟暂无工具调用。",
+      "zh-Hant": "最近 10 分鐘沒有工具呼叫。",
+      "ja": "過去 10 分間にツールの呼び出しはありません。"
+    },
+    "请填写电脑名称和连接 ID。": {
+      "en": "Enter a computer name and connection ID.",
+      "zh-Hans": "请填写电脑名称和连接 ID。",
+      "zh-Hant": "請填寫電腦名稱和連線 ID。",
+      "ja": "コンピュータ名と接続 ID を入力してください。"
+    },
+    "请输入 1–120 个字符的电脑名称。": {
+      "en": "Enter a computer name with 1–120 characters.",
+      "zh-Hans": "请输入 1–120 个字符的电脑名称。",
+      "zh-Hant": "請輸入 1–120 個字元的電腦名稱。",
+      "ja": "コンピュータ名を 1～120 文字で入力してください。"
+    },
+    "请复制完整的连接 ID，格式为 tunnel_…，不要填写网址。": {
+      "en": "Copy the full connection ID starting with tunnel_…; do not enter a URL.",
+      "zh-Hans": "请复制完整的连接 ID，格式为 tunnel_…，不要填写网址。",
+      "zh-Hant": "請複製完整的連線 ID，格式為 tunnel_…，不要填寫網址。",
+      "ja": "tunnel_… で始まる接続 ID をすべてコピーしてください。URL は入力しないでください。"
+    },
+    "请粘贴有效的连接密钥。": {
+      "en": "Paste a valid connection key.",
+      "zh-Hans": "请粘贴有效的连接密钥。",
+      "zh-Hant": "請貼上有效的連線金鑰。",
+      "ja": "有効な接続キーを貼り付けてください。"
+    },
+    "密钥内容不完整，请重新复制为单行文本。": {
+      "en": "The key is incomplete. Copy it again as a single line.",
+      "zh-Hans": "密钥内容不完整，请重新复制为单行文本。",
+      "zh-Hant": "金鑰內容不完整，請重新複製為單行文字。",
+      "ja": "キーの内容が不完全です。改行を含まない 1 行のテキストとして、もう一度コピーしてください。"
+    },
+    "请检查标出的连接信息。": {
+      "en": "Check the highlighted connection details.",
+      "zh-Hans": "请检查标出的连接信息。",
+      "zh-Hant": "請檢查標示的連線資訊。",
+      "ja": "表示されている接続情報の問題を確認してください。"
+    },
+    "隔离测试配置不会保存或读取日常连接密钥。": {
+      "en": "Isolated test settings will not save or read your regular connection key.",
+      "zh-Hans": "隔离测试配置不会保存或读取日常连接密钥。",
+      "zh-Hant": "隔離測試設定不會儲存或讀取日常連線金鑰。",
+      "ja": "分離テストの設定では、普段の接続キーの保存や読み取りは行いません。"
+    },
+    "首次连接需要填写连接密钥。": {
+      "en": "A connection key is required for the first connection.",
+      "zh-Hans": "首次连接需要填写连接密钥。",
+      "zh-Hant": "首次連線需要填寫連線金鑰。",
+      "ja": "初回の接続には接続キーの入力が必要です。"
+    },
+    "请粘贴连接密钥。": {
+      "en": "Paste the connection key.",
+      "zh-Hans": "请粘贴连接密钥。",
+      "zh-Hant": "請貼上連線金鑰。",
+      "ja": "接続キーを貼り付けてください。"
+    },
+    "暂时无法读取密钥状态。请解锁登录钥匙串后重试。": {
+      "en": "The key status is temporarily unavailable. Unlock the login keychain and try again.",
+      "zh-Hans": "暂时无法读取密钥状态。请解锁登录钥匙串后重试。",
+      "zh-Hant": "暫時無法讀取金鑰狀態。請解鎖登入鑰匙圈後再試。",
+      "ja": "キーの状態を一時的に取得できません。ログインキーチェーンのロックを解除して、もう一度お試しください。"
+    },
+    "请先解锁登录钥匙串。": {
+      "en": "Unlock the login keychain first.",
+      "zh-Hans": "请先解锁登录钥匙串。",
+      "zh-Hant": "請先解鎖登入鑰匙圈。",
+      "ja": "先にログインキーチェーンのロックを解除してください。"
+    },
+    "隔离模式需要测试夹具，不能创建真实连接密钥。": {
+      "en": "Isolated mode requires test fixtures and cannot create a real connection key.",
+      "zh-Hans": "隔离模式需要测试夹具，不能创建真实连接密钥。",
+      "zh-Hant": "隔離模式需要測試資料，不能建立真實連線金鑰。",
+      "ja": "分離モードにはテストデータが必要です。実際の接続キーは作成できません。"
+    },
+    "已保存的连接端口无效，请检查应用配置。": {
+      "en": "The saved connection port is invalid. Check the app configuration.",
+      "zh-Hans": "已保存的连接端口无效，请检查应用配置。",
+      "zh-Hant": "已儲存的連線連接埠無效，請檢查應用程式設定。",
+      "ja": "保存されている接続ポートが無効です。アプリの設定を確認してください。"
+    },
+    "请先选择允许访问的文件夹。": {
+      "en": "First choose a folder to allow access.",
+      "zh-Hans": "请先选择允许访问的文件夹。",
+      "zh-Hant": "請先選擇允許存取的資料夾。",
+      "ja": "先にアクセスを許可するフォルダを選択してください。"
+    },
+    "请至少添加一个文件夹。": {
+      "en": "Add at least one folder.",
+      "zh-Hans": "请至少添加一个文件夹。",
+      "zh-Hant": "請至少新增一個資料夾。",
+      "ja": "フォルダを 1 つ以上追加してください。"
+    },
+    "请至少保留一个允许访问的文件夹。": {
+      "en": "Keep at least one folder with access allowed.",
+      "zh-Hans": "请至少保留一个允许访问的文件夹。",
+      "zh-Hant": "請至少保留一個允許存取的資料夾。",
+      "ja": "アクセスを許可するフォルダを、少なくとも 1 つ残してください。"
+    },
+    "最多可以添加 32 个文件夹。": {
+      "en": "You can add up to 32 folders.",
+      "zh-Hans": "最多可以添加 32 个文件夹。",
+      "zh-Hant": "最多可以新增 32 個資料夾。",
+      "ja": "追加できるフォルダは 32 個までです。"
+    },
+    "文件夹数量超过上限。": {
+      "en": "There are too many folders.",
+      "zh-Hans": "文件夹数量超过上限。",
+      "zh-Hant": "資料夾數量超過上限。",
+      "ja": "フォルダ数が上限を超えています。"
+    },
+    "文件夹信息无效，请重新选择。": {
+      "en": "The folder details are invalid. Choose the folder again.",
+      "zh-Hans": "文件夹信息无效，请重新选择。",
+      "zh-Hant": "資料夾資訊無效，請重新選擇。",
+      "ja": "フォルダの情報が無効です。もう一度選択してください。"
+    },
+    "使用自动生成的标识，或输入字母、数字、短横线和下划线。": {
+      "en": "Use the generated ID, or enter letters, numbers, hyphens and underscores.",
+      "zh-Hans": "使用自动生成的标识，或输入字母、数字、短横线和下划线。",
+      "zh-Hant": "使用自動產生的識別碼，或輸入英文字母、數字、短橫線和底線。",
+      "ja": "自動生成された ID を使うか、英数字、ハイフン、アンダースコアで入力してください。"
+    },
+    "这个标识已存在，请换一个。": {
+      "en": "This ID is already in use. Choose another.",
+      "zh-Hans": "这个标识已存在，请换一个。",
+      "zh-Hant": "這個識別碼已存在，請換一個。",
+      "ja": "この ID はすでに使われています。別の ID を指定してください。"
+    },
+    "请通过“选择文件夹”选择本机目录。": {
+      "en": "Use “Choose folder” to select a folder on this Mac.",
+      "zh-Hans": "请通过“选择文件夹”选择本机目录。",
+      "zh-Hant": "請透過「選擇資料夾」選取本機目錄。",
+      "ja": "「フォルダを選択」から、この Mac のフォルダを選んでください。"
+    },
+    "这个文件夹不存在或无法访问，请重新选择。": {
+      "en": "This folder does not exist or cannot be accessed. Choose it again.",
+      "zh-Hans": "这个文件夹不存在或无法访问，请重新选择。",
+      "zh-Hant": "這個資料夾不存在或無法存取，請重新選擇。",
+      "ja": "このフォルダは存在しないか、アクセスできません。もう一度選択してください。"
+    },
+    "请检查标出的文件夹设置。": {
+      "en": "Check the highlighted folder settings.",
+      "zh-Hans": "请检查标出的文件夹设置。",
+      "zh-Hant": "請檢查標示的資料夾設定。",
+      "ja": "表示されているフォルダ設定の問題を確認してください。"
+    },
+    "保存过程被中断，请重新加载并检查设置。": {
+      "en": "Saving was interrupted. Reload and check the settings.",
+      "zh-Hans": "保存过程被中断，请重新加载并检查设置。",
+      "zh-Hant": "儲存過程被中斷，請重新載入並檢查設定。",
+      "ja": "保存が中断されました。再読み込みして設定を確認してください。"
+    },
+    "设置未保存，原有内容已恢复。请检查磁盘空间和文件权限后重试。": {
+      "en": "Settings were not saved; the previous contents were restored. Check disk space and file permissions, then try again.",
+      "zh-Hans": "设置未保存，原有内容已恢复。请检查磁盘空间和文件权限后重试。",
+      "zh-Hant": "設定未儲存，原有內容已還原。請檢查磁碟空間和檔案權限後再試。",
+      "ja": "設定を保存できなかったため、元の内容に戻しました。ディスクの空き容量とファイルのアクセス権を確認して、もう一度お試しください。"
+    },
+    "隔离测试目录不会启动、停止或重启日常连接。": {
+      "en": "An isolated test folder will not start, stop or restart your regular connection.",
+      "zh-Hans": "隔离测试目录不会启动、停止或重启日常连接。",
+      "zh-Hant": "隔離測試目錄不會啟動、停止或重新啟動日常連線。",
+      "ja": "分離テスト用のフォルダでは、普段の接続の開始、停止、再起動は行いません。"
+    },
+    "另一个程序正在使用连接端口。请结束原连接后再试。": {
+      "en": "Another app is using the connection port. Stop the existing connection and try again.",
+      "zh-Hans": "另一个程序正在使用连接端口。请结束原连接后再试。",
+      "zh-Hant": "另一個程式正在使用連線連接埠。請結束原連線後再試。",
+      "ja": "別のアプリが接続ポートを使用しています。既存の接続を停止してから、もう一度お試しください。"
+    },
+    "设置已保存，请继续完成连接信息和文件夹选择。": {
+      "en": "Settings saved. Finish entering the connection details and selecting folders.",
+      "zh-Hans": "设置已保存，请继续完成连接信息和文件夹选择。",
+      "zh-Hant": "設定已儲存，請繼續完成連線資訊和資料夾選擇。",
+      "ja": "設定を保存しました。接続情報の入力とフォルダの選択を完了してください。"
+    },
+    "设置已保存；隔离模式不会重启日常连接。": {
+      "en": "Settings saved. Isolated mode will not restart your regular connection.",
+      "zh-Hans": "设置已保存；隔离模式不会重启日常连接。",
+      "zh-Hant": "設定已儲存；隔離模式不會重新啟動日常連線。",
+      "ja": "設定を保存しました。分離モードでは普段の接続を再起動しません。"
+    },
+    "设置已保存，重新连接后生效。": {
+      "en": "Settings saved. They will take effect when you reconnect.",
+      "zh-Hans": "设置已保存，重新连接后生效。",
+      "zh-Hant": "設定已儲存，重新連線後生效。",
+      "ja": "設定を保存しました。再接続すると適用されます。"
+    },
+    "连接尚未就绪，请稍候重试。": {
+      "en": "The connection is not ready yet. Try again shortly.",
+      "zh-Hans": "连接尚未就绪，请稍候重试。",
+      "zh-Hant": "連線尚未就緒，請稍後再試。",
+      "ja": "接続の準備がまだできていません。しばらくしてから、もう一度お試しください。"
+    },
+    "设置已保存，本机已就绪。": {
+      "en": "Settings saved. This Mac is ready.",
+      "zh-Hans": "设置已保存，本机已就绪。",
+      "zh-Hant": "設定已儲存，本機已就緒。",
+      "ja": "設定を保存しました。この Mac の準備ができました。"
+    },
+    "设置已保存，但连接尚未成功。": {
+      "en": "Settings saved, but the connection has not succeeded yet.",
+      "zh-Hans": "设置已保存，但连接尚未成功。",
+      "zh-Hant": "設定已儲存，但連線尚未成功。",
+      "ja": "設定を保存しましたが、接続はまだ成功していません。"
+    },
+    "设置已保存，但连接状态暂时无法确认。请刷新后重试。": {
+      "en": "Settings saved, but the connection status cannot be confirmed yet. Refresh and try again.",
+      "zh-Hans": "设置已保存，但连接状态暂时无法确认。请刷新后重试。",
+      "zh-Hant": "設定已儲存，但暫時無法確認連線狀態。請重新整理後再試。",
+      "ja": "設定を保存しましたが、接続状態をまだ確認できません。更新してから、もう一度お試しください。"
+    },
+    "请先确认这项操作会中断正在运行的任务。": {
+      "en": "Confirm that this operation will interrupt running tasks.",
+      "zh-Hans": "请先确认这项操作会中断正在运行的任务。",
+      "zh-Hant": "請先確認這項操作會中斷正在執行的工作。",
+      "ja": "この操作によって実行中のタスクが中断されることを確認してください。"
+    },
+    "请先完成连接信息和文件夹设置。": {
+      "en": "Complete the connection and folder settings first.",
+      "zh-Hans": "请先完成连接信息和文件夹设置。",
+      "zh-Hant": "請先完成連線資訊和資料夾設定。",
+      "ja": "先に接続情報とフォルダの設定を完了してください。"
+    },
+    "连接已停止，设置仍然保留。": {
+      "en": "Connection stopped. Your settings are still saved.",
+      "zh-Hans": "连接已停止，设置仍然保留。",
+      "zh-Hant": "連線已停止，設定仍然保留。",
+      "ja": "接続を停止しました。設定は保持されています。"
+    },
+    "连接还没有就绪，请稍候刷新或查看运行记录。": {
+      "en": "The connection is not ready yet. Refresh shortly or check the logs.",
+      "zh-Hans": "连接还没有就绪，请稍候刷新或查看运行记录。",
+      "zh-Hant": "連線還沒有就緒，請稍後重新整理或查看執行記錄。",
+      "ja": "接続の準備がまだできていません。しばらくしてから更新するか、ログを確認してください。"
+    },
+    "本机已就绪。": {
+      "en": "This Mac is ready.",
+      "zh-Hans": "本机已就绪。",
+      "zh-Hant": "本機已就緒。",
+      "ja": "この Mac の準備ができました。"
+    },
+    "请选择本机真实存在的文件夹。": {
+      "en": "Choose a folder that exists on this Mac.",
+      "zh-Hans": "请选择本机真实存在的文件夹。",
+      "zh-Hant": "請選擇本機確實存在的資料夾。",
+      "ja": "この Mac に存在するフォルダを選択してください。"
+    },
+    "文件夹不存在或无法访问。": {
+      "en": "The folder does not exist or cannot be accessed.",
+      "zh-Hans": "文件夹不存在或无法访问。",
+      "zh-Hant": "資料夾不存在或無法存取。",
+      "ja": "フォルダが存在しないか、アクセスできません。"
+    },
+    "文件夹列表已变化，请重新打开后再添加。": {
+      "en": "The folder list has changed. Reopen it before adding a folder.",
+      "zh-Hans": "文件夹列表已变化，请重新打开后再添加。",
+      "zh-Hant": "資料夾列表已變更，請重新開啟後再新增。",
+      "ja": "フォルダの一覧が変更されました。開き直してから追加してください。"
+    },
+    "请选择要检查的环境。": {
+      "en": "Choose an environment to check.",
+      "zh-Hans": "请选择要检查的环境。",
+      "zh-Hant": "請選擇要檢查的環境。",
+      "ja": "確認する環境を選択してください。"
+    },
+    "隔离模式未连接日常后台，未执行环境检查。": {
+      "en": "Isolated mode is not connected to the regular background service. No environment checks were run.",
+      "zh-Hans": "隔离模式未连接日常后台，未执行环境检查。",
+      "zh-Hant": "隔離模式未連接日常背景服務，未執行環境檢查。",
+      "ja": "分離モードでは普段のバックグラウンドサービスに接続しないため、環境の確認は行っていません。"
+    },
+    "屏幕录制": {
+      "en": "Screen recording",
+      "ja": "画面収録",
+      "zh-Hans": "屏幕录制",
+      "zh-Hant": "螢幕錄製"
+    },
+    "辅助功能": {
+      "en": "Accessibility",
+      "ja": "アクセシビリティ",
+      "zh-Hans": "辅助功能",
+      "zh-Hant": "輔助使用"
+    },
+    "键鼠事件": {
+      "en": "Keyboard and mouse events",
+      "ja": "キーボードとマウス操作",
+      "zh-Hans": "键鼠事件",
+      "zh-Hant": "鍵盤與滑鼠事件"
+    },
+    "后台暂时不可达，请启动连接后重试。": {
+      "en": "The background service is unavailable. Start the connection and try again.",
+      "zh-Hans": "后台暂时不可达，请启动连接后重试。",
+      "zh-Hant": "背景服務暫時無法連線，請啟動連線後再試。",
+      "ja": "バックグラウンドサービスに接続できません。接続を開始してから、もう一度お試しください。"
+    },
+    "尚未授权": {
+      "en": "Not granted",
+      "zh-Hans": "尚未授权",
+      "zh-Hant": "尚未授權",
+      "ja": "未許可"
+    },
+    "已授权": {
+      "en": "Granted",
+      "zh-Hans": "已授权",
+      "zh-Hant": "已授權",
+      "ja": "許可済み"
+    },
+    "普通文件和终端操作不需要这些权限；仅在有需要时申请。": {
+      "en": "Normal file and terminal operations do not need these permissions. Request them only when needed.",
+      "zh-Hans": "普通文件和终端操作不需要这些权限；仅在有需要时申请。",
+      "zh-Hant": "一般檔案和終端機操作不需要這些權限；僅在需要時申請。",
+      "ja": "通常のファイル操作やターミナル操作にこれらの権限は不要です。必要な場合にのみ要求してください。"
+    },
+    "基础读写验证通过": {
+      "en": "Basic reading and writing verified",
+      "zh-Hans": "基础读写验证通过",
+      "zh-Hant": "基本讀寫驗證通過",
+      "ja": "基本的な読み書きを確認済み"
+    },
+    "已发现所需组件，尚未验证读写": {
+      "en": "Required components found; reading and writing not yet verified",
+      "zh-Hans": "已发现所需组件，尚未验证读写",
+      "zh-Hant": "已找到所需元件，尚未驗證讀寫",
+      "ja": "必要なコンポーネントを検出しました。読み書きは未確認です"
+    },
+    "未找到所需组件": {
+      "en": "Required components not found",
+      "zh-Hans": "未找到所需组件",
+      "zh-Hant": "未找到所需元件",
+      "ja": "必要なコンポーネントが見つかりません"
+    },
+    "基础读写验证未通过": {
+      "en": "Basic reading and writing verification failed",
+      "zh-Hans": "基础读写验证未通过",
+      "zh-Hant": "基本讀寫驗證未通過",
+      "ja": "基本的な読み書きの確認に失敗しました"
+    },
+    "检查超时，可以重试": {
+      "en": "The check timed out. You can try again.",
+      "zh-Hans": "检查超时，可以重试",
+      "zh-Hant": "檢查逾時，可以再試一次",
+      "ja": "確認がタイムアウトしました。再試行できます"
+    },
+    "尚未检查": {
+      "en": "Not checked",
+      "ja": "未確認",
+      "zh-Hans": "尚未检查",
+      "zh-Hant": "尚未檢查"
+    },
+    "Excel 文件": {
+      "en": "Excel files",
+      "ja": "Excel ファイル",
+      "zh-Hans": "Excel 文件",
+      "zh-Hant": "Excel 檔案"
+    },
+    "PPT 文件": {
+      "en": "PowerPoint files",
+      "zh-Hans": "PPT 文件",
+      "zh-Hant": "PPT 檔案",
+      "ja": "PowerPoint ファイル"
+    },
+    "Word 文件": {
+      "en": "Word files",
+      "ja": "Word ファイル",
+      "zh-Hans": "Word 文件",
+      "zh-Hant": "Word 檔案"
+    },
+    "尚未确认": {
+      "en": "Not confirmed",
+      "zh-Hans": "尚未确认",
+      "zh-Hant": "尚未確認",
+      "ja": "まだ確認できていません"
+    },
+    "请启动连接后重新检查。": {
+      "en": "Start the connection, then check again.",
+      "zh-Hans": "请启动连接后重新检查。",
+      "zh-Hant": "請啟動連線後重新檢查。",
+      "ja": "接続を開始してから、もう一度確認してください。"
+    },
+    "已检查示例文档的基础读写。": {
+      "en": "Basic reading and writing were checked using sample documents.",
+      "zh-Hans": "已检查示例文档的基础读写。",
+      "zh-Hant": "已使用範例文件檢查基本讀寫。",
+      "ja": "サンプル文書で基本的な読み書きを確認しました。"
+    },
+    "已检查本机文档组件，可以继续验证基础读写。": {
+      "en": "Local document components have been checked. You can now verify basic reading and writing.",
+      "zh-Hans": "已检查本机文档组件，可以继续验证基础读写。",
+      "zh-Hant": "已檢查本機文件元件，可以繼續驗證基本讀寫。",
+      "ja": "この Mac の文書用コンポーネントを確認しました。基本的な読み書きの検証に進めます。"
+    },
+    "不支持的系统权限类型。": {
+      "en": "This system permission type is not supported.",
+      "zh-Hans": "不支持的系统权限类型。",
+      "zh-Hant": "不支援的系統權限類型。",
+      "ja": "この種類のシステム権限には対応していません。"
+    },
+    "请先确认要申请的系统权限。": {
+      "en": "Confirm which system permission you want to request.",
+      "zh-Hans": "请先确认要申请的系统权限。",
+      "zh-Hant": "請先確認要申請的系統權限。",
+      "ja": "要求するシステム権限を確認してください。"
+    },
+    "隔离测试模式不会申请系统权限。": {
+      "en": "Isolated test mode will not request system permissions.",
+      "zh-Hans": "隔离测试模式不会申请系统权限。",
+      "zh-Hant": "隔離測試模式不會申請系統權限。",
+      "ja": "分離テストモードでは、システム権限を要求しません。"
+    },
+    "已发出权限申请，请在系统提示中完成授权，再重新检查。": {
+      "en": "Permission requested. Complete authorization in the system prompt, then check again.",
+      "zh-Hans": "已发出权限申请，请在系统提示中完成授权，再重新检查。",
+      "zh-Hant": "已提出權限申請，請在系統提示中完成授權，再重新檢查。",
+      "ja": "権限を要求しました。システムの案内に従って許可した後、もう一度確認してください。"
+    },
+    "请选择应用提供的运行记录。": {
+      "en": "Choose one of the app's logs.",
+      "zh-Hans": "请选择应用提供的运行记录。",
+      "zh-Hant": "請選擇應用程式提供的執行記錄。",
+      "ja": "アプリが提供するログから選択してください。"
+    },
+    "运行记录每次可查看 1–500 行。": {
+      "en": "You can view 1–500 log lines at a time.",
+      "zh-Hans": "运行记录每次可查看 1–500 行。",
+      "zh-Hant": "每次可查看 1–500 行執行記錄。",
+      "ja": "一度に表示できるログは 1～500 行です。"
+    },
+    "运行记录目录异常，无法读取。": {
+      "en": "The log folder is invalid and cannot be read.",
+      "zh-Hans": "运行记录目录异常，无法读取。",
+      "zh-Hant": "執行記錄目錄異常，無法讀取。",
+      "ja": "ログフォルダに問題があるため、読み取れません。"
+    },
+    "无法读取运行记录，请稍后重试。": {
+      "en": "Unable to read the logs. Try again shortly.",
+      "zh-Hans": "无法读取运行记录，请稍后重试。",
+      "zh-Hant": "無法讀取執行記錄，請稍後再試。",
+      "ja": "ログを読み取れません。しばらくしてから、もう一度お試しください。"
+    },
+    "运行记录必须是当前用户拥有的普通文件。": {
+      "en": "Logs must be regular files owned by the current user.",
+      "zh-Hans": "运行记录必须是当前用户拥有的普通文件。",
+      "zh-Hant": "執行記錄必須是目前使用者擁有的一般檔案。",
+      "ja": "ログには、現在のユーザーが所有する通常のファイルを使用してください。"
+    },
+    "请求格式无效，请重新打开应用后重试。": {
+      "en": "The request format is invalid. Reopen the app and try again.",
+      "zh-Hans": "请求格式无效，请重新打开应用后重试。",
+      "zh-Hant": "要求格式無效，請重新開啟應用程式後再試。",
+      "ja": "リクエストの形式が無効です。アプリを開き直して、もう一度お試しください。"
+    },
+    "界面与后台版本不一致，请重新安装同一版本。": {
+      "en": "The interface and background service versions do not match. Reinstall the same version for both.",
+      "zh-Hans": "界面与后台版本不一致，请重新安装同一版本。",
+      "zh-Hant": "介面與背景服務版本不一致，請重新安裝同一版本。",
+      "ja": "画面とバックグラウンドサービスのバージョンが一致していません。同じバージョンを再インストールしてください。"
+    },
+    "此操作暂不可用，请更新应用后重试。": {
+      "en": "This operation is currently unavailable. Update the app and try again.",
+      "zh-Hans": "此操作暂不可用，请更新应用后重试。",
+      "zh-Hant": "此操作暫時無法使用，請更新應用程式後再試。",
+      "ja": "現在この操作は利用できません。アプリを更新して、もう一度お試しください。"
+    },
+    "操作参数无效，请重试。": {
+      "en": "The operation parameters are invalid. Try again.",
+      "zh-Hans": "操作参数无效，请重试。",
+      "zh-Hant": "操作參數無效，請再試一次。",
+      "ja": "操作のパラメータが無効です。もう一度お試しください。"
+    },
+    "操作暂时未完成。请重试，或查看运行记录了解原因。": {
+      "en": "The operation could not be completed. Try again, or check the logs for details.",
+      "zh-Hans": "操作暂时未完成。请重试，或查看运行记录了解原因。",
+      "zh-Hant": "操作暫時未完成。請再試一次，或查看執行記錄了解原因。",
+      "ja": "操作を完了できませんでした。もう一度試すか、ログで原因を確認してください。"
+    },
+    "设置内容过大，请减少内容后重试。": {
+      "en": "The settings are too large. Reduce their size and try again.",
+      "zh-Hans": "设置内容过大，请减少内容后重试。",
+      "zh-Hant": "設定內容過大，請減少內容後再試。",
+      "ja": "設定の内容が大きすぎます。内容を減らして、もう一度お試しください。"
+    },
+    "无法读取应用设置，请重试。": {
+      "en": "Unable to read the app settings. Try again.",
+      "zh-Hans": "无法读取应用设置，请重试。",
+      "zh-Hant": "無法讀取應用程式設定，請再試一次。",
+      "ja": "アプリの設定を読み取れません。もう一度お試しください。"
+    },
+    "返回内容过大，请减少目录配置后重试。": {
+      "en": "The response is too large. Reduce the folder configuration and try again.",
+      "zh-Hans": "返回内容过大，请减少目录配置后重试。",
+      "zh-Hant": "傳回的內容過大，請減少目錄設定後再試。",
+      "ja": "応答が大きすぎます。フォルダ設定を減らして、もう一度お試しください。"
+    },
+    "活动较多，部分来源未纳入统计；会话数为当前可识别的部分。": {
+      "en": "Some sources could not be counted because activity is high. The session count is only the identified portion.",
+      "zh-Hans": "活动较多，部分来源未纳入统计；会话数为当前可识别的部分。",
+      "zh-Hant": "活動較多，部分來源未納入統計；對話數僅包含目前可識別的部分。",
+      "ja": "アクティビティが多いため、一部の呼び出し元を集計できませんでした。セッション数には現在識別できている分だけを含めています。"
+    },
+    "无法读取工作区配置，请检查文件权限；原配置已保留。": {
+      "en": "Unable to read the workspace configuration. Check file permissions; the original configuration has been preserved.",
+      "zh-Hans": "无法读取工作区配置，请检查文件权限；原配置已保留。",
+      "zh-Hant": "無法讀取工作區設定，請檢查檔案權限；原設定已保留。",
+      "ja": "ワークスペース設定を読み取れません。ファイルのアクセス権を確認してください。元の設定は保持されています。"
+    },
+    "工作区配置必须是普通 JSON 文件；原配置已保留。": {
+      "en": "The workspace configuration must be a regular JSON file. The original configuration has been preserved.",
+      "zh-Hans": "工作区配置必须是普通 JSON 文件；原配置已保留。",
+      "zh-Hant": "工作區設定必須是一般 JSON 檔案；原設定已保留。",
+      "ja": "ワークスペース設定には通常の JSON ファイルを使用してください。元の設定は保持されています。"
+    },
+    "工作区配置文件过大，请检查文件内容；原配置已保留。": {
+      "en": "The workspace configuration file is too large. Check its contents; the original configuration has been preserved.",
+      "zh-Hans": "工作区配置文件过大，请检查文件内容；原配置已保留。",
+      "zh-Hant": "工作區設定檔過大，請檢查檔案內容；原設定已保留。",
+      "ja": "ワークスペース設定ファイルが大きすぎます。内容を確認してください。元の設定は保持されています。"
+    },
+    "工作区配置需要包含 workspaces 列表；请修复现有 JSON，原配置已保留。": {
+      "en": "The workspace configuration must include a workspaces list. Fix the existing JSON; the original configuration has been preserved.",
+      "zh-Hans": "工作区配置需要包含 workspaces 列表；请修复现有 JSON，原配置已保留。",
+      "zh-Hant": "工作區設定需要包含 workspaces 列表；請修復現有 JSON，原設定已保留。",
+      "ja": "ワークスペース設定には workspaces のリストが必要です。既存の JSON を修正してください。元の設定は保持されています。"
+    },
+    "工作区列表中的每项都必须是对象；原配置已保留。": {
+      "en": "Each workspace list entry must be an object. The original configuration has been preserved.",
+      "zh-Hans": "工作区列表中的每项都必须是对象；原配置已保留。",
+      "zh-Hant": "工作區列表中的每一項都必須是物件；原設定已保留。",
+      "ja": "ワークスペースのリストには、各項目をオブジェクトとして指定してください。元の設定は保持されています。"
+    },
+    "每个工作区都需要名称 id 和目录 root；原配置已保留。": {
+      "en": "Each workspace needs an id and a root folder. The original configuration has been preserved.",
+      "zh-Hans": "每个工作区都需要名称 id 和目录 root；原配置已保留。",
+      "zh-Hant": "每個工作區都需要名稱 id 和目錄 root；原設定已保留。",
+      "ja": "各ワークスペースには名前の id とフォルダの root が必要です。元の設定は保持されています。"
+    },
+    "工作区配置不是有效的 UTF-8 JSON；请修复现有文件，原配置已保留。": {
+      "en": "The workspace configuration is not valid UTF-8 JSON. Fix the existing file; the original configuration has been preserved.",
+      "zh-Hans": "工作区配置不是有效的 UTF-8 JSON；请修复现有文件，原配置已保留。",
+      "zh-Hant": "工作區設定不是有效的 UTF-8 JSON；請修復現有檔案，原設定已保留。",
+      "ja": "ワークスペース設定が有効な UTF-8 JSON ではありません。既存のファイルを修正してください。元の設定は保持されています。"
+    },
+    "旧版项目目录记录无效，请检查应用设置。": {
+      "en": "The legacy project folder record is invalid. Check the app settings.",
+      "zh-Hans": "旧版项目目录记录无效，请检查应用设置。",
+      "zh-Hant": "舊版專案目錄記錄無效，請檢查應用程式設定。",
+      "ja": "旧バージョンのプロジェクトフォルダの記録が無効です。アプリの設定を確認してください。"
+    },
+    "请选择本机真实存在、可以访问的项目文件夹。": {
+      "en": "Choose an existing, accessible project folder on this Mac.",
+      "zh-Hans": "请选择本机真实存在、可以访问的项目文件夹。",
+      "zh-Hant": "請選擇本機確實存在且可以存取的專案資料夾。",
+      "ja": "この Mac に存在し、アクセスできるプロジェクトフォルダを選択してください。"
+    },
+    "工作区配置包含无法保存的值；原配置已保留。": {
+      "en": "The workspace configuration contains values that cannot be saved. The original configuration has been preserved.",
+      "zh-Hans": "工作区配置包含无法保存的值；原配置已保留。",
+      "zh-Hant": "工作區設定包含無法儲存的值；原設定已保留。",
+      "ja": "ワークスペース設定に保存できない値が含まれています。元の設定は保持されています。"
+    },
+    "请至少添加一个项目目录。": {
+      "en": "Add at least one project folder.",
+      "zh-Hans": "请至少添加一个项目目录。",
+      "zh-Hant": "請至少新增一個專案目錄。",
+      "ja": "プロジェクトフォルダを 1 つ以上追加してください。"
+    },
+    "最多可以添加 32 个项目目录。": {
+      "en": "You can add up to 32 project folders.",
+      "zh-Hans": "最多可以添加 32 个项目目录。",
+      "zh-Hant": "最多可以新增 32 個專案目錄。",
+      "ja": "追加できるプロジェクトフォルダは 32 個までです。"
+    },
+    "项目名称需为 1–64 位英文字母、数字、下划线或短横线，并以字母或数字开头。": {
+      "en": "Project names must contain 1–64 ASCII letters, numbers, underscores or hyphens, and start with a letter or number.",
+      "zh-Hans": "项目名称需为 1–64 位英文字母、数字、下划线或短横线，并以字母或数字开头。",
+      "zh-Hant": "專案名稱需為 1–64 個英文字母、數字、底線或短橫線，並以字母或數字開頭。",
+      "ja": "プロジェクト名は半角英数字、アンダースコア、ハイフンを使って 1～64 文字で指定し、先頭は英字または数字にしてください。"
+    },
+    "项目名称不能重复，请给每个项目设置不同的名称。": {
+      "en": "Project names must be unique. Give each project a different name.",
+      "zh-Hans": "项目名称不能重复，请给每个项目设置不同的名称。",
+      "zh-Hant": "專案名稱不能重複，請為每個專案設定不同的名稱。",
+      "ja": "プロジェクト名は重複できません。各プロジェクトに別の名前を付けてください。"
+    },
+    "项目读写和执行权限必须使用 true 或 false。": {
+      "en": "Project read/write and execution permissions must use true or false.",
+      "zh-Hans": "项目读写和执行权限必须使用 true 或 false。",
+      "zh-Hant": "專案的讀寫和執行權限必須使用 true 或 false。",
+      "ja": "プロジェクトの読み書きと実行の権限には、true または false を指定してください。"
+    },
+    "请选择项目专用目录，不能包含本应用的配置目录。": {
+      "en": "Choose a dedicated project folder that does not contain this app's configuration folder.",
+      "zh-Hans": "请选择项目专用目录，不能包含本应用的配置目录。",
+      "zh-Hant": "請選擇專案專用目錄，不能包含本應用程式的設定目錄。",
+      "ja": "このアプリの設定フォルダを含まない、プロジェクト専用のフォルダを選択してください。"
+    },
+    "项目目录不能包含工作区的状态或备份目录。": {
+      "en": "A project folder cannot contain the workspace state or backup folders.",
+      "zh-Hans": "项目目录不能包含工作区的状态或备份目录。",
+      "zh-Hant": "專案目錄不能包含工作區的狀態或備份目錄。",
+      "ja": "プロジェクトフォルダには、ワークスペースの状態フォルダやバックアップフォルダを含めることはできません。"
+    },
+    "可写项目目录不能包含 MCP 服务或其 Python 运行环境。": {
+      "en": "A writable project folder cannot contain the MCP service or its Python runtime.",
+      "zh-Hans": "可写项目目录不能包含 MCP 服务或其 Python 运行环境。",
+      "zh-Hant": "可寫入的專案目錄不能包含 MCP 服務或其 Python 執行環境。",
+      "ja": "書き込みを許可するプロジェクトフォルダには、MCP サービスやその Python 実行環境を含めることはできません。"
+    },
+    "请选择具体项目目录，不能选择整个文件系统根目录。": {
+      "en": "Choose a specific project folder, not the root of the entire filesystem.",
+      "zh-Hans": "请选择具体项目目录，不能选择整个文件系统根目录。",
+      "zh-Hant": "請選擇特定專案目錄，不能選擇整個檔案系統的根目錄。",
+      "ja": "ファイルシステム全体のルートではなく、個別のプロジェクトフォルダを選択してください。"
+    },
+    "有项目目录不存在或不是文件夹，请更换该目录或从列表中移除。": {
+      "en": "A project path does not exist or is not a folder. Choose a different folder or remove that entry.",
+      "zh-Hans": "有项目目录不存在或不是文件夹，请更换该目录或从列表中移除。",
+      "zh-Hant": "有專案目錄不存在或不是資料夾，請更換該目錄或從列表中移除。",
+      "ja": "存在しないか、フォルダではないプロジェクトパスがあります。別のフォルダを選ぶか、一覧から削除してください。"
+    },
+    "项目目录必须使用绝对路径，或以 ~/ 开头的本机目录。": {
+      "en": "Project folders must use an absolute path or a local path starting with ~/.",
+      "zh-Hans": "项目目录必须使用绝对路径，或以 ~/ 开头的本机目录。",
+      "zh-Hant": "專案目錄必須使用絕對路徑，或以 ~/ 開頭的本機目錄。",
+      "ja": "プロジェクトフォルダには、絶対パスか ~/ で始まるローカルパスを指定してください。"
+    },
+    "现有工作区 JSON 含有不支持的配置项，请检查文件；原有字段不会被自动删除。": {
+      "en": "The existing workspace JSON contains unsupported settings. Check the file; existing fields will not be deleted automatically.",
+      "zh-Hans": "现有工作区 JSON 含有不支持的配置项，请检查文件；原有字段不会被自动删除。",
+      "zh-Hant": "現有工作區 JSON 含有不支援的設定項目，請檢查檔案；原有欄位不會自動刪除。",
+      "ja": "既存のワークスペース JSON に対応していない設定が含まれています。ファイルを確認してください。既存の項目は自動では削除されません。"
+    },
+    "无法访问某个项目目录或配置文件，请检查本机权限。": {
+      "en": "A project folder or configuration file cannot be accessed. Check permissions on this Mac.",
+      "zh-Hans": "无法访问某个项目目录或配置文件，请检查本机权限。",
+      "zh-Hant": "無法存取某個專案目錄或設定檔，請檢查本機權限。",
+      "ja": "アクセスできないプロジェクトフォルダまたは設定ファイルがあります。この Mac のアクセス権を確認してください。"
+    },
+    "工作区配置校验未通过，请检查目录、权限和其他设置；原配置已保留。": {
+      "en": "Workspace configuration validation failed. Check folders, permissions and other settings; the original configuration has been preserved.",
+      "zh-Hans": "工作区配置校验未通过，请检查目录、权限和其他设置；原配置已保留。",
+      "zh-Hant": "工作區設定驗證未通過，請檢查目錄、權限和其他設定；原設定已保留。",
+      "ja": "ワークスペース設定の検証に失敗しました。フォルダ、アクセス権、その他の設定を確認してください。元の設定は保持されています。"
+    },
+    "MCP 配置校验组件无法加载，请先完成应用的运行环境准备。": {
+      "en": "The MCP configuration validator could not be loaded. Finish preparing the app's runtime first.",
+      "zh-Hans": "MCP 配置校验组件无法加载，请先完成应用的运行环境准备。",
+      "zh-Hant": "無法載入 MCP 設定驗證元件，請先完成應用程式的執行環境準備。",
+      "ja": "MCP 設定の検証コンポーネントを読み込めません。先にアプリの実行環境の準備を完了してください。"
+    },
+    "配置版本信息无效，请重新打开项目管理。": {
+      "en": "The configuration version is invalid. Reopen project management.",
+      "zh-Hans": "配置版本信息无效，请重新打开项目管理。",
+      "zh-Hant": "設定版本資訊無效，請重新開啟專案管理。",
+      "ja": "設定のバージョン情報が無効です。プロジェクト管理を開き直してください。"
+    },
+    "工作区配置已被其他操作修改，请重新打开项目管理后再保存。": {
+      "en": "Another operation changed the workspace configuration. Reopen project management before saving.",
+      "zh-Hans": "工作区配置已被其他操作修改，请重新打开项目管理后再保存。",
+      "zh-Hant": "工作區設定已被其他操作修改，請重新開啟專案管理後再儲存。",
+      "ja": "別の操作によってワークスペース設定が変更されました。プロジェクト管理を開き直してから保存してください。"
+    },
+    "无法保存工作区配置，请检查本机权限；原配置已保留。": {
+      "en": "Unable to save the workspace configuration. Check local permissions; the original configuration has been preserved.",
+      "zh-Hans": "无法保存工作区配置，请检查本机权限；原配置已保留。",
+      "zh-Hant": "無法儲存工作區設定，請檢查本機權限；原設定已保留。",
+      "ja": "ワークスペース設定を保存できません。この Mac のアクセス権を確認してください。元の設定は保持されています。"
+    },
+    "运行环境架构无法识别，请重新运行安装准备。": {
+      "en": "The runtime architecture could not be identified. Run installation setup again.",
+      "zh-Hans": "运行环境架构无法识别，请重新运行安装准备。",
+      "zh-Hant": "無法識別執行環境架構，請重新執行安裝準備。",
+      "ja": "実行環境のアーキテクチャを確認できません。インストールの準備をやり直してください。"
+    },
+    "运行环境不完整，请重新打开安装应用。": {
+      "en": "The runtime is incomplete. Reopen the installer app.",
+      "zh-Hans": "运行环境不完整，请重新打开安装应用。",
+      "zh-Hant": "執行環境不完整，請重新開啟安裝應用程式。",
+      "ja": "実行環境が不完全です。インストーラのアプリを開き直してください。"
+    },
+    "Tunnel ID 格式不正确。请从 OpenAI 隧道页面复制完整的 tunnel_… ID。": {
+      "en": "The Tunnel ID format is invalid. Copy the complete tunnel_… ID from the OpenAI tunnels page.",
+      "zh-Hans": "Tunnel ID 格式不正确。请从 OpenAI 隧道页面复制完整的 tunnel_… ID。",
+      "zh-Hant": "Tunnel ID 格式不正確。請從 OpenAI 通道頁面複製完整的 tunnel_… ID。",
+      "ja": "Tunnel ID の形式が正しくありません。OpenAI のトンネルページから、tunnel_… で始まる ID をすべてコピーしてください。"
+    },
+    "macOS 未能停止此应用管理的后台任务。": {
+      "en": "macOS could not stop the background job managed by this app.",
+      "zh-Hans": "macOS 未能停止此应用管理的后台任务。",
+      "zh-Hant": "macOS 未能停止此應用程式管理的背景工作。",
+      "ja": "このアプリが管理するバックグラウンドタスクを macOS が停止できませんでした。"
+    },
+    "后台任务正在退出，尚未释放端口。请稍候再点击连接。": {
+      "en": "The background job is still exiting and has not released the port. Wait a moment before connecting again.",
+      "zh-Hans": "后台任务正在退出，尚未释放端口。请稍候再点击连接。",
+      "zh-Hant": "背景工作正在結束，尚未釋放連接埠。請稍候再連線。",
+      "ja": "バックグラウンドタスクは終了処理中で、まだポートを解放していません。しばらく待ってから、再接続してください。"
+    },
+    "此应用管理的后台连接已停止。": {
+      "en": "The background connection managed by this app has stopped.",
+      "zh-Hans": "此应用管理的后台连接已停止。",
+      "zh-Hant": "此應用程式管理的背景連線已停止。",
+      "ja": "このアプリが管理するバックグラウンド接続を停止しました。"
+    },
+    "系统操作失败：{value_1}": {
+      "en": "System operation failed: {value_1}",
+      "zh-Hans": "系统操作失败：{value_1}",
+      "zh-Hant": "系統操作失敗：{value_1}",
+      "ja": "システム操作に失敗しました: {value_1}"
+    },
+    "已连接": {
+      "en": "Connected",
+      "zh-Hans": "已连接",
+      "zh-Hant": "已連線",
+      "ja": "接続済み"
+    },
+    "MCP 的 Python 依赖无法加载。请查看安装日志或重新运行安装准备；当前不会启动隧道。": {
+      "en": "The MCP Python dependencies could not be loaded. Check the installation log or run setup again. The tunnel will not start yet.",
+      "zh-Hans": "MCP 的 Python 依赖无法加载。请查看安装日志或重新运行安装准备；当前不会启动隧道。",
+      "zh-Hant": "無法載入 MCP 的 Python 相依套件。請查看安裝記錄或重新執行安裝準備；目前不會啟動通道。",
+      "ja": "MCP の Python 依存パッケージを読み込めません。インストールログを確認するか、インストールの準備をやり直してください。現時点ではトンネルを起動しません。"
+    },
+    "另一启动操作正在进行，请稍候。": {
+      "en": "Another startup operation is in progress. Please wait.",
+      "zh-Hans": "另一启动操作正在进行，请稍候。",
+      "zh-Hant": "另一項啟動操作正在進行，請稍候。",
+      "ja": "別の起動操作が進行中です。しばらくお待ちください。"
+    },
+    "此后台任务正在运行，但隧道尚未就绪。可查看日志检查密钥、权限或网络。": {
+      "en": "The background job is running, but the tunnel is not ready. Check the logs for key, permission or network issues.",
+      "zh-Hans": "此后台任务正在运行，但隧道尚未就绪。可查看日志检查密钥、权限或网络。",
+      "zh-Hant": "背景工作正在執行，但通道尚未就緒。可查看記錄，檢查金鑰、權限或網路問題。",
+      "ja": "バックグラウンドタスクは実行中ですが、トンネルの準備ができていません。ログでキー、権限、ネットワークの問題を確認してください。"
+    },
+    "本机端口 {value_1} 正由其他进程使用。请先停止原来的终端隧道或占用此端口的程序，再打开本应用。": {
+      "en": "Local port {value_1} is in use by another process. Stop the existing terminal tunnel or the app using this port, then reopen this app.",
+      "zh-Hans": "本机端口 {value_1} 正由其他进程使用。请先停止原来的终端隧道或占用此端口的程序，再打开本应用。",
+      "zh-Hant": "本機連接埠 {value_1} 正由其他程序使用。請先停止原有的終端機通道或占用此連接埠的程式，再開啟本應用程式。",
+      "ja": "ローカルポート {value_1} は別のプロセスが使用しています。既存のターミナルのトンネル、またはこのポートを使用しているアプリを停止してから、このアプリを開き直してください。"
+    },
+    "登录钥匙串中没有此连接的密钥，请打开“配置”重新填写。": {
+      "en": "The login keychain does not contain a key for this connection. Open connection settings and enter it again.",
+      "zh-Hans": "登录钥匙串中没有此连接的密钥，请打开“配置”重新填写。",
+      "zh-Hant": "登入鑰匙圈中沒有此連線的金鑰，請開啟連線設定重新填寫。",
+      "ja": "ログインキーチェーンにこの接続のキーがありません。接続設定を開き、もう一度入力してください。"
+    },
+    "无法更新已停止的后台任务，请重新登录 macOS 后重试。": {
+      "en": "Unable to update the stopped background job. Log in to macOS again and retry.",
+      "zh-Hans": "无法更新已停止的后台任务，请重新登录 macOS 后重试。",
+      "zh-Hant": "無法更新已停止的背景工作，請重新登入 macOS 後再試。",
+      "ja": "停止済みのバックグラウンドタスクを更新できません。macOS にログインし直して、もう一度お試しください。"
+    },
+    "macOS 无法启动后台任务。请打开本机日志目录检查。": {
+      "en": "macOS could not start the background job. Open the local log folder to investigate.",
+      "zh-Hans": "macOS 无法启动后台任务。请打开本机日志目录检查。",
+      "zh-Hant": "macOS 無法啟動背景工作，請開啟本機記錄目錄檢查。",
+      "ja": "macOS がバックグラウンドタスクを起動できませんでした。この Mac のログフォルダを開いて確認してください。"
+    },
+    "后台任务已提交，但连接尚未就绪。请检查网络、Runtime key 的 Tunnels 权限和 Tunnel ID。": {
+      "en": "The background job was submitted, but the connection is not ready. Check the network, the Runtime key's Tunnels permission and the Tunnel ID.",
+      "zh-Hans": "后台任务已提交，但连接尚未就绪。请检查网络、Runtime key 的 Tunnels 权限和 Tunnel ID。",
+      "zh-Hant": "背景工作已提交，但連線尚未就緒。請檢查網路、Runtime key 的 Tunnels 權限和 Tunnel ID。",
+      "ja": "バックグラウンドタスクを登録しましたが、接続の準備ができていません。ネットワーク、Runtime key の Tunnels 権限、Tunnel ID を確認してください。"
+    },
+    "这次操作等待时间较长。请查看连接状态后重试；已保存的设置会保留。": {
+      "en": "This is taking longer than expected. Check the connection and try again; saved settings will be kept.",
+      "ja": "処理に時間がかかっています。接続状態を確認して再試行してください。保存済みの設定は保持されます。",
+      "zh-Hans": "这次操作等待时间较长。请查看连接状态后重试；已保存的设置会保留。",
+      "zh-Hant": "這次操作等待時間較長。請查看連線狀態後重試；已儲存的設定會保留。"
+    },
+    "无法将设置交给连接组件，请检查连接状态后重试。": {
+      "en": "Settings could not be sent to the connection component. Check the connection and try again.",
+      "ja": "接続コンポーネントに設定を送信できませんでした。接続状態を確認して再試行してください。",
+      "zh-Hans": "无法将设置交给连接组件，请检查连接状态后重试。",
+      "zh-Hant": "無法將設定交給連線組件，請檢查連線狀態後重試。"
+    },
+    "连接组件返回的内容过多，已停止读取。请重新打开应用后重试。": {
+      "en": "The connection component returned too much data. Reopen the app and try again.",
+      "ja": "接続コンポーネントからのデータが多すぎるため、読み込みを停止しました。アプリを開き直してください。",
+      "zh-Hans": "连接组件返回的内容过多，已停止读取。请重新打开应用后重试。",
+      "zh-Hant": "連線組件返回的內容過多，已停止讀取。請重新打開應用程式後重試。"
+    },
+    "安装包缺少安装组件，请重新下载完整应用。": {
+      "en": "The installer component is missing. Download the complete app again.",
+      "ja": "インストール用コンポーネントがありません。完全なアプリを再ダウンロードしてください。",
+      "zh-Hans": "安装包缺少安装组件，请重新下载完整应用。",
+      "zh-Hant": "安裝包缺少安裝組件，請重新下載完整應用程式。"
+    },
+    "应用完整性验证失败，请重新下载完整安装包。": {
+      "en": "The app failed its integrity check. Download the complete package again.",
+      "ja": "アプリの整合性を確認できませんでした。完全なパッケージを再ダウンロードしてください。",
+      "zh-Hans": "应用完整性验证失败，请重新下载完整安装包。",
+      "zh-Hant": "應用程式完整性驗證失敗，請重新下載完整安裝包。"
+    },
+    "安装副本完整性验证失败。": {
+      "en": "The installed copy failed its integrity check.",
+      "ja": "インストール先のコピーの整合性を確認できませんでした。",
+      "zh-Hans": "安装副本完整性验证失败。",
+      "zh-Hant": "安裝副本完整性驗證失敗。"
+    },
+    "这台 Mac 已安装更新版本，已阻止旧安装包覆盖。": {
+      "en": "A newer version is installed on this Mac. The older package was not installed.",
+      "ja": "この Mac には新しいバージョンがあるため、古いパッケージでの上書きを停止しました。",
+      "zh-Hans": "这台 Mac 已安装更新版本，已阻止旧安装包覆盖。",
+      "zh-Hant": "這台 Mac 已安裝更新版本，已阻止舊安裝包覆蓋。"
+    },
+    "另一个安装正在进行，请稍后重新打开应用。": {
+      "en": "Another installation is in progress. Reopen the app when it finishes.",
+      "ja": "別のインストールが進行中です。完了してからアプリを開き直してください。",
+      "zh-Hans": "另一个安装正在进行，请稍后重新打开应用。",
+      "zh-Hant": "另一個安裝正在進行，請稍後重新打開應用程式。"
+    },
+    "安装位置已有其他应用，未覆盖。": {
+      "en": "Another app is at the installation location. It was not replaced.",
+      "ja": "インストール先に別のアプリがあります。上書きしていません。",
+      "zh-Hans": "安装位置已有其他应用，未覆盖。",
+      "zh-Hant": "安裝位置已有其他應用程式，未覆蓋。"
+    },
+    "安装位置已有其他文件，未覆盖。": {
+      "en": "Another file is at the installation location. It was not replaced.",
+      "ja": "インストール先に別のファイルがあります。上書きしていません。",
+      "zh-Hans": "安装位置已有其他文件，未覆盖。",
+      "zh-Hant": "安裝位置已有其他檔案，未覆蓋。"
+    },
+    "请安装到当前用户拥有的目录。": {
+      "en": "Choose an installation folder owned by the current user.",
+      "ja": "現在のユーザーが所有するフォルダにインストールしてください。",
+      "zh-Hans": "请安装到当前用户拥有的目录。",
+      "zh-Hant": "請安裝到當前用戶擁有的目錄。"
+    },
+    "应用尚未完成安装。请检查安装目录的可用空间和写入权限，再重新打开应用。": {
+      "en": "Installation is incomplete. Check available space and write access, then reopen the app.",
+      "ja": "インストールは未完了です。保存先の空き容量と書き込み権限を確認し、アプリを開き直してください。",
+      "zh-Hans": "应用尚未完成安装。请检查安装目录的可用空间和写入权限，再重新打开应用。",
+      "zh-Hant": "應用程式尚未完成安裝。請檢查安裝目錄的可用空間和寫入權限，再重新打開應用程式。"
+    },
+    "应用尚未完成安装。请检查“应用程序”目录权限，再重新打开应用。": {
+      "en": "Installation is incomplete. Check access to Applications, then reopen the app.",
+      "ja": "インストールは未完了です。Applications フォルダの権限を確認し、アプリを開き直してください。",
+      "zh-Hans": "应用尚未完成安装。请检查“应用程序”目录权限，再重新打开应用。",
+      "zh-Hant": "應用程式尚未完成安裝。請檢查「應用程式程式」目錄權限，再重新打開應用程式。"
+    },
+    "应用缺少运行组件，请使用完整安装包。": {
+      "en": "Runtime components are missing. Use the complete app package.",
+      "ja": "実行用コンポーネントがありません。完全なアプリパッケージを使用してください。",
+      "zh-Hans": "应用缺少运行组件，请使用完整安装包。",
+      "zh-Hant": "應用程式缺少執行組件，請使用完整安裝包。"
+    },
+    "运行环境准备未完成。请检查网络后重试，或打开启动记录查看原因。": {
+      "en": "Runtime preparation is incomplete. Check your network and retry, or view the startup log.",
+      "ja": "実行環境の準備は未完了です。ネットワークを確認して再試行するか、起動ログを確認してください。",
+      "zh-Hans": "运行环境准备未完成。请检查网络后重试，或打开启动记录查看原因。",
+      "zh-Hant": "執行環境準備未完成。請檢查網絡後重試，或打開啟動記錄查看原因。"
+    },
+    "运行环境尚未准备好，请稍候再试。": {
+      "en": "The runtime is not ready yet. Please try again shortly.",
+      "ja": "実行環境はまだ準備中です。少し待ってから再試行してください。",
+      "zh-Hans": "运行环境尚未准备好，请稍候再试。",
+      "zh-Hant": "執行環境尚未準備好，請稍候再試。"
+    },
+    "应用组件不完整，请重新安装最新版。": {
+      "en": "App components are incomplete. Reinstall the latest version.",
+      "ja": "アプリのコンポーネントが不足しています。最新版を再インストールしてください。",
+      "zh-Hans": "应用组件不完整，请重新安装最新版。",
+      "zh-Hant": "應用程式組件不完整，請重新安裝最新版。"
+    },
+    "设置内容过多，请减少文件夹或检查配置。": {
+      "en": "The settings are too large. Reduce the folders or check the configuration.",
+      "ja": "設定のサイズが大きすぎます。フォルダ数を減らすか、設定内容を確認してください。",
+      "zh-Hans": "设置内容过多，请减少文件夹或检查配置。",
+      "zh-Hant": "設定內容過多，請減少資料夾或檢查設定。"
+    },
+    "连接组件未能完成这次操作。请重试，或查看运行记录。": {
+      "en": "The connection component could not complete this action. Retry or check Logs.",
+      "ja": "接続コンポーネントが処理を完了できませんでした。再試行するか、ログを確認してください。",
+      "zh-Hans": "连接组件未能完成这次操作。请重试，或查看运行记录。",
+      "zh-Hant": "連線組件未能完成這次操作。請重試，或查看執行記錄。"
+    },
+    "正在准备连接组件…": {
+      "en": "Preparing connection components…",
+      "ja": "接続コンポーネントを準備中…",
+      "zh-Hans": "正在准备连接组件…",
+      "zh-Hant": "正在準備連線組件…"
+    },
+    "保存并重启": {
+      "en": "Save and restart",
+      "ja": "保存して再接続",
+      "zh-Hans": "保存并重启",
+      "zh-Hant": "儲存並重啓"
+    },
+    "保存并连接": {
+      "en": "Save and connect",
+      "ja": "保存して接続",
+      "zh-Hans": "保存并连接",
+      "zh-Hant": "儲存並連線"
+    },
+    "保存后会重新连接，正在运行的任务可能中断。": {
+      "en": "Saving reconnects this Mac and may interrupt running tasks.",
+      "ja": "保存後に再接続します。実行中のタスクが中断される場合があります。",
+      "zh-Hans": "保存后会重新连接，正在运行的任务可能中断。",
+      "zh-Hant": "儲存後會重新連線，正在執行的任務可能中斷。"
+    },
+    "设置保存后会尝试连接。": {
+      "en": "The app will try to connect after saving.",
+      "ja": "設定を保存すると接続を試みます。",
+      "zh-Hans": "设置保存后会尝试连接。",
+      "zh-Hant": "設定儲存後會嘗試連線。"
+    },
+    "新的文件夹": {
+      "en": "New folder",
+      "ja": "新しいフォルダ",
+      "zh-Hans": "新的文件夹",
+      "zh-Hant": "新的資料夾"
+    },
+    "正在准备连接组件…首次使用可能需要几分钟。": {
+      "en": "Preparing connection components… First use may take a few minutes.",
+      "ja": "接続コンポーネントを準備中… 初回は数分かかる場合があります。",
+      "zh-Hans": "正在准备连接组件…首次使用可能需要几分钟。",
+      "zh-Hant": "正在準備連線組件…首次使用可能需要幾分鐘。"
+    },
+    "准备还未完成": {
+      "en": "Preparation is incomplete",
+      "ja": "準備は未完了です",
+      "zh-Hans": "准备还未完成",
+      "zh-Hant": "準備還未完成"
+    },
+    "暂时无法更新活动统计，连接恢复后会自动刷新。": {
+      "en": "Activity could not be updated. It will refresh when the connection recovers.",
+      "ja": "活動情報を更新できません。接続が回復すると自動で更新します。",
+      "zh-Hans": "暂时无法更新活动统计，连接恢复后会自动刷新。",
+      "zh-Hant": "暫時無法更新活動統計，連線恢復後會自動刷新。"
+    },
+    "暂时无法更新状态": {
+      "en": "Status could not be updated",
+      "ja": "状態を更新できません",
+      "zh-Hans": "暂时无法更新状态",
+      "zh-Hant": "暫時無法更新狀態"
+    },
+    "我的 MacBook": {
+      "en": "My MacBook",
+      "ja": "自分の MacBook",
+      "zh-Hans": "我的 MacBook",
+      "zh-Hant": "我的 MacBook"
+    },
+    "我的 Mac": {
+      "en": "My Mac",
+      "ja": "自分の Mac",
+      "zh-Hans": "我的 Mac",
+      "zh-Hant": "我的 Mac"
+    },
+    "要放弃未保存的修改吗？": {
+      "en": "Discard unsaved changes?",
+      "ja": "未保存の変更を破棄しますか？",
+      "zh-Hans": "要放弃未保存的修改吗？",
+      "zh-Hant": "要放棄未儲存的修改嗎？"
+    },
+    "你可以继续编辑，也可以放弃这次修改后切换页面。": {
+      "en": "Keep editing, or discard these changes and switch pages.",
+      "ja": "編集を続けるか、変更を破棄して画面を切り替えられます。",
+      "zh-Hans": "你可以继续编辑，也可以放弃这次修改后切换页面。",
+      "zh-Hant": "你可以繼續編輯，也可以放棄這次修改後切換頁面。"
+    },
+    "放弃修改": {
+      "en": "Discard changes",
+      "ja": "変更を破棄",
+      "zh-Hans": "放弃修改",
+      "zh-Hant": "放棄修改"
+    },
+    "继续编辑": {
+      "en": "Keep editing",
+      "ja": "編集を続ける",
+      "zh-Hans": "继续编辑",
+      "zh-Hant": "繼續編輯"
+    },
+    "重新载入并放弃当前修改？": {
+      "en": "Reload and discard current changes?",
+      "ja": "現在の変更を破棄して再読み込みしますか？",
+      "zh-Hans": "重新载入并放弃当前修改？",
+      "zh-Hant": "重新載入並放棄當前修改？"
+    },
+    "将载入已经保存的最新设置，当前尚未保存的修改会被放弃。": {
+      "en": "The latest saved settings will be loaded. Unsaved changes will be discarded.",
+      "ja": "保存済みの最新設定を読み込みます。未保存の変更は破棄されます。",
+      "zh-Hans": "将载入已经保存的最新设置，当前尚未保存的修改会被放弃。",
+      "zh-Hant": "將載入已經儲存的最新設定，當前尚未儲存的修改會被放棄。"
+    },
+    "重新载入": {
+      "en": "Reload",
+      "ja": "再読み込み",
+      "zh-Hans": "重新载入",
+      "zh-Hant": "重新載入"
+    },
+    "保留当前修改吗？": {
+      "en": "Keep current changes?",
+      "ja": "現在の変更を保持しますか？",
+      "zh-Hans": "保留当前修改吗？",
+      "zh-Hant": "保留當前修改嗎？"
+    },
+    "切换文件夹前，请保存当前修改，或放弃后继续。": {
+      "en": "Save your changes before switching folders, or discard them to continue.",
+      "ja": "フォルダを切り替える前に変更を保存するか、破棄して続けてください。",
+      "zh-Hans": "切换文件夹前，请保存当前修改，或放弃后继续。",
+      "zh-Hant": "切換資料夾前，請儲存當前修改，或放棄後繼續。"
+    },
+    "放弃并切换": {
+      "en": "Discard and switch",
+      "ja": "破棄して切り替え",
+      "zh-Hans": "放弃并切换",
+      "zh-Hant": "放棄並切換"
+    },
+    "选择第一个项目文件夹": {
+      "en": "Choose your first project folder",
+      "ja": "最初のプロジェクトフォルダを選択",
+      "zh-Hans": "选择第一个项目文件夹",
+      "zh-Hant": "選擇第一個專案資料夾"
+    },
+    "选择项目文件夹": {
+      "en": "Choose a project folder",
+      "ja": "プロジェクトフォルダを選択",
+      "zh-Hans": "选择项目文件夹",
+      "zh-Hant": "選擇專案資料夾"
+    },
+    "选择希望 AI 协助处理的文件夹。你可以稍后调整访问权限。": {
+      "en": "Choose a folder for AI to work with. You can change its permissions later.",
+      "ja": "AI に扱わせるフォルダを選んでください。権限はあとから変更できます。",
+      "zh-Hans": "选择希望 AI 协助处理的文件夹。你可以稍后调整访问权限。",
+      "zh-Hant": "選擇希望 AI 協助處理的資料夾。你可以稍後調整存取權限。"
+    },
+    "选择文件夹": {
+      "en": "Choose folder",
+      "ja": "フォルダを選択",
+      "zh-Hans": "选择文件夹",
+      "zh-Hant": "選擇資料夾"
+    },
+    "要放弃当前文件夹的修改吗？": {
+      "en": "Discard this folder’s changes?",
+      "ja": "このフォルダの変更を破棄しますか？",
+      "zh-Hans": "要放弃当前文件夹的修改吗？",
+      "zh-Hant": "要放棄當前資料夾的修改嗎？"
+    },
+    "当前修改尚未保存。": {
+      "en": "Your current changes have not been saved.",
+      "ja": "現在の変更は保存されていません。",
+      "zh-Hans": "当前修改尚未保存。",
+      "zh-Hant": "當前修改尚未儲存。"
+    },
+    "放弃并添加": {
+      "en": "Discard and add",
+      "ja": "破棄して追加",
+      "zh-Hans": "放弃并添加",
+      "zh-Hant": "放棄並添加"
+    },
+    "正在检查文件夹…": {
+      "en": "Checking folder…",
+      "ja": "フォルダを確認中…",
+      "zh-Hans": "正在检查文件夹…",
+      "zh-Hant": "正在檢查資料夾…"
+    },
+    "无法识别所选文件夹，请重新选择。": {
+      "en": "The selected folder could not be recognized. Choose it again.",
+      "ja": "選択したフォルダを認識できません。もう一度選択してください。",
+      "zh-Hans": "无法识别所选文件夹，请重新选择。",
+      "zh-Hant": "無法識別所選資料夾，請重新選擇。"
+    },
+    "未能添加文件夹": {
+      "en": "Folder could not be added",
+      "ja": "フォルダを追加できません",
+      "zh-Hans": "未能添加文件夹",
+      "zh-Hant": "未能添加資料夾"
+    },
+    "正在保存文件夹并连接…": {
+      "en": "Saving folder and connecting…",
+      "ja": "フォルダを保存して接続中…",
+      "zh-Hans": "正在保存文件夹并连接…",
+      "zh-Hant": "正在儲存資料夾並連線…"
+    },
+    "请保留一个文件夹": {
+      "en": "Keep at least one folder",
+      "ja": "フォルダを1つ以上残してください",
+      "zh-Hans": "请保留一个文件夹",
+      "zh-Hant": "請保留一個資料夾"
+    },
+    "至少保留一个文件夹；要暂停使用，请在连接概览中停止连接。": {
+      "en": "Keep at least one folder. To pause access, stop the connection in Overview.",
+      "ja": "フォルダを1つ以上残してください。利用を一時停止するには、概要画面で接続を停止します。",
+      "zh-Hans": "至少保留一个文件夹；要暂停使用，请在连接概览中停止连接。",
+      "zh-Hant": "至少保留一個資料夾；要暫停使用，請在連線概覽中停止連線。"
+    },
+    "磁盘上的文件会保留。移除访问后会立即重新连接，正在运行的任务可能中断。": {
+      "en": "Files on disk will be kept. Removing access reconnects immediately and may interrupt tasks.",
+      "ja": "ディスク上のファイルは残ります。アクセス解除後すぐに再接続するため、タスクが中断される場合があります。",
+      "zh-Hans": "磁盘上的文件会保留。移除访问后会立即重新连接，正在运行的任务可能中断。",
+      "zh-Hant": "磁盤上的檔案會保留。移除存取後會立即重新連線，正在執行的任務可能中斷。"
+    },
+    "移除并重启": {
+      "en": "Remove and restart",
+      "ja": "解除して再接続",
+      "zh-Hans": "移除并重启",
+      "zh-Hant": "移除並重啓"
+    },
+    "保留": {
+      "en": "Keep",
+      "ja": "保持",
+      "zh-Hans": "保留",
+      "zh-Hant": "保留"
+    },
+    "正在更新文件夹访问…": {
+      "en": "Updating folder access…",
+      "ja": "フォルダへのアクセスを更新中…",
+      "zh-Hans": "正在更新文件夹访问…",
+      "zh-Hant": "正在更新資料夾存取…"
+    },
+    "正在保存并重新连接…": {
+      "en": "Saving and reconnecting…",
+      "ja": "保存して再接続中…",
+      "zh-Hans": "正在保存并重新连接…",
+      "zh-Hant": "正在儲存並重新連線…"
+    },
+    "正在保存并连接…": {
+      "en": "Saving and connecting…",
+      "ja": "保存して接続中…",
+      "zh-Hans": "正在保存并连接…",
+      "zh-Hant": "正在儲存並連線…"
+    },
+    "停止本机连接？": {
+      "en": "Stop this Mac’s connection?",
+      "ja": "この Mac の接続を停止しますか？",
+      "zh-Hans": "停止本机连接？",
+      "zh-Hant": "停止本機連線？"
+    },
+    "重新启动连接？": {
+      "en": "Restart the connection?",
+      "ja": "接続を再起動しますか？",
+      "zh-Hans": "重新启动连接？",
+      "zh-Hant": "重新啓動連線？"
+    },
+    "正在运行的任务可能中断。请先完成当前任务。": {
+      "en": "Running tasks may be interrupted. Finish your current work first.",
+      "ja": "実行中のタスクが中断される場合があります。現在の作業を先に完了してください。",
+      "zh-Hans": "正在运行的任务可能中断。请先完成当前任务。",
+      "zh-Hant": "正在執行的任務可能中斷。請先完成當前任務。"
+    },
+    "停止连接": {
+      "en": "Stop connection",
+      "ja": "接続を停止",
+      "zh-Hans": "停止连接",
+      "zh-Hant": "停止連線"
+    },
+    "重新连接": {
+      "en": "Reconnect",
+      "ja": "再接続",
+      "zh-Hans": "重新连接",
+      "zh-Hant": "重新連線"
+    },
+    "取消": {
+      "en": "Cancel",
+      "ja": "キャンセル",
+      "zh-Hans": "取消",
+      "zh-Hant": "取消"
+    },
+    "正在停止连接…": {
+      "en": "Stopping connection…",
+      "ja": "接続を停止中…",
+      "zh-Hans": "正在停止连接…",
+      "zh-Hant": "正在停止連線…"
+    },
+    "正在连接…": {
+      "en": "Connecting…",
+      "ja": "接続中…",
+      "zh-Hans": "正在连接…",
+      "zh-Hant": "正在連線…"
+    },
+    "已完成": {
+      "en": "Done",
+      "ja": "完了",
+      "zh-Hans": "已完成",
+      "zh-Hant": "已完成"
+    },
+    "设置已保存。": {
+      "en": "Settings saved.",
+      "ja": "設定を保存しました。",
+      "zh-Hans": "设置已保存。",
+      "zh-Hant": "設定已儲存。"
+    },
+    "操作尚未确认完成": {
+      "en": "Completion could not be confirmed",
+      "ja": "完了を確認できません",
+      "zh-Hans": "操作尚未确认完成",
+      "zh-Hant": "操作尚未確認完成"
+    },
+    "正在验证基础文档读写…": {
+      "en": "Verifying basic document reading and writing…",
+      "ja": "文書の基本的な読み書きを検証中…",
+      "zh-Hans": "正在验证基础文档读写…",
+      "zh-Hant": "正在驗證基本文件讀寫…"
+    },
+    "正在检查文档环境…": {
+      "en": "Checking document tools…",
+      "ja": "文書処理環境を確認中…",
+      "zh-Hans": "正在检查文档环境…",
+      "zh-Hant": "正在檢查文件環境…"
+    },
+    "正在检查系统授权…": {
+      "en": "Checking system permissions…",
+      "ja": "システム権限を確認中…",
+      "zh-Hans": "正在检查系统授权…",
+      "zh-Hant": "正在檢查系統授權…"
+    },
+    "检查未完成": {
+      "en": "Check incomplete",
+      "ja": "チェックは未完了です",
+      "zh-Hans": "检查未完成",
+      "zh-Hant": "檢查未完成"
+    },
+    "这是可选权限。系统会要求你确认授权，完成后请返回此处重新检查。": {
+      "en": "This permission is optional. Confirm in System Settings, then return here to check again.",
+      "ja": "この権限は任意です。システム設定で許可を確認してから、ここへ戻って再チェックしてください。",
+      "zh-Hans": "这是可选权限。系统会要求你确认授权，完成后请返回此处重新检查。",
+      "zh-Hant": "這是可選權限。系統會要求你確認授權，完成後請返回此處重新檢查。"
+    },
+    "继续申请": {
+      "en": "Continue",
+      "ja": "続ける",
+      "zh-Hans": "继续申请",
+      "zh-Hant": "繼續申請"
+    },
+    "正在申请系统授权…": {
+      "en": "Requesting system permission…",
+      "ja": "システム権限を要求中…",
+      "zh-Hans": "正在申请系统授权…",
+      "zh-Hant": "正在申請系統授權…"
+    },
+    "请在系统设置中完成授权": {
+      "en": "Complete authorization in System Settings",
+      "ja": "システム設定で許可してください",
+      "zh-Hans": "请在系统设置中完成授权",
+      "zh-Hant": "請在系統設定中完成授權"
+    },
+    "完成后，点击“检查系统授权”确认状态。": {
+      "en": "When finished, choose Check system permissions to confirm.",
+      "ja": "完了したら「システム権限を確認」で状態を確認してください。",
+      "zh-Hans": "完成后，点击“检查系统授权”确认状态。",
+      "zh-Hant": "完成後，按一下「檢查系統授權」確認狀態。"
+    },
+    "授权申请未完成": {
+      "en": "Permission request incomplete",
+      "ja": "権限の要求は未完了です",
+      "zh-Hans": "授权申请未完成",
+      "zh-Hant": "授權申請未完成"
+    },
+    "正在读取运行记录…": {
+      "en": "Reading logs…",
+      "ja": "ログを読み込み中…",
+      "zh-Hans": "正在读取运行记录…",
+      "zh-Hant": "正在讀取執行記錄…"
+    },
+    "暂时无法读取记录": {
+      "en": "Logs could not be read",
+      "ja": "ログを読み込めません",
+      "zh-Hans": "暂时无法读取记录",
+      "zh-Hant": "暫時無法讀取記錄"
+    },
+    "预览模式": {
+      "en": "Preview mode",
+      "ja": "プレビューモード",
+      "zh-Hans": "预览模式",
+      "zh-Hant": "預覽模式"
+    },
+    "预览不会打开本机日志目录。": {
+      "en": "Preview does not open this Mac’s log folder.",
+      "ja": "プレビューでは、この Mac のログフォルダを開きません。",
+      "zh-Hans": "预览不会打开本机日志目录。",
+      "zh-Hant": "預覽不會打開本機日誌目錄。"
+    },
+    "设置已保存，连接还需处理": {
+      "en": "Settings saved; connection needs attention",
+      "ja": "設定を保存しました。接続の確認が必要です",
+      "zh-Hans": "设置已保存，连接还需处理",
+      "zh-Hant": "設定已儲存，連線還需處理"
+    },
+    "还差一步": {
+      "en": "One more step",
+      "ja": "あと少しです",
+      "zh-Hans": "还差一步",
+      "zh-Hant": "還差一步"
+    },
+    "设置已被其他操作修改，请重新载入后再保存。": {
+      "en": "Settings changed elsewhere. Reload them before saving again.",
+      "ja": "設定が別の操作で変更されました。再読み込みしてから保存してください。",
+      "zh-Hans": "设置已被其他操作修改，请重新载入后再保存。",
+      "zh-Hant": "設定已被其他操作修改，請重新載入後再儲存。"
+    },
+    "请为这台电脑起一个名称。": {
+      "en": "Give this computer a name.",
+      "ja": "このコンピュータに名前を付けてください。",
+      "zh-Hans": "请为这台电脑起一个名称。",
+      "zh-Hant": "請為這台電腦起一個名稱。"
+    },
+    "请填写电脑名称。": {
+      "en": "Enter a computer name.",
+      "ja": "コンピュータ名を入力してください。",
+      "zh-Hans": "请填写电脑名称。",
+      "zh-Hant": "請填寫電腦名稱。"
+    },
+    "请复制完整的连接 ID。": {
+      "en": "Copy the full connection ID.",
+      "ja": "接続 ID を完全にコピーしてください。",
+      "zh-Hans": "请复制完整的连接 ID。",
+      "zh-Hant": "請複製完整的連線 ID。"
+    },
+    "连接 ID 不完整，请重新复制。": {
+      "en": "The connection ID is incomplete. Copy it again.",
+      "ja": "接続 ID が不完全です。もう一度コピーしてください。",
+      "zh-Hans": "连接 ID 不完整，请重新复制。",
+      "zh-Hant": "連線 ID 不完整，請重新複製。"
+    },
+    "连接已停止": {
+      "en": "Connection stopped",
+      "ja": "接続を停止しました",
+      "zh-Hans": "连接已停止",
+      "zh-Hant": "連線已停止"
+    },
+    "启动连接后，就能在这里查看会话活动。": {
+      "en": "Start the connection to view session activity here.",
+      "ja": "接続を開始すると、ここでセッションの活動を確認できます。",
+      "zh-Hans": "启动连接后，就能在这里查看会话活动。",
+      "zh-Hant": "啓動連線後，就能在這裡查看對話活動。"
+    },
+    "预览中的更改已应用；没有修改本机配置。": {
+      "en": "Preview changes applied. This Mac’s settings were not changed.",
+      "ja": "プレビューに変更を反映しました。この Mac の設定は変更していません。",
+      "zh-Hans": "预览中的更改已应用；没有修改本机配置。",
+      "zh-Hant": "預覽中的更改已應用程式；沒有修改本機設定。"
+    },
+    "以下为界面预览示例，不代表本机实际检查结果。": {
+      "en": "These are preview examples, not actual results for this Mac.",
+      "ja": "以下はプレビュー用の例です。この Mac の実際の結果ではありません。",
+      "zh-Hans": "以下为界面预览示例，不代表本机实际检查结果。",
+      "zh-Hant": "以下為介面預覽示例，不代表本機實際檢查結果。"
+    },
+    "基础读写已验证（示例）": {
+      "en": "Basic reading and writing verified (example)",
+      "ja": "基本的な読み書き確認済み（例）",
+      "zh-Hans": "基础读写已验证（示例）",
+      "zh-Hant": "基本讀寫已驗證（示例）"
+    },
+    "PowerPoint 文件": {
+      "en": "PowerPoint files",
+      "ja": "PowerPoint ファイル",
+      "zh-Hans": "PowerPoint 文件",
+      "zh-Hant": "PowerPoint 檔案"
+    },
+    "尚未检查（示例）": {
+      "en": "Not checked (example)",
+      "ja": "未確認（例）",
+      "zh-Hans": "尚未检查（示例）",
+      "zh-Hant": "尚未檢查（示例）"
+    },
+    "界面预览 · 示例记录\n\n本机连接已就绪。\n项目文件夹已载入。\n\n这里展示经过脱敏的最近运行记录。": {
+      "en": "Interface preview · Sample log\n\nLocal connection ready.\nProject folders loaded.\n\nRecent logs appear here with identifiable keys hidden.",
+      "ja": "画面プレビュー · サンプルログ\n\nローカル接続は準備完了です。\nプロジェクトフォルダを読み込みました。\n\nここに機密情報を除いた最近のログを表示します。",
+      "zh-Hans": "界面预览 · 示例记录\n\n本机连接已就绪。\n项目文件夹已载入。\n\n这里展示经过脱敏的最近运行记录。",
+      "zh-Hant": "介面預覽 · 示例記錄\n\n本機連線已就緒。\n專案資料夾已載入。\n\n這裡展示經過脫敏的最近執行記錄。"
+    },
+    "预览模式不会申请任何系统权限。": {
+      "en": "Preview mode does not request system permissions.",
+      "ja": "プレビューモードではシステム権限を要求しません。",
+      "zh-Hans": "预览模式不会申请任何系统权限。",
+      "zh-Hant": "預覽模式不會申請任何系統權限。"
+    },
+    "预览中不支持这项操作。": {
+      "en": "This action is unavailable in preview.",
+      "ja": "この操作はプレビューでは利用できません。",
+      "zh-Hans": "预览中不支持这项操作。",
+      "zh-Hant": "預覽中不支持這項操作。"
+    },
+    "连接概览": {
+      "en": "Overview",
+      "ja": "概要",
+      "zh-Hans": "连接概览",
+      "zh-Hant": "連線概覽"
+    },
+    "项目文件夹": {
+      "en": "Folders",
+      "ja": "フォルダ",
+      "zh-Hans": "项目文件夹",
+      "zh-Hant": "專案資料夾"
+    },
+    "连接设置": {
+      "en": "Connection",
+      "ja": "接続",
+      "zh-Hans": "连接设置",
+      "zh-Hant": "連線設定"
+    },
+    "环境检查": {
+      "en": "Checks",
+      "ja": "環境チェック",
+      "zh-Hans": "环境检查",
+      "zh-Hant": "環境檢查"
+    },
+    "运行记录": {
+      "en": "Logs",
+      "ja": "ログ",
+      "zh-Hans": "运行记录",
+      "zh-Hant": "執行記錄"
+    },
+    "可编辑 · 可运行任务": {
+      "en": "Edit · Run tasks",
+      "ja": "編集・タスク実行",
+      "zh-Hans": "可编辑 · 可运行任务",
+      "zh-Hant": "可編輯 · 可執行任務"
+    },
+    "可运行任务": {
+      "en": "Run tasks",
+      "ja": "タスク実行",
+      "zh-Hans": "可运行任务",
+      "zh-Hant": "可執行任務"
+    },
+    "可阅读 · 可编辑": {
+      "en": "Read · Edit",
+      "ja": "閲覧・編集",
+      "zh-Hans": "可阅读 · 可编辑",
+      "zh-Hant": "可閱讀 · 可編輯"
+    },
+    "仅阅读": {
+      "en": "Read only",
+      "ja": "閲覧のみ",
+      "zh-Hans": "仅阅读",
+      "zh-Hant": "僅閱讀"
+    },
+    "正在连接": {
+      "en": "Connecting",
+      "ja": "接続中",
+      "zh-Hans": "正在连接",
+      "zh-Hant": "正在連線"
+    },
+    "连接暂时无法启动": {
+      "en": "Connection could not start",
+      "ja": "接続を開始できません",
+      "zh-Hans": "连接暂时无法启动",
+      "zh-Hant": "連線暫時無法啓動"
+    },
+    "需要处理连接问题": {
+      "en": "Connection needs attention",
+      "ja": "接続の確認が必要です",
+      "zh-Hans": "需要处理连接问题",
+      "zh-Hant": "需要處理連線問題"
+    },
+    "开始连接你的电脑": {
+      "en": "Connect your computer",
+      "ja": "パソコンを接続する",
+      "zh-Hans": "开始连接你的电脑",
+      "zh-Hant": "開始連線你的電腦"
+    },
+    "连接端口正由其他程序使用。关闭原来的连接后再试。": {
+      "en": "Another application is using the connection port. Close the previous connection, then try again.",
+      "ja": "接続ポートは別のアプリが使用しています。以前の接続を閉じてから、もう一度お試しください。",
+      "zh-Hans": "连接端口正由其他程序使用。关闭原来的连接后再试。",
+      "zh-Hant": "連線埠正由其他程式使用。關閉原有的連線後再試。"
+    },
+    "界面预览": {
+      "en": "Interface preview",
+      "ja": "画面プレビュー",
+      "zh-Hans": "界面预览",
+      "zh-Hant": "介面預覽"
+    },
+    "连接组件返回了无法识别的内容。请重试，或重新安装应用。": {
+      "en": "The connection component returned an unreadable response. Try again or reinstall the app.",
+      "ja": "接続コンポーネントから読み取れない応答が返されました。再試行するか、アプリを再インストールしてください。",
+      "zh-Hans": "连接组件返回了无法识别的内容。请重试，或重新安装应用。",
+      "zh-Hant": "連線組件返回了無法識別的內容。請重試，或重新安裝應用程式。"
+    },
+    "连接组件版本与界面不匹配，请重新打开最新版应用。": {
+      "en": "The connection component and interface versions do not match. Reopen the latest version of the app.",
+      "ja": "接続コンポーネントと画面のバージョンが一致しません。最新版のアプリを開き直してください。",
+      "zh-Hans": "连接组件版本与界面不匹配，请重新打开最新版应用。",
+      "zh-Hant": "連線組件版本與介面不匹配，請重新打開最新版應用程式。"
+    },
+    "操作暂时未完成，请重试。": {
+      "en": "The action could not be completed. Please try again.",
+      "ja": "操作を完了できませんでした。もう一度お試しください。",
+      "zh-Hans": "操作暂时未完成，请重试。",
+      "zh-Hant": "操作暫時未完成，請重試。"
+    },
+    "未知的页面。": {
+      "en": "Unknown page.",
+      "ja": "不明なページです。",
+      "zh-Hans": "未知的页面。",
+      "zh-Hant": "未知的頁面。"
+    },
+    "未知的预览状态。": {
+      "en": "Unknown preview state.",
+      "ja": "不明なプレビュー状態です。",
+      "zh-Hans": "未知的预览状态。",
+      "zh-Hant": "未知的預覽狀態。"
+    },
+    "测试目录必须使用具体的绝对路径。": {
+      "en": "The test directory must be a specific absolute path.",
+      "ja": "テスト用フォルダには具体的な絶対パスを指定してください。",
+      "zh-Hans": "测试目录必须使用具体的绝对路径。",
+      "zh-Hant": "測試目錄必須使用具體的絕對路徑。"
+    },
+    "资源目录必须使用绝对路径。": {
+      "en": "The resource directory must be an absolute path.",
+      "ja": "リソースフォルダには絶対パスを指定してください。",
+      "zh-Hans": "资源目录必须使用绝对路径。",
+      "zh-Hant": "資源目錄必須使用絕對路徑。"
+    },
+    "截图需要绝对路径。": {
+      "en": "The screenshot needs an absolute path.",
+      "ja": "スクリーンショットには絶対パスを指定してください。",
+      "zh-Hans": "截图需要绝对路径。",
+      "zh-Hant": "截圖需要絕對路徑。"
+    },
+    "窗口宽度应为 920–2400。": {
+      "en": "Window width must be between 920 and 2400.",
+      "ja": "ウィンドウの幅は 920～2400 で指定してください。",
+      "zh-Hans": "窗口宽度应为 920–2400。",
+      "zh-Hant": "視窗寬度應為 920–2400。"
+    },
+    "窗口高度应为 640–1800。": {
+      "en": "Window height must be between 640 and 1800.",
+      "ja": "ウィンドウの高さは 640～1800 で指定してください。",
+      "zh-Hans": "窗口高度应为 640–1800。",
+      "zh-Hant": "視窗高度應為 640–1800。"
+    },
+    "无法识别启动选项。": {
+      "en": "Unrecognized launch option.",
+      "ja": "起動オプションを認識できません。",
+      "zh-Hans": "无法识别启动选项。",
+      "zh-Hant": "無法識別啓動選項。"
+    },
+    "交互自检只允许在明确的预览模式运行。": {
+      "en": "Interaction self-tests require explicit preview mode.",
+      "ja": "操作の自己テストには明示的なプレビューモードが必要です。",
+      "zh-Hans": "交互自检只允许在明确的预览模式运行。",
+      "zh-Hant": "交互自檢只允許在明確的預覽模式執行。"
+    },
+    "请先指定截图文件。": {
+      "en": "Specify a screenshot file first.",
+      "ja": "先にスクリーンショットの保存先を指定してください。",
+      "zh-Hans": "请先指定截图文件。",
+      "zh-Hant": "請先指定截圖檔案。"
+    },
+    "查看可用文件夹": {
+      "en": "List available folders",
+      "ja": "利用可能なフォルダを一覧表示",
+      "zh-Hans": "查看可用文件夹",
+      "zh-Hant": "查看可用資料夾"
+    },
+    "查看文件夹": {
+      "en": "Browse a folder",
+      "ja": "フォルダを表示",
+      "zh-Hans": "查看文件夹",
+      "zh-Hant": "查看資料夾"
+    },
+    "读取文件": {
+      "en": "Read a file",
+      "ja": "ファイルを読む",
+      "zh-Hans": "读取文件",
+      "zh-Hant": "讀取檔案"
+    },
+    "搜索内容": {
+      "en": "Search content",
+      "ja": "内容を検索",
+      "zh-Hans": "搜索内容",
+      "zh-Hant": "搜索內容"
+    },
+    "编辑文件": {
+      "en": "Edit a file",
+      "ja": "ファイルを編集",
+      "zh-Hans": "编辑文件",
+      "zh-Hant": "編輯檔案"
+    },
+    "新建文件夹": {
+      "en": "Create a folder",
+      "ja": "フォルダを作成",
+      "zh-Hans": "新建文件夹",
+      "zh-Hant": "新建資料夾"
+    },
+    "整理文件": {
+      "en": "Organize files",
+      "ja": "ファイルを整理",
+      "zh-Hans": "整理文件",
+      "zh-Hant": "整理檔案"
+    },
+    "运行任务": {
+      "en": "Run a task",
+      "ja": "タスクを実行",
+      "zh-Hans": "运行任务",
+      "zh-Hant": "執行任務"
+    },
+    "查看任务": {
+      "en": "Check a task",
+      "ja": "タスクを確認",
+      "zh-Hans": "查看任务",
+      "zh-Hant": "查看任務"
+    },
+    "继续任务": {
+      "en": "Continue a task",
+      "ja": "タスクを続行",
+      "zh-Hans": "继续任务",
+      "zh-Hant": "繼續任務"
+    },
+    "停止任务": {
+      "en": "Stop a task",
+      "ja": "タスクを停止",
+      "zh-Hans": "停止任务",
+      "zh-Hant": "停止任務"
+    },
+    "使用本机工具": {
+      "en": "Use a local tool",
+      "ja": "ローカルツールを使用",
+      "zh-Hans": "使用本机工具",
+      "zh-Hant": "使用本機工具"
+    },
+    "本地项目": {
+      "en": "Local project",
+      "ja": "ローカルプロジェクト",
+      "zh-Hans": "本地项目",
+      "zh-Hant": "本地專案"
+    },
+    "当前连接尚不提供活动统计。重新连接以应用最新版组件。": {
+      "en": "This connection does not provide activity statistics yet. Reconnect to use the latest component.",
+      "ja": "現在の接続は活動状況の表示に対応していません。再接続して最新のコンポーネントを適用してください。",
+      "zh-Hans": "当前连接尚不提供活动统计。重新连接以应用最新版组件。",
+      "zh-Hant": "當前連線尚不提供活動統計。重新連線以應用程式最新版組件。"
+    },
+    "隔离测试不会读取日常连接的活动。": {
+      "en": "Isolated tests do not read activity from your regular connection.",
+      "ja": "隔離テストでは通常の接続の活動情報を読み取りません。",
+      "zh-Hans": "隔离测试不会读取日常连接的活动。",
+      "zh-Hant": "隔離測試不會讀取日常連線的活動。"
+    },
+    "活动统计暂时无法读取，请稍后重试。": {
+      "en": "Activity statistics are temporarily unavailable. Please try again later.",
+      "ja": "活動状況を一時的に取得できません。しばらくしてからお試しください。",
+      "zh-Hans": "活动统计暂时无法读取，请稍后重试。",
+      "zh-Hant": "活動統計暫時無法讀取，請稍後重試。"
+    },
+    "未识别": {
+      "en": "Unidentified",
+      "ja": "未識別",
+      "zh-Hans": "未识别",
+      "zh-Hant": "未識別"
+    },
+    "等待活动数据": {
+      "en": "Waiting for activity",
+      "ja": "活動情報を待機中",
+      "zh-Hans": "等待活动数据",
+      "zh-Hant": "等待活動數據"
+    },
+    "当前没有工具调用": {
+      "en": "No tool calls in progress",
+      "ja": "実行中のツール呼び出しはありません",
+      "zh-Hans": "当前没有工具调用",
+      "zh-Hant": "當前沒有工具呼叫"
+    },
+    "最近有调用未提供会话标识": {
+      "en": "Some recent calls did not include a session identifier",
+      "ja": "最近の呼び出しの一部にセッション識別子がありません",
+      "zh-Hans": "最近有调用未提供会话标识",
+      "zh-Hant": "最近有呼叫未提供對話識別碼"
+    },
+    "；活动较多，统计也可能不完整": {
+      "en": "; high activity may also make these statistics incomplete",
+      "ja": "。また、活動が多いため統計が不完全な場合があります",
+      "zh-Hans": "；活动较多，统计也可能不完整",
+      "zh-Hant": "；活動較多，統計也可能不完整"
+    },
+    "活动较多或来源信息不完整，会话数量仅显示已识别部分。": {
+      "en": "Activity is high or source information is incomplete. Session counts include only identified sessions.",
+      "ja": "活動が多いか、送信元の情報が不足しています。確認できたセッションのみを集計しています。",
+      "zh-Hans": "活动较多或来源信息不完整，会话数量仅显示已识别部分。",
+      "zh-Hant": "活動較多或來源資訊不完整，對話數量僅顯示已識別部分。"
+    },
+    "界面预览 · 示例活动": {
+      "en": "Interface preview · Sample activity",
+      "ja": "画面プレビュー · 活動のサンプル",
+      "zh-Hans": "界面预览 · 示例活动",
+      "zh-Hant": "介面預覽 · 示例活動"
+    },
+    "会话活动": {
+      "en": "Session activity",
+      "ja": "セッションの活動",
+      "zh-Hans": "会话活动",
+      "zh-Hant": "對話活動"
+    },
+    "暂无统计": {
+      "en": "No statistics",
+      "ja": "統計はありません",
+      "zh-Hans": "暂无统计",
+      "zh-Hant": "暫無統計"
+    },
+    "正在调用的会话": {
+      "en": "Sessions calling now",
+      "ja": "呼び出し中のセッション",
+      "zh-Hans": "正在调用的会话",
+      "zh-Hant": "正在呼叫的對話"
+    },
+    "近 10 分钟活跃会话": {
+      "en": "Active in the last 10 minutes",
+      "ja": "過去 10 分間の活動セッション",
+      "zh-Hans": "近 10 分钟活跃会话",
+      "zh-Hant": "近 10 分鐘活躍對話"
+    },
+    "有过调用，不表示仍在线": {
+      "en": "Recent calls do not mean a session is still online",
+      "ja": "呼び出し履歴であり、現在オンラインとは限りません",
+      "zh-Hans": "有过调用，不表示仍在线",
+      "zh-Hant": "有過呼叫，不表示仍在線"
+    },
+    "运行中任务": {
+      "en": "Running tasks",
+      "ja": "実行中のタスク",
+      "zh-Hans": "运行中任务",
+      "zh-Hant": "執行中任務"
+    },
+    "已启动且尚未结束的程序": {
+      "en": "Programs that have started and not yet finished",
+      "ja": "開始済みで、まだ終了していないプログラム",
+      "zh-Hans": "已启动且尚未结束的程序",
+      "zh-Hant": "已啓動且尚未結束的程式"
+    },
+    "收起会话活动": {
+      "en": "Collapse session activity",
+      "ja": "セッションの活動を折りたたむ",
+      "zh-Hans": "收起会话活动",
+      "zh-Hant": "收起對話活動"
+    },
+    "查看匿名会话活动": {
+      "en": "View anonymous session activity",
+      "ja": "匿名のセッション活動を表示",
+      "zh-Hans": "查看匿名会话活动",
+      "zh-Hant": "查看匿名對話活動"
+    },
+    "收起匿名会话活动": {
+      "en": "Collapse anonymous session activity",
+      "ja": "匿名のセッション活動を折りたたむ",
+      "zh-Hans": "收起匿名会话活动",
+      "zh-Hant": "收起匿名對話活動"
+    },
+    "展开匿名会话活动": {
+      "en": "Expand anonymous session activity",
+      "ja": "匿名のセッション活動を展開",
+      "zh-Hans": "展开匿名会话活动",
+      "zh-Hant": "展開匿名對話活動"
+    },
+    "已展开": {
+      "en": "Expanded",
+      "ja": "展開済み",
+      "zh-Hans": "已展开",
+      "zh-Hant": "已展開"
+    },
+    "已收起": {
+      "en": "Collapsed",
+      "ja": "折りたたみ済み",
+      "zh-Hans": "已收起",
+      "zh-Hant": "已收起"
+    },
+    "尚无活动记录。在 ChatGPT 中调用一次工具后，这里会开始更新。": {
+      "en": "No activity yet. Call a tool in ChatGPT to start seeing updates here.",
+      "ja": "活動履歴はまだありません。ChatGPT でツールを呼び出すと、ここに表示されます。",
+      "zh-Hans": "尚无活动记录。在 ChatGPT 中调用一次工具后，这里会开始更新。",
+      "zh-Hant": "尚無活動記錄。在 ChatGPT 中呼叫一次工具後，這裡會開始更新。"
+    },
+    "最近窗口为 10 分钟（600 秒），包含仍在进行的调用。重新连接后重新统计。": {
+      "en": "The recent window covers 10 minutes (600 seconds), including calls still in progress. Statistics reset when you reconnect.",
+      "ja": "過去 10 分間（600 秒）と、まだ実行中の呼び出しが対象です。再接続すると統計がリセットされます。",
+      "zh-Hans": "最近窗口为 10 分钟（600 秒），包含仍在进行的调用。重新连接后重新统计。",
+      "zh-Hant": "最近視窗為 10 分鐘（600 秒），包含仍在進行的呼叫。重新連線後重新統計。"
+    },
+    "已收到调用，但还没有可识别的会话记录。": {
+      "en": "Calls have been received, but no sessions could be identified yet.",
+      "ja": "呼び出しを受信していますが、識別できたセッションはまだありません。",
+      "zh-Hans": "已收到调用，但还没有可识别的会话记录。",
+      "zh-Hant": "已收到呼叫，但還沒有可識別的對話記錄。"
+    },
+    "当前空闲": {
+      "en": "Idle",
+      "ja": "待機中",
+      "zh-Hans": "当前空闲",
+      "zh-Hant": "當前空閒"
+    },
+    "这里只展示最近的部分会话；上方数量包含其他已识别会话。": {
+      "en": "Only some recent sessions are shown here. The totals above include other identified sessions.",
+      "ja": "ここには最近のセッションの一部を表示しています。上の件数には、ほかの確認済みセッションも含まれます。",
+      "zh-Hans": "这里只展示最近的部分会话；上方数量包含其他已识别会话。",
+      "zh-Hant": "這裡只展示最近的部分對話；上方數量包含其他已識別對話。"
+    },
+    "正在准备 Codex Local MCP": {
+      "en": "Preparing Codex Local MCP",
+      "ja": "Codex Local MCP を準備中",
+      "zh-Hans": "正在准备 Codex Local MCP",
+      "zh-Hant": "正在準備 Codex Local MCP"
+    },
+    "请检查网络后重新准备。已保存的连接和文件夹会保留。": {
+      "en": "Check your network connection, then try preparing again. Your saved connection and folders will be kept.",
+      "ja": "ネットワークを確認してから、もう一度準備してください。保存済みの接続とフォルダは保持されます。",
+      "zh-Hans": "请检查网络后重新准备。已保存的连接和文件夹会保留。",
+      "zh-Hant": "請檢查網絡後重新準備。已儲存的連線和資料夾會保留。"
+    },
+    "重新准备": {
+      "en": "Try preparing again",
+      "ja": "もう一度準備",
+      "zh-Hans": "重新准备",
+      "zh-Hant": "重新準備"
+    },
+    "打开启动记录": {
+      "en": "Open startup log",
+      "ja": "起動ログを開く",
+      "zh-Hans": "打开启动记录",
+      "zh-Hant": "打開啟動記錄"
+    },
+    "工作空间": {
+      "en": "Workspace",
+      "ja": "ワークスペース",
+      "zh-Hans": "工作空间",
+      "zh-Hant": "工作空間"
+    },
+    "使用帮助": {
+      "en": "Help",
+      "ja": "使い方",
+      "zh-Hans": "使用帮助",
+      "zh-Hant": "使用說明"
+    },
+    "正在准备": {
+      "en": "Preparing",
+      "ja": "準備中",
+      "zh-Hans": "正在准备",
+      "zh-Hant": "正在準備"
+    },
+    "尚未就绪": {
+      "en": "Not ready",
+      "ja": "準備未完了",
+      "zh-Hans": "尚未就绪",
+      "zh-Hant": "尚未就緒"
+    },
+    "界面预览 · 示例数据": {
+      "en": "Interface preview · Sample data",
+      "ja": "画面プレビュー · サンプルデータ",
+      "zh-Hans": "界面预览 · 示例数据",
+      "zh-Hant": "介面預覽 · 示例數據"
+    },
+    "刷新状态": {
+      "en": "Refresh status",
+      "ja": "状態を更新",
+      "zh-Hans": "刷新状态",
+      "zh-Hant": "刷新狀態"
+    },
+    "重新载入设置": {
+      "en": "Reload settings",
+      "ja": "設定を読み込み直す",
+      "zh-Hans": "重新载入设置",
+      "zh-Hant": "重新載入設定"
+    },
+    "查看运行记录": {
+      "en": "View logs",
+      "ja": "ログを表示",
+      "zh-Hans": "查看运行记录",
+      "zh-Hant": "查看執行記錄"
+    },
+    "关闭提示": {
+      "en": "Dismiss message",
+      "ja": "メッセージを閉じる",
+      "zh-Hans": "关闭提示",
+      "zh-Hant": "關閉提示"
+    },
+    "本机工作，从这里连接": {
+      "en": "Connect your local workspace",
+      "ja": "いつもの作業を、ここからつなぐ",
+      "zh-Hans": "本机工作，从这里连接",
+      "zh-Hant": "本機工作，從這裡連線"
+    },
+    "连接你的电脑，让 AI 在你授权的文件夹中协助工作。": {
+      "en": "Connect your computer so AI can help in the folders you authorize.",
+      "ja": "パソコンを接続して、許可したフォルダで AI と一緒に作業できます。",
+      "zh-Hans": "连接你的电脑，让 AI 在你授权的文件夹中协助工作。",
+      "zh-Hant": "連線你的電腦，讓 AI 在你授權的資料夾中協助工作。"
+    },
+    "先完成一次连接设置，就可以开始使用。": {
+      "en": "Complete connection setup once to get started.",
+      "ja": "最初に接続を設定すると、すぐに使い始められます。",
+      "zh-Hans": "先完成一次连接设置，就可以开始使用。",
+      "zh-Hant": "先完成一次連線設定，就可以開始使用。"
+    },
+    "开始设置": {
+      "en": "Start setup",
+      "ja": "設定を始める",
+      "zh-Hans": "开始设置",
+      "zh-Hant": "開始設定"
+    },
+    "管理文件夹": {
+      "en": "Manage folders",
+      "ja": "フォルダを管理",
+      "zh-Hans": "管理文件夹",
+      "zh-Hant": "管理資料夾"
+    },
+    "启动连接": {
+      "en": "Start connection",
+      "ja": "接続を開始",
+      "zh-Hans": "启动连接",
+      "zh-Hant": "啓動連線"
+    },
+    "检查连接设置": {
+      "en": "Check connection settings",
+      "ja": "接続設定を確認",
+      "zh-Hans": "检查连接设置",
+      "zh-Hant": "檢查連線設定"
+    },
+    "“本机已就绪”表示本地连接已启动。请在 ChatGPT 中调用一次工具，确认完整连接。": {
+      "en": "“Ready on this Mac” means the local connection has started. Call a tool in ChatGPT to verify the complete connection.",
+      "ja": "「この Mac で準備完了」はローカル接続の開始を示します。ChatGPT でツールを呼び出して、接続全体を確認してください。",
+      "zh-Hans": "“本机已就绪”表示本地连接已启动。请在 ChatGPT 中调用一次工具，确认完整连接。",
+      "zh-Hant": "「本機已就緒」表示本地連線已啓動。請在 ChatGPT 中呼叫一次工具，確認完整連線。"
+    },
+    "新版已安装。下一次重新连接时会应用更新；当前连接可以继续使用。": {
+      "en": "The new version is installed. It will take effect the next time you reconnect; your current connection can continue.",
+      "ja": "新しいバージョンをインストールしました。次回の再接続時に適用されます。現在の接続はそのまま利用できます。",
+      "zh-Hans": "新版已安装。下一次重新连接时会应用更新；当前连接可以继续使用。",
+      "zh-Hant": "新版已安裝。下一次重新連線時會套用更新；目前的連線可以繼續使用。"
+    },
+    "已授权文件夹": {
+      "en": "Authorized folders",
+      "ja": "許可済みのフォルダ",
+      "zh-Hans": "已授权文件夹",
+      "zh-Hant": "已授權資料夾"
+    },
+    "还没有添加文件夹。选择一个文件夹后，即可让 AI 协助阅读和处理其中的内容。": {
+      "en": "No folders have been added. Choose a folder so AI can help read and work with its contents.",
+      "ja": "フォルダはまだ追加されていません。フォルダを選ぶと、内容の読み取りや作業を AI に依頼できます。",
+      "zh-Hans": "还没有添加文件夹。选择一个文件夹后，即可让 AI 协助阅读和处理其中的内容。",
+      "zh-Hant": "還沒有添加資料夾。選擇一個資料夾後，即可讓 AI 協助閱讀和處理其中的內容。"
+    },
+    "添加文件夹": {
+      "en": "Add folder",
+      "ja": "フォルダを追加",
+      "zh-Hans": "添加文件夹",
+      "zh-Hant": "添加資料夾"
+    },
+    "查看全部文件夹": {
+      "en": "View all folders",
+      "ja": "すべてのフォルダを表示",
+      "zh-Hans": "查看全部文件夹",
+      "zh-Hant": "查看全部資料夾"
+    },
+    "准备好之后": {
+      "en": "Once you are ready",
+      "ja": "準備ができたら",
+      "zh-Hans": "准备好之后",
+      "zh-Hant": "準備好之後"
+    },
+    "打开 ChatGPT": {
+      "en": "Open ChatGPT",
+      "ja": "ChatGPT を開く",
+      "zh-Hans": "打开 ChatGPT",
+      "zh-Hant": "打開 ChatGPT"
+    },
+    "选择已连接的 Codex Local MCP 插件。": {
+      "en": "Select your connected Codex Local MCP plugin.",
+      "ja": "接続済みの Codex Local MCP プラグインを選択します。",
+      "zh-Hans": "选择已连接的 Codex Local MCP 插件。",
+      "zh-Hant": "選擇已連線的 Codex Local MCP 外掛。"
+    },
+    "告诉 AI 你的目标": {
+      "en": "Tell AI your goal",
+      "ja": "AI に目的を伝える",
+      "zh-Hans": "告诉 AI 你的目标",
+      "zh-Hant": "告訴 AI 你的目標"
+    },
+    "例如：“查看项目目录，帮我了解当前进度。”": {
+      "en": "For example: “Look through my project and help me understand its progress.”",
+      "ja": "例：「プロジェクトのフォルダを確認して、現在の進捗を教えて。」",
+      "zh-Hans": "例如：“查看项目目录，帮我了解当前进度。”",
+      "zh-Hant": "例如：「查看專案目錄，幫我瞭解當前進度。」"
+    },
+    "按需调整权限": {
+      "en": "Adjust permissions as needed",
+      "ja": "必要に応じて権限を調整",
+      "zh-Hans": "按需调整权限",
+      "zh-Hant": "按需調整權限"
+    },
+    "在项目文件夹中控制编辑和运行任务的能力。": {
+      "en": "Control editing and task execution in Folders.",
+      "ja": "「フォルダ」で編集とタスク実行の権限を管理できます。",
+      "zh-Hans": "在项目文件夹中控制编辑和运行任务的能力。",
+      "zh-Hant": "在專案資料夾中控制編輯和執行任務的能力。"
+    },
+    "查看完整使用指南": {
+      "en": "Read the full guide",
+      "ja": "使い方のガイドを読む",
+      "zh-Hans": "查看完整使用指南",
+      "zh-Hant": "查看完整使用指南"
+    },
+    "由你选择文件夹，由你决定权限。连接密钥保存在 macOS 钥匙串。": {
+      "en": "You choose the folders and permissions. Your connection key stays in macOS Keychain.",
+      "ja": "フォルダも権限も自分で選べます。接続キーは macOS キーチェーンに保存されます。",
+      "zh-Hans": "由你选择文件夹，由你决定权限。连接密钥保存在 macOS 钥匙串。",
+      "zh-Hant": "由你選擇資料夾，由你決定權限。連線金鑰儲存在 macOS 鑰匙圈。"
+    },
+    "选择 AI 可以访问的内容，并为每个文件夹设置权限。": {
+      "en": "Choose what AI can access and set permissions for each folder.",
+      "ja": "AI に許可するフォルダを選び、フォルダごとに権限を設定します。",
+      "zh-Hans": "选择 AI 可以访问的内容，并为每个文件夹设置权限。",
+      "zh-Hant": "選擇 AI 可以存取的內容，並為每個資料夾設定權限。"
+    },
+    "从一个文件夹开始": {
+      "en": "Start with one folder",
+      "ja": "まずはフォルダを 1 つ",
+      "zh-Hans": "从一个文件夹开始",
+      "zh-Hant": "從一個資料夾開始"
+    },
+    "直接选择你平时工作的文件夹。文件会保留在原来的位置，不需要导入。": {
+      "en": "Choose a folder you already work in. Files stay where they are—no import is needed.",
+      "ja": "いつも使っているフォルダを選んでください。ファイルを移動したり、読み込んだりする必要はありません。",
+      "zh-Hans": "直接选择你平时工作的文件夹。文件会保留在原来的位置，不需要导入。",
+      "zh-Hant": "直接選擇你平時工作的資料夾。檔案會保留在原來的位置，不需要導入。"
+    },
+    "选择一个文件夹": {
+      "en": "Choose a folder",
+      "ja": "フォルダを選択",
+      "zh-Hans": "选择一个文件夹",
+      "zh-Hant": "選擇一個資料夾"
+    },
+    "在左侧选择文件夹，查看位置或调整访问权限。": {
+      "en": "Select a folder on the left to view its location or change access permissions.",
+      "ja": "左側でフォルダを選ぶと、場所の確認やアクセス権限の変更ができます。",
+      "zh-Hans": "在左侧选择文件夹，查看位置或调整访问权限。",
+      "zh-Hant": "在左側選擇資料夾，查看位置或調整存取權限。"
+    },
+    "移除访问权限不会删除磁盘上的文件。最多可添加 32 个文件夹。": {
+      "en": "Removing access does not delete files on disk. You can add up to 32 folders.",
+      "ja": "アクセスを削除しても、ディスク上のファイルは削除されません。フォルダは最大 32 個まで追加できます。",
+      "zh-Hans": "移除访问权限不会删除磁盘上的文件。最多可添加 32 个文件夹。",
+      "zh-Hant": "移除存取權限不會刪除磁盤上的檔案。最多可添加 32 個資料夾。"
+    },
+    "确认位置和权限后保存": {
+      "en": "Confirm the location and permissions, then save",
+      "ja": "場所と権限を確認して保存",
+      "zh-Hans": "确认位置和权限后保存",
+      "zh-Hant": "確認位置和權限後儲存"
+    },
+    "文件夹设置": {
+      "en": "Folder settings",
+      "ja": "フォルダ設定",
+      "zh-Hans": "文件夹设置",
+      "zh-Hant": "資料夾設定"
+    },
+    "文件夹位置": {
+      "en": "Folder location",
+      "ja": "フォルダの場所",
+      "zh-Hans": "文件夹位置",
+      "zh-Hant": "資料夾位置"
+    },
+    "更换文件夹": {
+      "en": "Change folder",
+      "ja": "フォルダを変更",
+      "zh-Hans": "更换文件夹",
+      "zh-Hant": "更換資料夾"
+    },
+    "在访达中显示": {
+      "en": "Show in Finder",
+      "ja": "Finder に表示",
+      "zh-Hans": "在访达中显示",
+      "zh-Hant": "在Finder中顯示"
+    },
+    "阅读文件": {
+      "en": "Read files",
+      "ja": "ファイルの読み取り",
+      "zh-Hans": "阅读文件",
+      "zh-Hant": "閱讀檔案"
+    },
+    "查看和搜索所选文件夹中的内容": {
+      "en": "View and search content in the selected folder",
+      "ja": "選択したフォルダの内容を表示・検索",
+      "zh-Hans": "查看和搜索所选文件夹中的内容",
+      "zh-Hant": "查看和搜索所選資料夾中的內容"
+    },
+    "已允许": {
+      "en": "Allowed",
+      "ja": "許可済み",
+      "zh-Hans": "已允许",
+      "zh-Hant": "已允許"
+    },
+    "允许编辑文件": {
+      "en": "Allow file editing",
+      "ja": "ファイル編集を許可",
+      "zh-Hans": "允许编辑文件",
+      "zh-Hant": "允許編輯檔案"
+    },
+    "允许 AI 创建、修改或整理文件内容。": {
+      "en": "Allow AI to create, change, and organize file content.",
+      "ja": "AI にファイルの作成・変更・整理を許可します。",
+      "zh-Hans": "允许 AI 创建、修改或整理文件内容。",
+      "zh-Hant": "允許 AI 建立、修改或整理檔案內容。"
+    },
+    "允许运行任务": {
+      "en": "Allow running tasks",
+      "ja": "タスク実行を許可",
+      "zh-Hans": "允许运行任务",
+      "zh-Hant": "允許執行任務"
+    },
+    "运行本机程序，例如测试项目、处理文档。": {
+      "en": "Run local programs, such as project tests or document processing.",
+      "ja": "プロジェクトのテストや文書処理など、ローカルのプログラムを実行します。",
+      "zh-Hans": "运行本机程序，例如测试项目、处理文档。",
+      "zh-Hant": "執行本機程式，例如測試專案、處理文件。"
+    },
+    "运行任务使用你的本机账户权限，也可能修改文件；关闭“允许编辑文件”不会限制程序自身的写入能力。": {
+      "en": "Tasks run with your local account permissions and may change files. Turning off “Allow file editing” does not restrict a program’s own ability to write files.",
+      "ja": "タスクはローカルアカウントの権限で実行され、ファイルを変更する場合があります。「ファイル編集を許可」をオフにしても、プログラム自体による書き込みは制限されません。",
+      "zh-Hans": "运行任务使用你的本机账户权限，也可能修改文件；关闭“允许编辑文件”不会限制程序自身的写入能力。",
+      "zh-Hant": "執行任務使用你的本機帳號權限，也可能修改檔案；關閉「允許編輯檔案」不會限制程式自身的寫入能力。"
+    },
+    "项目标识": {
+      "en": "Project identifier",
+      "ja": "プロジェクト ID",
+      "zh-Hans": "项目标识",
+      "zh-Hant": "專案識別碼"
+    },
+    "已自动生成。已有连接可能引用此标识，通常无需修改。": {
+      "en": "Generated automatically. Existing connections may use this identifier; it usually does not need changing.",
+      "ja": "自動生成されています。既存の接続がこの ID を参照している場合があるため、通常は変更不要です。",
+      "zh-Hans": "已自动生成。已有连接可能引用此标识，通常无需修改。",
+      "zh-Hant": "已自動生成。已有連線可能引用此識別碼，通常無需修改。"
+    },
+    "更多设置": {
+      "en": "More settings",
+      "ja": "その他の設定",
+      "zh-Hans": "更多设置",
+      "zh-Hant": "更多設定"
+    },
+    "移除访问权限": {
+      "en": "Remove access",
+      "ja": "アクセスを削除",
+      "zh-Hans": "移除访问权限",
+      "zh-Hant": "移除存取權限"
+    },
+    "连接你的第一台电脑": {
+      "en": "Connect your first computer",
+      "ja": "最初のパソコンを接続",
+      "zh-Hans": "连接你的第一台电脑",
+      "zh-Hant": "連線你的第一台電腦"
+    },
+    "管理电脑名称和连接信息。已有的连接密钥无需重复填写。": {
+      "en": "Manage your computer name and connection details. You do not need to enter a saved connection key again.",
+      "ja": "パソコン名と接続情報を管理します。保存済みの接続キーを入力し直す必要はありません。",
+      "zh-Hans": "管理电脑名称和连接信息。已有的连接密钥无需重复填写。",
+      "zh-Hant": "管理電腦名稱和連線資訊。已有的連線金鑰無需重復填寫。"
+    },
+    "完成一次设置，之后打开应用就能管理本机连接。": {
+      "en": "Set up once, then open the app whenever you want to manage your local connection.",
+      "ja": "一度設定すれば、あとはアプリを開くだけでローカル接続を管理できます。",
+      "zh-Hans": "完成一次设置，之后打开应用就能管理本机连接。",
+      "zh-Hant": "完成一次設定，之後打開應用程式就能管理本機連線。"
+    },
+    "连接信息": {
+      "en": "Connection details",
+      "ja": "接続情報",
+      "zh-Hans": "连接信息",
+      "zh-Hant": "連線資訊"
+    },
+    "这些信息在哪里？": {
+      "en": "Where do I find these?",
+      "ja": "この情報はどこにありますか？",
+      "zh-Hans": "这些信息在哪里？",
+      "zh-Hant": "這些資訊在哪裡？"
+    },
+    "电脑名称": {
+      "en": "Computer name",
+      "ja": "パソコン名",
+      "zh-Hans": "电脑名称",
+      "zh-Hant": "電腦名稱"
+    },
+    "起一个容易辨认的名称，例如“我的 MacBook”或“办公室电脑”。": {
+      "en": "Choose an easy-to-recognize name, such as “My MacBook” or “Office computer.”",
+      "ja": "「自分の MacBook」や「職場のパソコン」など、わかりやすい名前を付けてください。",
+      "zh-Hans": "起一个容易辨认的名称，例如“我的 MacBook”或“办公室电脑”。",
+      "zh-Hant": "起一個容易辨認的名稱，例如「我的 MacBook」或「辦公室電腦」。"
+    },
+    "连接 ID（Tunnel ID）": {
+      "en": "Connection ID (Tunnel ID)",
+      "ja": "接続 ID（Tunnel ID）",
+      "zh-Hans": "连接 ID（Tunnel ID）",
+      "zh-Hant": "連線 ID（Tunnel ID）"
+    },
+    "从 OpenAI 的连接配置中复制完整 ID，以 tunnel_ 开头。": {
+      "en": "Copy the full ID from your OpenAI connection setup. It starts with tunnel_.",
+      "ja": "OpenAI の接続設定から、tunnel_ で始まる ID 全体をコピーしてください。",
+      "zh-Hans": "从 OpenAI 的连接配置中复制完整 ID，以 tunnel_ 开头。",
+      "zh-Hant": "從 OpenAI 的連線設定中複製完整 ID，以 tunnel_ 開頭。"
+    },
+    "连接密钥已安全保存": {
+      "en": "Connection key saved securely",
+      "ja": "接続キーは安全に保存済み",
+      "zh-Hans": "连接密钥已安全保存",
+      "zh-Hant": "連線金鑰已安全儲存"
+    },
+    "保存在 macOS 钥匙串中，不会显示密钥内容。": {
+      "en": "Stored in macOS Keychain. The key itself is never shown.",
+      "ja": "macOS キーチェーンに保存されています。キーの内容は表示されません。",
+      "zh-Hans": "保存在 macOS 钥匙串中，不会显示密钥内容。",
+      "zh-Hant": "儲存在 macOS 鑰匙圈中，不會顯示金鑰內容。"
+    },
+    "更换密钥": {
+      "en": "Replace key",
+      "ja": "キーを変更",
+      "zh-Hans": "更换密钥",
+      "zh-Hant": "更換金鑰"
+    },
+    "连接密钥（Runtime key）": {
+      "en": "Connection key (Runtime key)",
+      "ja": "接続キー（Runtime key）",
+      "zh-Hans": "连接密钥（Runtime key）",
+      "zh-Hant": "連線金鑰（Runtime key）"
+    },
+    "留空将继续使用已保存的密钥。新密钥只会在保存时写入钥匙串。": {
+      "en": "Leave this blank to keep the saved key. A new key is stored in Keychain only when you save.",
+      "ja": "空欄のままにすると保存済みのキーを使います。新しいキーは、保存した時点でキーチェーンに書き込まれます。",
+      "zh-Hans": "留空将继续使用已保存的密钥。新密钥只会在保存时写入钥匙串。",
+      "zh-Hant": "留空將繼續使用已儲存的金鑰。新金鑰只會在儲存時寫入鑰匙圈。"
+    },
+    "使用具有 Tunnels Read / Use 权限的连接密钥；无需为模型调用配置密钥。": {
+      "en": "Use a connection key with Tunnels Read / Use permissions. A key for model API calls is not required.",
+      "ja": "Tunnels Read / Use 権限のある接続キーを使用します。モデル API 呼び出し用のキーは必要ありません。",
+      "zh-Hans": "使用具有 Tunnels Read / Use 权限的连接密钥；无需为模型调用配置密钥。",
+      "zh-Hant": "使用具有 Tunnels Read / Use 權限的連線金鑰；無需為模型呼叫設定金鑰。"
+    },
+    "留空可沿用已有密钥": {
+      "en": "Leave blank to keep the saved key",
+      "ja": "空欄の場合は保存済みのキーを使用",
+      "zh-Hans": "留空可沿用已有密钥",
+      "zh-Hant": "留空可沿用已有金鑰"
+    },
+    "粘贴连接密钥": {
+      "en": "Paste connection key",
+      "ja": "接続キーを貼り付け",
+      "zh-Hans": "粘贴连接密钥",
+      "zh-Hant": "貼上連線金鑰"
+    },
+    "暂时无法确认钥匙串状态。请在系统提示中解锁钥匙串，再刷新状态；也可以填写新的连接密钥。": {
+      "en": "Keychain status could not be confirmed. Unlock Keychain when macOS asks, then refresh the status. You can also enter a new connection key.",
+      "ja": "キーチェーンの状態を確認できません。macOS の案内に従ってロックを解除し、状態を更新してください。新しい接続キーを入力することもできます。",
+      "zh-Hans": "暂时无法确认钥匙串状态。请在系统提示中解锁钥匙串，再刷新状态；也可以填写新的连接密钥。",
+      "zh-Hant": "暫時無法確認鑰匙圈狀態。請在系統提示中解鎖鑰匙圈，再刷新狀態；也可以填寫新的連線金鑰。"
+    },
+    "选择第一个文件夹": {
+      "en": "Choose your first folder",
+      "ja": "最初のフォルダを選択",
+      "zh-Hans": "选择第一个文件夹",
+      "zh-Hant": "選擇第一個資料夾"
+    },
+    "选择平时工作的文件夹。可以稍后添加更多文件夹和调整权限。": {
+      "en": "Choose a folder you normally work in. You can add more folders and change permissions later.",
+      "ja": "いつも使うフォルダを選んでください。フォルダの追加や権限の変更は後からできます。",
+      "zh-Hans": "选择平时工作的文件夹。可以稍后添加更多文件夹和调整权限。",
+      "zh-Hant": "選擇平時工作的資料夾。可以稍後添加更多資料夾和調整權限。"
+    },
+    "更换": {
+      "en": "Change",
+      "ja": "変更",
+      "zh-Hans": "更换",
+      "zh-Hant": "更換"
+    },
+    "允许创建、修改和整理文件。": {
+      "en": "Allow creating, changing, and organizing files.",
+      "ja": "ファイルの作成・変更・整理を許可します。",
+      "zh-Hans": "允许创建、修改和整理文件。",
+      "zh-Hant": "允許建立、修改和整理檔案。"
+    },
+    "使用本机程序完成工作，可能修改文件。": {
+      "en": "Use local programs to do the work. They may change files.",
+      "ja": "ローカルのプログラムで作業します。ファイルを変更する場合があります。",
+      "zh-Hans": "使用本机程序完成工作，可能修改文件。",
+      "zh-Hant": "使用本機程式完成工作，可能修改檔案。"
+    },
+    "运行任务使用本机账户权限，也可能修改所选文件夹以外的文件。": {
+      "en": "Tasks run with your local account permissions and may change files outside the selected folder.",
+      "ja": "タスクはローカルアカウントの権限で実行され、選択したフォルダの外にあるファイルも変更する場合があります。",
+      "zh-Hans": "运行任务使用本机账户权限，也可能修改所选文件夹以外的文件。",
+      "zh-Hant": "執行任務使用本機帳號權限，也可能修改所選資料夾以外的檔案。"
+    },
+    "有未保存的修改": {
+      "en": "Unsaved changes",
+      "ja": "未保存の変更があります",
+      "zh-Hans": "有未保存的修改",
+      "zh-Hant": "有未儲存的修改"
+    },
+    "取消修改": {
+      "en": "Discard changes",
+      "ja": "変更を破棄",
+      "zh-Hans": "取消修改",
+      "zh-Hant": "捨棄修改"
+    },
+    "需要时检查本机能力。检查不会读取你的工作文档，也不会自动申请系统授权。": {
+      "en": "Check local capabilities when needed. Checks do not read your work documents or request system permissions automatically.",
+      "ja": "必要なときに、この Mac の機能を確認できます。作業中の文書を読んだり、システム権限を自動で申請したりすることはありません。",
+      "zh-Hans": "需要时检查本机能力。检查不会读取你的工作文档，也不会自动申请系统授权。",
+      "zh-Hant": "需要時檢查本機能力。檢查不會讀取你的工作文件，也不會自動申請系統授權。"
+    },
+    "文档处理": {
+      "en": "Document support",
+      "ja": "文書処理",
+      "zh-Hans": "文档处理",
+      "zh-Hant": "文件處理"
+    },
+    "查看 Excel、Word、PowerPoint 的基础读写环境。": {
+      "en": "Check basic read and write support for Excel, Word, and PowerPoint.",
+      "ja": "Excel、Word、PowerPoint の基本的な読み書き環境を確認します。",
+      "zh-Hans": "查看 Excel、Word、PowerPoint 的基础读写环境。",
+      "zh-Hant": "查看 Excel、Word、PowerPoint 的基本讀寫環境。"
+    },
+    "检查环境": {
+      "en": "Check environment",
+      "ja": "環境を確認",
+      "zh-Hans": "检查环境",
+      "zh-Hant": "檢查環境"
+    },
+    "用临时示例验证基础读写，不会打开个人文件。": {
+      "en": "Test basic reading and writing with temporary samples. Personal files are not opened.",
+      "ja": "一時的なサンプルで基本的な読み書きを検証します。個人のファイルは開きません。",
+      "zh-Hans": "用临时示例验证基础读写，不会打开个人文件。",
+      "zh-Hant": "用臨時示例驗證基本讀寫，不會打開個人檔案。"
+    },
+    "验证基础读写": {
+      "en": "Verify reading and writing",
+      "ja": "読み書きを検証",
+      "zh-Hans": "验证基础读写",
+      "zh-Hant": "驗證基本讀寫"
+    },
+    "系统授权": {
+      "en": "System permissions",
+      "ja": "システム権限",
+      "zh-Hans": "系统授权",
+      "zh-Hant": "系統授權"
+    },
+    "常规文件、终端和独立 Chrome 集成无需开启；仅在特定工作流需要时申请。": {
+      "en": "Not needed for standard files, terminal tasks, or the separate Chrome integration. Request only when a specific workflow needs them.",
+      "ja": "通常のファイル操作、ターミナル、独立した Chrome 連携には不要です。特定の作業で必要な場合にのみ申請してください。",
+      "zh-Hans": "常规文件、终端和独立 Chrome 集成无需开启；仅在特定工作流需要时申请。",
+      "zh-Hant": "常規檔案、終端機和獨立 Chrome 整合無需開啟；僅在特定工作流程需要時申請。"
+    },
+    "检查系统授权": {
+      "en": "Check system permissions",
+      "ja": "システム権限を確認",
+      "zh-Hans": "检查系统授权",
+      "zh-Hant": "檢查系統授權"
+    },
+    "申请授权": {
+      "en": "Request permission",
+      "ja": "権限を申請",
+      "zh-Hans": "申请授权",
+      "zh-Hant": "申請授權"
+    },
+    "打开系统设置": {
+      "en": "Open System Settings",
+      "ja": "システム設定を開く",
+      "zh-Hans": "打开系统设置",
+      "zh-Hant": "打開系統設定"
+    },
+    "检测结果属于当前连接进程。授权后如仍未生效，请重新启动连接，再检查一次。": {
+      "en": "Results apply to the current connection process. If a permission is still unavailable after you allow it, restart the connection and check again.",
+      "ja": "結果は現在の接続プロセスに対するものです。許可しても反映されない場合は、接続を再起動してからもう一度確認してください。",
+      "zh-Hans": "检测结果属于当前连接进程。授权后如仍未生效，请重新启动连接，再检查一次。",
+      "zh-Hant": "檢測結果屬於當前連線進程。授權後如仍未生效，請重新啓動連線，再檢查一次。"
+    },
+    "需要操作浏览器？": {
+      "en": "Need to use a browser?",
+      "ja": "ブラウザを操作しますか？",
+      "zh-Hans": "需要操作浏览器？",
+      "zh-Hant": "需要操作瀏覽器？"
+    },
+    "ChatGPT 的 Chrome 集成是独立连接，请在 ChatGPT 中启用。这里不会代替它显示连接状态。": {
+      "en": "ChatGPT’s Chrome integration uses a separate connection. Enable it in ChatGPT; its connection status is not shown here.",
+      "ja": "ChatGPT の Chrome 連携は独立した接続です。ChatGPT で有効にしてください。ここにはその接続状態は表示されません。",
+      "zh-Hans": "ChatGPT 的 Chrome 集成是独立连接，请在 ChatGPT 中启用。这里不会代替它显示连接状态。",
+      "zh-Hant": "ChatGPT 的 Chrome 整合是獨立連線，請在 ChatGPT 中啟用。這裡不會代替它顯示連線狀態。"
+    },
+    "查看指引": {
+      "en": "View guide",
+      "ja": "ガイドを見る",
+      "zh-Hans": "查看指引",
+      "zh-Hant": "查看指引"
+    },
+    "可用": {
+      "en": "Available",
+      "ja": "利用可能",
+      "zh-Hans": "可用",
+      "zh-Hant": "可用"
+    },
+    "未授权": {
+      "en": "Not allowed",
+      "ja": "未許可",
+      "zh-Hans": "未授权",
+      "zh-Hant": "未授權"
+    },
+    "缺少组件": {
+      "en": "Component missing",
+      "ja": "コンポーネント不足",
+      "zh-Hans": "缺少组件",
+      "zh-Hant": "缺少組件"
+    },
+    "未确认": {
+      "en": "Unconfirmed",
+      "ja": "未確認",
+      "zh-Hans": "未确认",
+      "zh-Hant": "未確認"
+    },
+    "暂不可用": {
+      "en": "Temporarily unavailable",
+      "ja": "一時的に利用不可",
+      "zh-Hans": "暂不可用",
+      "zh-Hant": "暫不可用"
+    },
+    "需处理": {
+      "en": "Needs attention",
+      "ja": "対応が必要",
+      "zh-Hans": "需处理",
+      "zh-Hant": "需處理"
+    },
+    "遇到问题时查看最近的记录。这里只显示有限条目，并隐藏可识别的密钥内容。": {
+      "en": "Review recent logs when something goes wrong. Only a limited number of entries are shown, with recognizable key values hidden.",
+      "ja": "問題が起きたときに最近のログを確認できます。表示件数には上限があり、識別できるキーの値は伏せられます。",
+      "zh-Hans": "遇到问题时查看最近的记录。这里只显示有限条目，并隐藏可识别的密钥内容。",
+      "zh-Hant": "遇到問題時查看最近的記錄。這裡只顯示有限條目，並隱藏可識別的金鑰內容。"
+    },
+    "记录类型": {
+      "en": "Log type",
+      "ja": "ログの種類",
+      "zh-Hans": "记录类型",
+      "zh-Hant": "記錄類型"
+    },
+    "连接问题": {
+      "en": "Connection issues",
+      "ja": "接続の問題",
+      "zh-Hans": "连接问题",
+      "zh-Hant": "連線問題"
+    },
+    "连接运行": {
+      "en": "Connection activity",
+      "ja": "接続の動作",
+      "zh-Hans": "连接运行",
+      "zh-Hant": "連線執行"
+    },
+    "启动准备": {
+      "en": "Startup preparation",
+      "ja": "起動の準備",
+      "zh-Hans": "启动准备",
+      "zh-Hant": "啓動準備"
+    },
+    "刷新": {
+      "en": "Refresh",
+      "ja": "更新",
+      "zh-Hans": "刷新",
+      "zh-Hant": "刷新"
+    },
+    "复制": {
+      "en": "Copy",
+      "ja": "コピー",
+      "zh-Hans": "复制",
+      "zh-Hant": "複製"
+    },
+    "最近的连接问题": {
+      "en": "Recent connection issues",
+      "ja": "最近の接続の問題",
+      "zh-Hans": "最近的连接问题",
+      "zh-Hant": "最近的連線問題"
+    },
+    "最近的连接运行记录": {
+      "en": "Recent connection activity",
+      "ja": "最近の接続動作ログ",
+      "zh-Hans": "最近的连接运行记录",
+      "zh-Hant": "最近的連線執行記錄"
+    },
+    "最近的启动准备记录": {
+      "en": "Recent startup preparation",
+      "ja": "最近の起動準備ログ",
+      "zh-Hans": "最近的启动准备记录",
+      "zh-Hant": "最近的啓動準備記錄"
+    },
+    "最多 150 行": {
+      "en": "Up to 150 lines",
+      "ja": "最大 150 行",
+      "zh-Hans": "最多 150 行",
+      "zh-Hant": "最多 150 行"
+    },
+    "暂无记录": {
+      "en": "No logs",
+      "ja": "ログはありません",
+      "zh-Hans": "暂无记录",
+      "zh-Hant": "暫無記錄"
+    },
+    "还没有读取记录": {
+      "en": "Logs have not been loaded",
+      "ja": "ログはまだ読み込まれていません",
+      "zh-Hans": "还没有读取记录",
+      "zh-Hant": "還沒有讀取記錄"
+    },
+    "此类型暂时没有可显示的运行信息。": {
+      "en": "No information of this type is available yet.",
+      "ja": "この種類の情報はまだありません。",
+      "zh-Hans": "此类型暂时没有可显示的运行信息。",
+      "zh-Hant": "此類型暫時沒有可顯示的執行資訊。"
+    },
+    "点击刷新，读取最近的运行信息。": {
+      "en": "Click Refresh to load recent activity.",
+      "ja": "「更新」をクリックすると、最近の情報を読み込みます。",
+      "zh-Hans": "点击刷新，读取最近的运行信息。",
+      "zh-Hant": "按一下刷新，讀取最近的執行資訊。"
+    },
+    "内容较长，已仅显示最近部分。": {
+      "en": "The log is long; only the most recent portion is shown.",
+      "ja": "ログが長いため、最近の部分のみを表示しています。",
+      "zh-Hans": "内容较长，已仅显示最近部分。",
+      "zh-Hant": "內容較長，已僅顯示最近部分。"
+    },
+    "需要更多细节时，可打开本机日志文件夹。": {
+      "en": "Open the local log folder if you need more detail.",
+      "ja": "詳細が必要な場合は、この Mac のログフォルダを開いてください。",
+      "zh-Hans": "需要更多细节时，可打开本机日志文件夹。",
+      "zh-Hant": "需要更多細節時，可打開本機日誌資料夾。"
+    },
+    "打开日志文件夹": {
+      "en": "Open log folder",
+      "ja": "ログフォルダを開く",
+      "zh-Hans": "打开日志文件夹",
+      "zh-Hant": "打開日誌資料夾"
+    },
+    "使用 Codex Local MCP": {
+      "en": "Using Codex Local MCP",
+      "ja": "Codex Local MCP の使い方",
+      "zh-Hans": "使用 Codex Local MCP",
+      "zh-Hant": "使用 Codex Local MCP"
+    },
+    "完成": {
+      "en": "Done",
+      "ja": "完了",
+      "zh-Hans": "完成",
+      "zh-Hant": "完成"
+    },
+    "连接浏览器": {
+      "en": "Connect a browser",
+      "ja": "ブラウザを接続",
+      "zh-Hans": "连接浏览器",
+      "zh-Hant": "連線瀏覽器"
+    },
+    "如需查看和操作 Chrome 页面，请在 ChatGPT 中启用浏览器集成，并按集成提示授权。浏览器连接与本机文件连接分别管理。": {
+      "en": "To view and control Chrome pages, enable the browser integration in ChatGPT and follow its permission prompts. Browser and local file connections are managed separately.",
+      "ja": "Chrome のページを表示・操作するには、ChatGPT でブラウザ連携を有効にして、案内に従って権限を許可してください。ブラウザとローカルファイルの接続は別々に管理されます。",
+      "zh-Hans": "如需查看和操作 Chrome 页面，请在 ChatGPT 中启用浏览器集成，并按集成提示授权。浏览器连接与本机文件连接分别管理。",
+      "zh-Hant": "如需查看和操作 Chrome 頁面，請在 ChatGPT 中啟用瀏覽器整合，並按整合提示授權。瀏覽器連線與本機檔案連線分別管理。"
+    },
+    "1. 准备连接信息": {
+      "en": "1. Prepare connection details",
+      "ja": "1. 接続情報を用意",
+      "zh-Hans": "1. 准备连接信息",
+      "zh-Hant": "1. 準備連線資訊"
+    },
+    "在 OpenAI 中创建本机连接，取得 Tunnel ID 和连接密钥（Runtime key）。连接密钥需要 Tunnels Read / Use 权限。将两项内容粘贴到“连接设置”，密钥会写入 macOS 钥匙串。": {
+      "en": "Create a local connection in OpenAI and obtain a Tunnel ID and Runtime key. The key needs Tunnels Read / Use permissions. Paste both values into Connection; the key will be stored in macOS Keychain.",
+      "ja": "OpenAI でローカル接続を作成し、Tunnel ID と Runtime key を取得します。キーには Tunnels Read / Use 権限が必要です。「接続」に両方を貼り付けると、キーは macOS キーチェーンに保存されます。",
+      "zh-Hans": "在 OpenAI 中创建本机连接，取得 Tunnel ID 和连接密钥（Runtime key）。连接密钥需要 Tunnels Read / Use 权限。将两项内容粘贴到“连接设置”，密钥会写入 macOS 钥匙串。",
+      "zh-Hant": "在 OpenAI 中建立本機連線，取得 Tunnel ID 和連線金鑰（Runtime key）。連線金鑰需要 Tunnels Read / Use 權限。將兩項內容貼上到「連線設定」，金鑰會寫入 macOS 鑰匙圈。"
+    },
+    "打开连接设置": {
+      "en": "Open connection settings",
+      "ja": "接続設定を開く",
+      "zh-Hans": "打开连接设置",
+      "zh-Hant": "打開連線設定"
+    },
+    "查看连接文档": {
+      "en": "Read connection documentation",
+      "ja": "接続ドキュメントを読む",
+      "zh-Hans": "查看连接文档",
+      "zh-Hant": "查看連線文件"
+    },
+    "2. 选择项目文件夹": {
+      "en": "2. Choose project folders",
+      "ja": "2. プロジェクトフォルダを選択",
+      "zh-Hans": "2. 选择项目文件夹",
+      "zh-Hant": "2. 選擇專案資料夾"
+    },
+    "选择你希望 AI 协助处理的文件夹，无需移动文件。新文件夹默认允许阅读和编辑；需要运行程序时，再开启“允许运行任务”。项目标识会自动生成。": {
+      "en": "Choose the folders where you want AI to help. Files stay in place. New folders allow reading and editing by default; turn on “Allow running tasks” when you need programs to run. Project identifiers are generated automatically.",
+      "ja": "AI に作業してほしいフォルダを選びます。ファイルの移動は不要です。新しいフォルダは読み取りと編集が初期設定で許可されます。プログラムが必要なときに「タスク実行を許可」をオンにしてください。プロジェクト ID は自動生成されます。",
+      "zh-Hans": "选择你希望 AI 协助处理的文件夹，无需移动文件。新文件夹默认允许阅读和编辑；需要运行程序时，再开启“允许运行任务”。项目标识会自动生成。",
+      "zh-Hant": "選擇你希望 AI 協助處理的資料夾，無需移動檔案。新資料夾預設允許閱讀和編輯；需要執行程式時，再開啟「允許執行任務」。專案識別碼會自動生成。"
+    },
+    "3. 保存并连接": {
+      "en": "3. Save and connect",
+      "ja": "3. 保存して接続",
+      "zh-Hans": "3. 保存并连接",
+      "zh-Hant": "3. 儲存並連線"
+    },
+    "点击“保存并连接”。看到“本机已就绪”后，回到 ChatGPT 选择插件，并让 AI 列出项目文件夹，验证完整连接。修改设置后重新连接，正在执行的任务可能中断。": {
+      "en": "Click “Save and connect.” Once you see “Ready on this Mac,” return to ChatGPT, select the plugin, and ask AI to list your project folders to verify the complete connection. Reconnecting after settings change may interrupt running tasks.",
+      "ja": "「保存して接続」をクリックします。「この Mac で準備完了」と表示されたら、ChatGPT でプラグインを選び、AI にプロジェクトフォルダの一覧を依頼して接続を確認します。設定変更後の再接続では、実行中のタスクが中断される場合があります。",
+      "zh-Hans": "点击“保存并连接”。看到“本机已就绪”后，回到 ChatGPT 选择插件，并让 AI 列出项目文件夹，验证完整连接。修改设置后重新连接，正在执行的任务可能中断。",
+      "zh-Hant": "按一下「儲存並連線」。看到「本機已就緒」後，回到 ChatGPT 選擇外掛，並讓 AI 列出專案資料夾，驗證完整連線。修改設定後重新連線，正在執行的任務可能中斷。"
+    },
+    "如何理解权限": {
+      "en": "Understanding permissions",
+      "ja": "権限について",
+      "zh-Hans": "如何理解权限",
+      "zh-Hant": "如何理解權限"
+    },
+    "“允许编辑文件”控制文件工具的修改能力。“允许运行任务”允许以本机账户权限执行程序，程序自身也可能修改文件。仅在两个开关都关闭时，文件工具提供只读访问。": {
+      "en": "“Allow file editing” controls changes made by file tools. “Allow running tasks” lets programs run with your local account permissions; those programs can also change files. File tools provide read-only access only when both switches are off.",
+      "ja": "「ファイル編集を許可」はファイルツールによる変更を制御します。「タスク実行を許可」はローカルアカウントの権限でプログラムを実行する設定で、プログラム自体もファイルを変更できます。両方のスイッチがオフの場合にのみ、ファイルツールが読み取り専用になります。",
+      "zh-Hans": "“允许编辑文件”控制文件工具的修改能力。“允许运行任务”允许以本机账户权限执行程序，程序自身也可能修改文件。仅在两个开关都关闭时，文件工具提供只读访问。",
+      "zh-Hant": "「允許編輯檔案」控制檔案工具的修改能力。「允許執行任務」允許以本機帳號權限執行程式，程式自身也可能修改檔案。僅在兩個開關都關閉時，檔案工具提供唯讀存取。"
+    },
+    "遇到问题时": {
+      "en": "If something goes wrong",
+      "ja": "問題が起きたときは",
+      "zh-Hans": "遇到问题时",
+      "zh-Hant": "遇到問題時"
+    },
+    "先检查连接设置，再查看“运行记录”。文档处理能力可以在“环境检查”中单独验证。常规文件、终端和独立 Chrome 集成无需这些可选系统授权；仅在特定工作流需要时申请。": {
+      "en": "Check Connection first, then review Logs. Document support can be verified separately in Checks. Standard files, terminal tasks, and the separate Chrome integration do not need these optional system permissions; request them only for a workflow that requires them.",
+      "ja": "まず「接続」の設定を確認し、次に「ログ」を見てください。文書処理は「環境チェック」で個別に検証できます。通常のファイル操作、ターミナル、独立した Chrome 連携には、これらの任意のシステム権限は不要です。必要な作業でのみ申請してください。",
+      "zh-Hans": "先检查连接设置，再查看“运行记录”。文档处理能力可以在“环境检查”中单独验证。常规文件、终端和独立 Chrome 集成无需这些可选系统授权；仅在特定工作流需要时申请。",
+      "zh-Hant": "先檢查連線設定，再查看「執行記錄」。文件處理能力可以在「環境檢查」中單獨驗證。常規檔案、終端機和獨立 Chrome 整合無需這些可選系統授權；僅在特定工作流程需要時申請。"
+    },
+    "由 Sugar 开发": {
+      "en": "Made by Sugar",
+      "ja": "開発：Sugar",
+      "zh-Hans": "由 Sugar 开发",
+      "zh-Hant": "由 Sugar 開發"
+    },
+    "GitHub 项目": {
+      "en": "GitHub project",
+      "ja": "GitHub プロジェクト",
+      "zh-Hans": "GitHub 项目",
+      "zh-Hant": "GitHub 專案"
+    },
+    "Codex Local MCP · 界面预览": {
+      "en": "Codex Local MCP · Interface preview",
+      "ja": "Codex Local MCP · 画面プレビュー",
+      "zh-Hans": "Codex Local MCP · 界面预览",
+      "zh-Hant": "Codex Local MCP · 介面預覽"
+    },
+    "正在检查应用安装…": {
+      "en": "Checking app installation…",
+      "ja": "アプリのインストールを確認中…",
+      "zh-Hans": "正在检查应用安装…",
+      "zh-Hant": "正在檢查應用程式安裝…"
+    },
+    "暂时无法完成启动": {
+      "en": "Unable to finish starting",
+      "ja": "起動を完了できません",
+      "zh-Hans": "暂时无法完成启动",
+      "zh-Hant": "暫時無法完成啓動"
+    },
+    "窗口尚未创建，无法截图。": {
+      "en": "A window has not been created, so a screenshot cannot be taken.",
+      "ja": "ウィンドウがまだ作成されていないため、スクリーンショットを撮影できません。",
+      "zh-Hans": "窗口尚未创建，无法截图。",
+      "zh-Hant": "視窗尚未建立，無法截圖。"
+    },
+    "无法创建窗口图像。": {
+      "en": "Unable to create a window image.",
+      "ja": "ウィンドウの画像を作成できません。",
+      "zh-Hans": "无法创建窗口图像。",
+      "zh-Hant": "無法建立視窗圖像。"
+    },
+    "无法生成 PNG 窗口截图。": {
+      "en": "Unable to create a PNG window screenshot.",
+      "ja": "PNG 形式のウィンドウ画像を作成できません。",
+      "zh-Hans": "无法生成 PNG 窗口截图。",
+      "zh-Hant": "無法生成 PNG 視窗截圖。"
+    },
+    "关闭窗口前放弃修改？": {
+      "en": "Discard changes before closing the window?",
+      "ja": "変更を破棄してウィンドウを閉じますか？",
+      "zh-Hans": "关闭窗口前放弃修改？",
+      "zh-Hant": "關閉視窗前放棄修改？"
+    },
+    "这些修改还没有保存。你可以继续编辑，或放弃后关闭窗口。": {
+      "en": "These changes have not been saved. Continue editing, or discard them and close the window.",
+      "ja": "変更はまだ保存されていません。編集を続けるか、変更を破棄してウィンドウを閉じてください。",
+      "zh-Hans": "这些修改还没有保存。你可以继续编辑，或放弃后关闭窗口。",
+      "zh-Hant": "這些修改還沒有儲存。你可以繼續編輯，或放棄後關閉視窗。"
+    },
+    "放弃并关闭": {
+      "en": "Discard and close",
+      "ja": "破棄して閉じる",
+      "zh-Hans": "放弃并关闭",
+      "zh-Hant": "放棄並關閉"
+    },
+    "退出前放弃未保存的修改？": {
+      "en": "Discard unsaved changes before quitting?",
+      "ja": "未保存の変更を破棄して終了しますか？",
+      "zh-Hans": "退出前放弃未保存的修改？",
+      "zh-Hant": "退出前放棄未儲存的修改？"
+    },
+    "退出界面不会停止已有的本机连接。未保存的修改将被放弃。": {
+      "en": "Quitting the interface will not stop an existing local connection. Unsaved changes will be discarded.",
+      "ja": "画面を終了しても、既存のローカル接続は停止しません。未保存の変更は破棄されます。",
+      "zh-Hans": "退出界面不会停止已有的本机连接。未保存的修改将被放弃。",
+      "zh-Hant": "退出介面不會停止已有的本機連線。未儲存的修改將被放棄。"
+    },
+    "放弃并退出": {
+      "en": "Discard and quit",
+      "ja": "破棄して終了",
+      "zh-Hans": "放弃并退出",
+      "zh-Hant": "放棄並退出"
+    },
+    "关于 Codex Local MCP": {
+      "en": "About Codex Local MCP",
+      "ja": "Codex Local MCP について",
+      "zh-Hans": "关于 Codex Local MCP",
+      "zh-Hant": "關於 Codex Local MCP"
+    },
+    "隐藏 Codex Local MCP": {
+      "en": "Hide Codex Local MCP",
+      "ja": "Codex Local MCP を隠す",
+      "zh-Hans": "隐藏 Codex Local MCP",
+      "zh-Hant": "隱藏 Codex Local MCP"
+    },
+    "退出 Codex Local MCP": {
+      "en": "Quit Codex Local MCP",
+      "ja": "Codex Local MCP を終了",
+      "zh-Hans": "退出 Codex Local MCP",
+      "zh-Hant": "退出 Codex Local MCP"
+    },
+    "编辑": {
+      "en": "Edit",
+      "ja": "編集",
+      "zh-Hans": "编辑",
+      "zh-Hant": "編輯"
+    },
+    "撤销": {
+      "en": "Undo",
+      "ja": "取り消す",
+      "zh-Hans": "撤销",
+      "zh-Hant": "撤銷"
+    },
+    "剪切": {
+      "en": "Cut",
+      "ja": "切り取り",
+      "zh-Hans": "剪切",
+      "zh-Hant": "剪切"
+    },
+    "粘贴": {
+      "en": "Paste",
+      "ja": "貼り付け",
+      "zh-Hans": "粘贴",
+      "zh-Hant": "貼上"
+    },
+    "全选": {
+      "en": "Select all",
+      "ja": "すべて選択",
+      "zh-Hans": "全选",
+      "zh-Hant": "全選"
+    },
+    "窗口": {
+      "en": "Window",
+      "ja": "ウィンドウ",
+      "zh-Hans": "窗口",
+      "zh-Hant": "視窗"
+    },
+    "最小化": {
+      "en": "Minimize",
+      "ja": "最小化",
+      "zh-Hans": "最小化",
+      "zh-Hant": "縮到最小"
+    },
+    "关闭窗口": {
+      "en": "Close window",
+      "ja": "ウィンドウを閉じる",
+      "zh-Hans": "关闭窗口",
+      "zh-Hant": "關閉視窗"
+    },
+    "帮助": {
+      "en": "Help",
+      "ja": "ヘルプ",
+      "zh-Hans": "帮助",
+      "zh-Hant": "幫助"
+    },
+    "Codex Local MCP 使用帮助": {
+      "en": "Codex Local MCP Help",
+      "ja": "Codex Local MCP ヘルプ",
+      "zh-Hans": "Codex Local MCP 使用帮助",
+      "zh-Hant": "Codex Local MCP 使用說明"
+    },
+    "跟随系统": {
+      "en": "System default",
+      "zh-Hans": "跟随系统",
+      "zh-Hant": "跟隨系統",
+      "ja": "システム設定に従う"
+    },
+    "%d 个工具调用正在进行": {
+      "en": "Tool calls in progress: %d",
+      "zh-Hans": "%d 个工具调用正在进行",
+      "zh-Hant": "正在進行的工具呼叫：%d",
+      "ja": "実行中のツール呼び出し：%d"
+    },
+    "有 %d 个正在进行的调用未提供会话标识": {
+      "en": "Calls in progress without a session identifier: %d",
+      "zh-Hans": "有 %d 个正在进行的调用未提供会话标识",
+      "zh-Hant": "有 %d 個正在進行的呼叫未提供對話識別碼",
+      "ja": "セッション識別子のない実行中の呼び出し：%d"
+    },
+    "%@，无法归入会话。会话数量仅包含已识别来源。": {
+      "en": "%@; they cannot be assigned to a session. Session counts include only identified sources.",
+      "zh-Hans": "%@，无法归入会话。会话数量仅包含已识别来源。",
+      "zh-Hant": "%@，無法歸入對話。對話數量僅包含已識別來源。",
+      "ja": "%@。これらはセッションに分類できません。セッション数には識別できた送信元のみを含みます。"
+    },
+    "活动较多，统计也可能不完整。": {
+      "en": "High activity may make these statistics incomplete.",
+      "zh-Hans": "活动较多，统计也可能不完整。",
+      "zh-Hant": "活動較多，統計也可能不完整。",
+      "ja": "活動が多いため、統計が不完全な場合があります。"
+    },
+    "更新于 %@": {
+      "en": "Updated %@",
+      "zh-Hans": "更新于 %@",
+      "zh-Hant": "更新於 %@",
+      "ja": "更新：%@"
+    },
+    "%d 个已识别会话": {
+      "en": "Identified sessions: %d",
+      "zh-Hans": "%d 个已识别会话",
+      "zh-Hant": "已識別的對話：%d",
+      "ja": "識別済みセッション：%d"
+    },
+    "会话 %d": {
+      "en": "Session %d",
+      "zh-Hans": "会话 %d",
+      "zh-Hant": "對話 %d",
+      "ja": "セッション %d"
+    },
+    "%d 个调用进行中": {
+      "en": "Calls in progress: %d",
+      "zh-Hans": "%d 个调用进行中",
+      "zh-Hant": "進行中的呼叫：%d",
+      "ja": "実行中の呼び出し：%d"
+    },
+    "最近调用 %@": {
+      "en": "Last call %@",
+      "zh-Hans": "最近调用 %@",
+      "zh-Hant": "最近呼叫 %@",
+      "ja": "最後の呼び出し：%@"
+    },
+    "本次统计始于 %@。编号为本次连接中的匿名序号。": {
+      "en": "Statistics began %@. Numbers are anonymous identifiers for this connection.",
+      "zh-Hans": "本次统计始于 %@。编号为本次连接中的匿名序号。",
+      "zh-Hant": "本次統計始於 %@。編號為本次連線中的匿名序號。",
+      "ja": "集計の開始：%@。番号は今回の接続内で使う匿名の識別番号です。"
+    },
+    "移除“%@”的访问权限？": {
+      "en": "Remove access to “%@”?",
+      "zh-Hans": "移除“%@”的访问权限？",
+      "zh-Hant": "移除「%@」的存取權限？",
+      "ja": "「%@」へのアクセスを削除しますか？"
+    },
+    "申请%@权限？": {
+      "en": "Request %@ permission?",
+      "zh-Hans": "申请%@权限？",
+      "zh-Hant": "申請%@權限？",
+      "ja": "%@の権限を申請しますか？"
+    },
+    "%@ 缺少参数。": {
+      "en": "%@ requires an argument.",
+      "zh-Hans": "%@ 缺少参数。",
+      "zh-Hant": "%@ 缺少參數。",
+      "ja": "%@ には引数が必要です。"
+    },
+    "未知的预览语言。": {
+      "en": "Unknown preview language.",
+      "zh-Hans": "未知的预览语言。",
+      "zh-Hant": "未知的預覽語言。",
+      "ja": "不明なプレビュー言語です。"
+    },
+    "预览语言选项只允许在明确的预览模式使用。": {
+      "en": "The preview language option requires explicit preview mode.",
+      "zh-Hans": "预览语言选项只允许在明确的预览模式使用。",
+      "zh-Hant": "預覽語言選項只允許在明確的預覽模式使用。",
+      "ja": "プレビュー言語の指定には、明示的なプレビューモードが必要です。"
+    },
+    "界面语言": {
+      "en": "Interface language",
+      "zh-Hans": "界面语言",
+      "zh-Hant": "介面語言",
+      "ja": "表示言語"
+    },
+    "文件夹  %d": {
+      "en": "Folders  %d",
+      "zh-Hans": "文件夹  %d",
+      "zh-Hant": "資料夾  %d",
+      "ja": "フォルダ  %d"
+    },
+    "将沿用已有的 %d 个项目文件夹。": {
+      "en": "Existing project folders will be kept: %d.",
+      "zh-Hans": "将沿用已有的 %d 个项目文件夹。",
+      "zh-Hant": "將沿用已有的 %d 個專案資料夾。",
+      "ja": "既存のプロジェクトフォルダを引き継ぎます：%d 個。"
+    },
+    "作者": {
+      "en": "Author",
+      "zh-Hans": "作者",
+      "zh-Hant": "作者",
+      "ja": "作者"
+    },
+    "由 Sugar 维护的社区项目，非 OpenAI 官方客户端。": {
+      "en": "A community project maintained by Sugar, independent of OpenAI.",
+      "zh-Hans": "由 Sugar 维护的社区项目，非 OpenAI 官方客户端。",
+      "zh-Hant": "由 Sugar 維護的社群專案，非 OpenAI 官方客戶端。",
+      "ja": "Sugar が保守するコミュニティプロジェクトです。OpenAI の公式クライアントではありません。"
+    },
+    "会话活动如何统计": {
+      "en": "How session activity is counted",
+      "zh-Hans": "会话活动如何统计",
+      "zh-Hant": "對話活動如何統計",
+      "ja": "セッション活動の集計方法"
+    },
+    "概览按本次连接启动后的工具调用统计。最近 10 分钟为 600 秒，包含仍在进行的调用；活跃记录不表示会话仍在线。没有会话标识的调用会单独说明，重新连接后重新统计。": {
+      "en": "Overview counts tool calls since this connection started. The last 10 minutes means 600 seconds and includes calls still in progress. Recent activity does not mean a session is still online. Calls without a session identifier are noted separately. Statistics reset when you reconnect.",
+      "zh-Hans": "概览按本次连接启动后的工具调用统计。最近 10 分钟为 600 秒，包含仍在进行的调用；活跃记录不表示会话仍在线。没有会话标识的调用会单独说明，重新连接后重新统计。",
+      "zh-Hant": "概覽統計本次連線啟動後的工具呼叫。最近 10 分鐘為 600 秒，包含仍在進行的呼叫；活動記錄不表示對話仍在線上。沒有對話識別碼的呼叫會另行說明，重新連線後重新統計。",
+      "ja": "概要には、今回の接続を開始してからのツール呼び出しを集計します。過去 10 分間は 600 秒で、実行中の呼び出しも含みます。活動履歴はセッションが現在オンラインであることを意味しません。セッション識別子のない呼び出しは別に案内します。再接続すると集計をリセットします。"
+    },
+    "创作项目": {
+      "en": "Creative project",
+      "zh-Hans": "创作项目",
+      "zh-Hant": "創作專案",
+      "ja": "制作プロジェクト"
+    },
+    "工作资料": {
+      "en": "Work documents",
+      "zh-Hans": "工作资料",
+      "zh-Hant": "工作資料",
+      "ja": "仕事の資料"
+    },
+    "只允许对预览数据执行交互自检。": {
+      "en": "Interaction self-tests can only use preview data.",
+      "zh-Hans": "只允许对预览数据执行交互自检。",
+      "zh-Hant": "只允許對預覽資料執行互動自我測試。",
+      "ja": "操作の自己テストはプレビューデータでのみ実行できます。"
+    },
+    "预览工作电脑": {
+      "en": "Preview work computer",
+      "zh-Hans": "预览工作电脑",
+      "zh-Hant": "預覽工作電腦",
+      "ja": "プレビュー用の仕事のパソコン"
+    },
+    "首次配置自检失败。": {
+      "en": "Initial setup self-test failed.",
+      "zh-Hans": "首次配置自检失败。",
+      "zh-Hant": "首次設定自我測試失敗。",
+      "ja": "初期設定の自己テストに失敗しました。"
+    },
+    "权限表达自检失败。": {
+      "en": "Permission description self-test failed.",
+      "zh-Hans": "权限表达自检失败。",
+      "zh-Hant": "權限說明自我測試失敗。",
+      "ja": "権限表示の自己テストに失敗しました。"
+    },
+    "隐藏设置保留失败。": {
+      "en": "Hidden settings were not preserved.",
+      "zh-Hans": "隐藏设置保留失败。",
+      "zh-Hant": "隱藏設定未能保留。",
+      "ja": "非表示の設定を保持できませんでした。"
+    },
+    "取消编辑失败。": {
+      "en": "Discarding edits failed.",
+      "zh-Hans": "取消编辑失败。",
+      "zh-Hant": "取消編輯失敗。",
+      "ja": "編集の取り消しに失敗しました。"
+    },
+    "我的工作电脑": {
+      "en": "My work computer",
+      "zh-Hans": "我的工作电脑",
+      "zh-Hant": "我的工作電腦",
+      "ja": "仕事用のパソコン"
+    },
+    "连接设置保存失败。": {
+      "en": "Connection settings could not be saved.",
+      "zh-Hans": "连接设置保存失败。",
+      "zh-Hant": "連線設定儲存失敗。",
+      "ja": "接続設定を保存できませんでした。"
+    },
+    "并发冲突未处理。": {
+      "en": "Concurrent changes were not handled.",
+      "zh-Hans": "并发冲突未处理。",
+      "zh-Hant": "未處理同時修改衝突。",
+      "ja": "同時変更の競合を処理できませんでした。"
+    },
+    "环境检查失败。": {
+      "en": "Environment check failed.",
+      "zh-Hans": "环境检查失败。",
+      "zh-Hant": "環境檢查失敗。",
+      "ja": "環境チェックに失敗しました。"
+    },
+    "运行记录失败。": {
+      "en": "Loading logs failed.",
+      "zh-Hans": "运行记录失败。",
+      "zh-Hant": "讀取執行記錄失敗。",
+      "ja": "ログの読み込みに失敗しました。"
+    },
+    "请检查这一项设置。": {
+      "en": "Please check this setting.",
+      "zh-Hans": "请检查这一项设置。",
+      "zh-Hant": "請檢查這一項設定。",
+      "ja": "この設定を確認してください。"
+    },
+    "诊断信息": {
+      "en": "Diagnostic details",
+      "zh-Hans": "诊断信息",
+      "zh-Hant": "診斷資訊",
+      "ja": "診断情報"
+    },
+    "使用具有 Tunnels Read + Use 权限的连接密钥；无需为模型调用配置密钥。": {
+      "en": "Use a connection key with Tunnels Read + Use permissions. A key for model API calls is not required.",
+      "ja": "Tunnels Read + Use 権限のある接続キーを使用します。モデル API 呼び出し用のキーは必要ありません。",
+      "zh-Hans": "使用具有 Tunnels Read + Use 权限的连接密钥；无需为模型调用配置密钥。",
+      "zh-Hant": "使用具有 Tunnels Read + Use 權限的連線金鑰；無需設定模型呼叫金鑰。"
+    },
+    "在 OpenAI 中创建本机连接，取得 Tunnel ID 和连接密钥（Runtime key）。连接密钥需要 Tunnels Read + Use 权限。将两项内容粘贴到“连接设置”，密钥会写入 macOS 钥匙串。": {
+      "en": "Create a local connection in OpenAI and obtain a Tunnel ID and Runtime key. The key needs Tunnels Read + Use permissions. Paste both values into Connection; the key will be stored in macOS Keychain.",
+      "ja": "OpenAI でローカル接続を作成し、Tunnel ID と Runtime key を取得します。キーには Tunnels Read + Use 権限が必要です。「接続」に両方を貼り付けると、キーは macOS キーチェーンに保存されます。",
+      "zh-Hans": "在 OpenAI 中创建本机连接，取得 Tunnel ID 和连接密钥（Runtime key）。连接密钥需要 Tunnels Read + Use 权限。将两项内容粘贴到“连接设置”，密钥会写入 macOS 钥匙串。",
+      "zh-Hant": "在 OpenAI 中建立本機連線，取得 Tunnel ID 和連線金鑰（Runtime key）。連線金鑰需要 Tunnels Read + Use 權限。將兩項內容貼上到「連線設定」，金鑰會寫入 macOS 鑰匙圈。"
+    },
+    "设置已经保存，连接还需要处理。请查看诊断信息或运行记录。": {
+      "en": "Settings have been saved, but the connection needs attention. Check the diagnostic details or logs.",
+      "zh-Hans": "设置已经保存，连接还需要处理。请查看诊断信息或运行记录。",
+      "zh-Hant": "設定已儲存，但連線仍需要處理。請查看診斷資訊或執行記錄。",
+      "ja": "設定は保存されましたが、接続への対応が必要です。診断情報またはログを確認してください。"
+    },
+    "请检查标出的设置后再试。": {
+      "en": "Check the highlighted settings, then try again.",
+      "zh-Hans": "请检查标出的设置后再试。",
+      "zh-Hant": "請檢查標出的設定後再試。",
+      "ja": "表示された設定を確認して、もう一度お試しください。"
+    },
+    "连接尚未就绪。请检查连接设置或运行记录。": {
+      "en": "The connection is not ready. Check the connection settings or logs.",
+      "zh-Hans": "连接尚未就绪。请检查连接设置或运行记录。",
+      "zh-Hant": "連線尚未就緒。請檢查連線設定或執行記錄。",
+      "ja": "接続の準備ができていません。接続設定またはログを確認してください。"
+    },
+    "操作还需要处理。请查看诊断信息或运行记录。": {
+      "en": "The action needs attention. Check the diagnostic details or logs.",
+      "zh-Hans": "操作还需要处理。请查看诊断信息或运行记录。",
+      "zh-Hant": "操作仍需要處理。請查看診斷資訊或執行記錄。",
+      "ja": "操作への対応が必要です。診断情報またはログを確認してください。"
+    }
+  }
+}

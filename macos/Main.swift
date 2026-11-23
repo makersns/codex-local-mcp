@@ -6,12 +6,15 @@ struct CodexLocalMCPMain {
     @MainActor static func main() {
         do {
             let options = try LaunchOptions()
+            Localization.shared.configure(preview: options.preview || options.selfTest,
+                                          language: options.selfTest ? .zhHans : options.previewLanguage)
             if options.selfTest {
                 Task.detached {
                     do {
                         var checks = try NativeSelfTests.run()
                         checks += try await NativeSelfTests.runBridge()
-                        emit(["ok": true, "scope": "native model, protocol and subprocess transport", "checks": checks])
+                        checks += try await NativeSelfTests.runLocalization()
+                        emit(["ok": true, "scope": "native model, protocol, subprocess transport and four-language localization", "checks": checks])
                         exit(0)
                     } catch {
                         emit(["ok": false, "error": error.localizedDescription])
@@ -45,6 +48,7 @@ final class DesktopApplicationDelegate: NSObject, NSApplicationDelegate, NSWindo
     let model: AppModel
     private var window: NSWindow?
     private var askingToClose = false
+    private var languageObserver: NSObjectProtocol?
 
     init(options: LaunchOptions) {
         self.options = options
@@ -54,11 +58,18 @@ final class DesktopApplicationDelegate: NSObject, NSApplicationDelegate, NSWindo
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         configureMenu()
+        languageObserver = NotificationCenter.default.addObserver(forName: Localization.didChangeNotification,
+                                                                   object: nil, queue: .main) { [weak self] _ in
+            Task { @MainActor in
+                self?.configureMenu()
+                self?.updateWindowTitle()
+            }
+        }
         let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: options.windowWidth, height: options.windowHeight),
                               styleMask: [.titled, .closable, .miniaturizable, .resizable],
                               backing: .buffered, defer: false)
         self.window = window
-        window.title = options.preview ? "Codex Local MCP · 界面预览" : "Codex Local MCP"
+        window.title = options.preview ? L("Codex Local MCP · 界面预览") : "Codex Local MCP"
         window.contentMinSize = NSSize(width: 920, height: 640)
         window.titlebarAppearsTransparent = true
         window.backgroundColor = .white
@@ -173,41 +184,45 @@ final class DesktopApplicationDelegate: NSObject, NSApplicationDelegate, NSWindo
         return .terminateLater
     }
 
+    private func updateWindowTitle() {
+        window?.title = options.preview ? L("Codex Local MCP · 界面预览") : "Codex Local MCP"
+    }
+
     private func configureMenu() {
         let menu = NSMenu()
         let appItem = NSMenuItem()
         menu.addItem(appItem)
         let application = NSMenu()
-        application.addItem(withTitle: "关于 Codex Local MCP", action: #selector(showAbout), keyEquivalent: "").target = self
+        application.addItem(withTitle: L("关于 Codex Local MCP"), action: #selector(showAbout), keyEquivalent: "").target = self
         application.addItem(.separator())
-        application.addItem(withTitle: "隐藏 Codex Local MCP", action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
+        application.addItem(withTitle: L("隐藏 Codex Local MCP"), action: #selector(NSApplication.hide(_:)), keyEquivalent: "h")
         application.addItem(.separator())
-        application.addItem(withTitle: "退出 Codex Local MCP", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+        application.addItem(withTitle: L("退出 Codex Local MCP"), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         appItem.submenu = application
 
-        let editItem = NSMenuItem(title: "编辑", action: nil, keyEquivalent: "")
-        let edit = NSMenu(title: "编辑")
+        let editItem = NSMenuItem(title: L("编辑"), action: nil, keyEquivalent: "")
+        let edit = NSMenu(title: L("编辑"))
         for (title, selector, key) in [
             ("撤销", Selector(("undo:")), "z"),
             ("剪切", #selector(NSText.cut(_:)), "x"),
             ("复制", #selector(NSText.copy(_:)), "c"),
             ("粘贴", #selector(NSText.paste(_:)), "v"),
             ("全选", #selector(NSText.selectAll(_:)), "a")
-        ] { edit.addItem(withTitle: title, action: selector, keyEquivalent: key) }
+        ] { edit.addItem(withTitle: L(title), action: selector, keyEquivalent: key) }
         editItem.submenu = edit
         menu.addItem(editItem)
 
-        let windowItem = NSMenuItem(title: "窗口", action: nil, keyEquivalent: "")
-        let windows = NSMenu(title: "窗口")
-        windows.addItem(withTitle: "最小化", action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m")
-        windows.addItem(withTitle: "关闭窗口", action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w")
+        let windowItem = NSMenuItem(title: L("窗口"), action: nil, keyEquivalent: "")
+        let windows = NSMenu(title: L("窗口"))
+        windows.addItem(withTitle: L("最小化"), action: #selector(NSWindow.performMiniaturize(_:)), keyEquivalent: "m")
+        windows.addItem(withTitle: L("关闭窗口"), action: #selector(NSWindow.performClose(_:)), keyEquivalent: "w")
         windowItem.submenu = windows
         menu.addItem(windowItem)
         NSApp.windowsMenu = windows
 
-        let helpItem = NSMenuItem(title: "帮助", action: nil, keyEquivalent: "")
-        let help = NSMenu(title: "帮助")
-        help.addItem(withTitle: "Codex Local MCP 使用帮助", action: #selector(showHelp), keyEquivalent: "?").target = self
+        let helpItem = NSMenuItem(title: L("帮助"), action: nil, keyEquivalent: "")
+        let help = NSMenu(title: L("帮助"))
+        help.addItem(withTitle: L("Codex Local MCP 使用帮助"), action: #selector(showHelp), keyEquivalent: "?").target = self
         helpItem.submenu = help
         menu.addItem(helpItem)
         NSApp.mainMenu = menu

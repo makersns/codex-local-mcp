@@ -7,6 +7,17 @@ struct AppNotice {
     var title: String
     var detail: String
     var retryable = false
+    var errorCode = ""
+    var saved = false
+    var fallbackDetail: String {
+        if saved { return "设置已经保存，连接还需要处理。请查看诊断信息或运行记录。" }
+        switch errorCode {
+        case "conflict": return "设置已被其他操作修改，请重新载入后再保存。"
+        case "validation": return "请检查标出的设置后再试。"
+        case "connection_failed": return "连接尚未就绪。请检查连接设置或运行记录。"
+        default: return "操作还需要处理。请查看诊断信息或运行记录。"
+        }
+    }
 }
 
 @MainActor
@@ -90,7 +101,7 @@ final class AppModel: ObservableObject {
     }
     var visibleFolderName: String {
         let value = URL(fileURLWithPath: folderPath).lastPathComponent
-        return value.isEmpty ? "新的文件夹" : value
+        return value.isEmpty ? L("新的文件夹") : value
     }
 
     func prepare() async {
@@ -147,10 +158,15 @@ final class AppModel: ObservableObject {
         guard prepared else { return }
         do {
             let reply = try await request("snapshot")
-            guard reply.ok else { if !silent { showError(reply) }; return }
+            guard reply.ok else {
+                snapshot.raw["activity"] = ActivitySnapshot.unavailable(reason: "unavailable", message: "暂时无法更新活动统计，连接恢复后会自动刷新。")
+                if !silent { showError(reply) }
+                return
+            }
             snapshot = DesktopSnapshot(raw: reply.data)
             if hydrate || !connectionDirty { hydrateConnection() }
         } catch {
+            snapshot.raw["activity"] = ActivitySnapshot.unavailable(reason: "unavailable", message: "暂时无法更新活动统计，连接恢复后会自动刷新。")
             if !silent {
                 notice = AppNotice(kind: .error, title: "暂时无法更新状态",
                                    detail: error.localizedDescription, retryable: true)
@@ -159,7 +175,7 @@ final class AppModel: ObservableObject {
     }
 
     private func hydrateConnection() {
-        name = snapshot.computerName.isEmpty ? (options.preview ? "我的 MacBook" : Host.current().localizedName ?? "我的 Mac") : snapshot.computerName
+        name = snapshot.computerName.isEmpty ? (options.preview ? L("我的 MacBook") : Host.current().localizedName ?? L("我的 Mac")) : snapshot.computerName
         tunnelID = snapshot.tunnelID
         originalConnection = [name, tunnelID]
         connectionRevision = snapshot.revision
@@ -231,9 +247,9 @@ final class AppModel: ObservableObject {
 
     func pickFolder(forFirstSetup: Bool = false, replacing: Bool = false) async {
         let panel = NSOpenPanel()
-        panel.title = forFirstSetup ? "选择第一个项目文件夹" : "选择项目文件夹"
-        panel.message = "选择希望 AI 协助处理的文件夹。你可以稍后调整访问权限。"
-        panel.prompt = "选择文件夹"
+        panel.title = L(forFirstSetup ? "选择第一个项目文件夹" : "选择项目文件夹")
+        panel.message = L("选择希望 AI 协助处理的文件夹。你可以稍后调整访问权限。")
+        panel.prompt = L("选择文件夹")
         panel.canChooseFiles = false
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
@@ -312,7 +328,7 @@ final class AppModel: ObservableObject {
                                detail: "至少保留一个文件夹；要暂停使用，请在连接概览中停止连接。")
             return
         }
-        guard await confirm(title: "移除“\(visibleFolderName)”的访问权限？",
+        guard await confirm(title: LF("移除“%@”的访问权限？", visibleFolderName),
                             detail: "磁盘上的文件会保留。移除访问后会立即重新连接，正在运行的任务可能中断。",
                             action: "移除并重启", cancel: "保留") else { return }
         var document = folderDocument
@@ -402,7 +418,7 @@ final class AppModel: ObservableObject {
     func requestPermission(_ kind: String) async {
         guard !isBusy else { return }
         let title = kind == "screen_capture" ? "屏幕录制" : kind == "post_event" ? "键鼠事件" : "辅助功能"
-        guard await confirm(title: "申请\(title)权限？",
+        guard await confirm(title: LF("申请%@权限？", L(title)),
                             detail: "这是可选权限。系统会要求你确认授权，完成后请返回此处重新检查。",
                             action: "继续申请", cancel: "取消") else { return }
         busyLabel = "正在申请系统授权…"
@@ -445,6 +461,7 @@ final class AppModel: ObservableObject {
             "tunnels": "https://platform.openai.com/settings/organization/tunnels",
             "keys": "https://platform.openai.com/settings/organization/api-keys",
             "repository": "https://github.com/makersns/codex-local-mcp",
+            "author": "https://sugar.makersns.com/",
             "connection_guide": "https://developers.openai.com/api/docs/guides/secure-mcp-tunnels",
             "screen_capture": "x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture",
             "accessibility": "x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility",
@@ -462,16 +479,17 @@ final class AppModel: ObservableObject {
     private func showError(_ reply: APIReply) {
         fieldErrors = reply.fieldErrors
         notice = AppNotice(kind: .error, title: reply.saved ? "设置已保存，连接还需处理" : "还差一步",
-                           detail: reply.message, retryable: flag(reply.error["retryable"]))
+                           detail: reply.message, retryable: flag(reply.error["retryable"]),
+                           errorCode: string(reply.error["code"]), saved: reply.saved)
     }
 
     func confirm(title: String, detail: String, action: String, cancel: String) async -> Bool {
         let alert = NSAlert()
-        alert.messageText = title
-        alert.informativeText = detail
+        alert.messageText = L(title)
+        alert.informativeText = L(detail)
         alert.alertStyle = .warning
-        alert.addButton(withTitle: action)
-        alert.addButton(withTitle: cancel)
+        alert.addButton(withTitle: L(action))
+        alert.addButton(withTitle: L(cancel))
         alert.buttons.last?.keyEquivalent = "\r"
         alert.buttons.first?.keyEquivalent = ""
         if let window = NSApp.keyWindow {
@@ -517,6 +535,8 @@ final class AppModel: ObservableObject {
                 status["title"] = action == "stop" ? "连接已停止" : "本机已就绪"
                 status["managed"] = action != "stop"
                 raw["status"] = status
+                raw["activity"] = action == "stop" ? ActivitySnapshot.unavailable(
+                    reason: "not_running", message: "启动连接后，就能在这里查看会话活动。") : ActivitySnapshot.preview(sample: false)
                 previewGeneration += 1
                 raw["revision"] = String(format: "%064x", previewGeneration)
                 snapshot = DesktopSnapshot(raw: raw)

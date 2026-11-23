@@ -57,7 +57,7 @@ def _memory_worker(service, operation):
 
 
 class DiagnosticsWithoutSocketsTests(unittest.TestCase):
-    def test_permission_lane_is_independent_of_four_busy_execution_slots(self):
+    def test_permission_and_activity_lanes_are_independent_of_busy_execution_slots(self):
         entered, release = threading.Event(), threading.Event()
         count_lock = threading.Lock()
         count = 0
@@ -73,12 +73,14 @@ class DiagnosticsWithoutSocketsTests(unittest.TestCase):
             "slow": slow, "ordinary": lambda: {"ran": True},
             "permissions_status": lambda: {"checked": True},
             "permissions_request": lambda: {"request_sent": True},
+            "activity_snapshot": lambda: {"activity_checked": True},
         })
         workers = [_memory_worker(service, "slow") for _ in range(4)]
         try:
             self.assertTrue(entered.wait(1))
             for operation, field in [("permissions_status", "checked"),
-                                     ("permissions_request", "request_sent")]:
+                                     ("permissions_request", "request_sent"),
+                                     ("activity_snapshot", "activity_checked")]:
                 connection, worker = _memory_worker(service, operation)
                 worker.join(0.5)
                 self.assertFalse(worker.is_alive(), operation)

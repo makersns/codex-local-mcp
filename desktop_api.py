@@ -299,9 +299,125 @@ class DesktopAPI:
         return {**base, "state": "stopped", "title": "当前未连接",
                 "message": "设置已保留，点击“开始连接”即可继续使用。"}
 
+    @staticmethod
+    def _activity_unavailable(reason, message):
+        return {
+            "available": False, "reason": reason, "message": message,
+            "window_seconds": 600, "observed_at": None, "statistics_started_at": None,
+            "instance_id": None, "active_sessions": None, "recent_sessions": None,
+            "active_calls": None, "unknown_active_calls": None,
+            "unknown_recent_calls": None, "running_tasks": None,
+            "metadata_seen": None, "coverage_complete": None, "capacity_limited": None,
+            "last_activity_at": None, "last_operation": None, "last_workspace": None,
+            "sessions": [], "sessions_truncated": False,
+        }
+
+    def _activity(self, document, status):
+        unavailable = self._activity_unavailable
+        if self.isolated:
+            return unavailable("isolated", "隔离模式未连接日常后台，无法读取会话活动。")
+        if not status.get("managed") or status.get("state") not in {"ready", "connecting"}:
+            return unavailable("not_running", "连接就绪后，这里会显示会话活动。")
+        try:
+            reply = desktop.permissions.backend_request(document, "activity_snapshot", timeout=1.0)
+        except Exception:
+            return unavailable("unavailable", "后台暂时无法提供会话统计，请稍后刷新或更新并重新连接。")
+        if not isinstance(reply, dict):
+            return unavailable("invalid_response", "会话统计暂时无法读取，请稍后刷新。")
+        if reply.get("ok") is not True:
+            error = reply.get("error")
+            code = error.get("code") if isinstance(error, dict) else None
+            if code == "unknown_operation":
+                return unavailable("unsupported", "当前后台尚不支持会话统计，更新并重新连接后即可查看。")
+            return unavailable("unavailable", "暂时无法更新会话统计，请稍后刷新；未把旧数据作为实时结果。")
+        # Only allow the frozen aggregate contract through this bridge. Never
+        # relay arbitrary diagnostic strings, fields or session identifiers.
+        operations = {"workspace_list", "list_directory", "read_file", "search_text",
+                      "write_file", "edit_file", "run_command", "process_list",
+                      "read_process", "send_process_input", "stop_process",
+                      "office_status", "office_verify", "macos_permissions_status",
+                      "macos_permissions_request"}
+        counts = ("active_sessions", "recent_sessions", "active_calls",
+                  "unknown_active_calls", "unknown_recent_calls", "running_tasks")
+        flags = ("metadata_seen", "coverage_complete", "capacity_limited", "sessions_truncated")
+
+        def integer(value):
+            return type(value) is int and 0 <= value <= 2 ** 53 - 1
+
+        def timestamp(value, nullable=False):
+            if value is None:
+                return nullable
+            if not isinstance(value, str) or len(value) > 64:
+                return False
+            try:
+                from datetime import datetime
+                return datetime.fromisoformat(value.replace("Z", "+00:00")).utcoffset() is not None
+            except (ValueError, OverflowError):
+                return False
+
+        def workspace(value):
+            return value is None or isinstance(value, str) and bool(_ID.fullmatch(value))
+
+        def operation(value, nullable=False):
+            return value is None and nullable or isinstance(value, str) and value in operations
+
+        valid = (reply.get("available") is True and type(reply.get("window_seconds")) is int
+                 and reply["window_seconds"] == 600
+                 and isinstance(reply.get("instance_id"), str)
+                 and bool(re.fullmatch(r"[a-f0-9]{32}", reply["instance_id"]))
+                 and all(integer(reply.get(name)) for name in counts)
+                 and all(type(reply.get(name)) is bool for name in flags)
+                 and timestamp(reply.get("observed_at"))
+                 and timestamp(reply.get("statistics_started_at"))
+                 and timestamp(reply.get("last_activity_at"), nullable=True)
+                 and operation(reply.get("last_operation"), nullable=True)
+                 and workspace(reply.get("last_workspace"))
+                 and isinstance(reply.get("sessions"), list) and len(reply["sessions"]) <= 32)
+        if valid:
+            valid = (reply["active_sessions"] <= reply["recent_sessions"] <= 256
+                     and reply["active_sessions"] + reply["unknown_active_calls"] <= reply["active_calls"]
+                     and (reply["metadata_seen"] or reply["recent_sessions"] == 0)
+                     and reply["coverage_complete"] == (not (reply["unknown_active_calls"] or reply["unknown_recent_calls"]
+                             or reply["capacity_limited"])))
+        rows = []
+        if valid:
+            seen = set()
+            for row in reply["sessions"]:
+                if (not isinstance(row, dict) or not integer(row.get("number"))
+                        or row["number"] == 0 or row["number"] in seen
+                        or not integer(row.get("active_calls"))
+                        or row["active_calls"] > reply["active_calls"]
+                        or not timestamp(row.get("last_activity_at"))
+                        or not operation(row.get("last_operation"))
+                        or not workspace(row.get("last_workspace"))):
+                    valid = False
+                    break
+                seen.add(row["number"])
+                rows.append({name: row.get(name) for name in
+                             ("number", "active_calls", "last_activity_at",
+                              "last_operation", "last_workspace")})
+            valid = valid and len(rows) <= reply["recent_sessions"]
+        if not valid:
+            return unavailable("invalid_response", "会话统计暂时无法读取，请稍后刷新。")
+        result = {name: reply.get(name) for name in
+                  (*counts, *flags, "window_seconds", "observed_at", "statistics_started_at",
+                   "instance_id", "last_activity_at", "last_operation", "last_workspace")}
+        message = "本次连接启动后统计；会话活动不代表聊天窗口持续在线。"
+        if result["capacity_limited"]:
+            message = "活动较多，部分来源未纳入统计；显示的是当前可识别的会话数。"
+        elif result["unknown_active_calls"] or result["unknown_recent_calls"]:
+            message = "部分调用未携带会话标识；已识别会话数未包含这些来源。"
+        elif result["last_activity_at"] is None:
+            message = "本次连接启动后尚未收到工具调用。"
+        elif result["recent_sessions"] == 0:
+            message = "最近 10 分钟暂无工具调用。"
+        result.update({"available": True, "reason": None, "message": message, "sessions": rows})
+        return result
+
     def snapshot(self):
         settings, document, revision, _, _ = self._state()
         runtime = self._runtime()
+        status = self._status(settings, document, runtime)
         return {
             "app": {"name": "Codex Local MCP", "version": desktop.VERSION, "author": "Sugar"},
             "connection": {
@@ -311,7 +427,7 @@ class DesktopAPI:
                 "tunnel_id": (settings or {}).get("tunnel_id", ""),
                 "credential_status": self._credential_status(settings),
             },
-            "status": self._status(settings, document, runtime),
+            "status": status, "activity": self._activity(document, status),
             "workspace_document": document, "revision": revision, "runtime": runtime,
         }
 

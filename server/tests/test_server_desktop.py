@@ -97,7 +97,8 @@ class DesktopServerTests(unittest.IsolatedAsyncioTestCase):
             server = build_server(self.config(execute=False))
             handlers = diagnostics.call_args.args[1]
             self.assertEqual(set(handlers), {
-                "permissions_status", "permissions_request", "office_status", "office_verify"})
+                "permissions_status", "permissions_request", "office_status", "office_verify",
+                "activity_snapshot"})
             self.assertFalse(handlers["permissions_status"]()["supported"])
             check.assert_called_once_with()
             for operation, payload in [("permissions_request", {"kind": "accessibility"}),

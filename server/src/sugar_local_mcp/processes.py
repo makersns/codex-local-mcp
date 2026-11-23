@@ -194,6 +194,11 @@ class ProcessManager:
             "cleanup_error": job.cleanup_error,
         }
 
+    def running_count(self) -> int:
+        """Count live command leaders without copying argv, output or history."""
+        with self._lock:
+            return sum(job.process.poll() is None for job in self._jobs.values())
+
     def start(
         self,
         argv: Sequence[str],

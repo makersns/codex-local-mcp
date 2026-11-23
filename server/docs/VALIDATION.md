@@ -4,7 +4,7 @@
 
 ## 本轮结论
 
-当前 0.6.0 核心源码完整回归运行 **124 项：123 通过、1 跳过、0 失败，12.812 秒**。测试包含真实 stdio 初始化和中文文件读取、MCP 工具发现、文件写入冲突、受管进程、HTTP Host/Origin 防护、诊断 IPC、权限与 Office 检测。
+当前 0.6.0 核心源码完整回归运行 **140 项：139 通过、1 跳过、0 失败，14.087 秒**。测试包含真实 stdio 初始化和中文文件读取、MCP 工具发现、文件写入冲突、受管进程、HTTP Host/Origin 防护、诊断 IPC、权限与 Office 检测。
 
 本轮使用 macOS 15.5 / arm64 的既有 Python 3.12 依赖环境，通过 `PYTHONPATH=server/src` 加载本仓库 0.6.0 源码。没有替换该解释器中原有服务包，没有把源码回归称为全新机器安装验证。测试使用独立临时项目和本地进程，不使用用户文档或真实隧道凭据。
 
@@ -18,7 +18,7 @@
 PYTHONPATH=server/src python -B -m unittest discover -s server/tests -v
 ```
 
-实际本机原始日志留在维护仓库的私有测试目录 `.data/native-desktop-0.6.0/release-build/server-unittest-20261123-0815.log`，不作为应用数据或公开源码提交。
+实际本机原始日志留在维护仓库的私有测试目录 `.data/native-desktop-0.6.0/activity-core-regression.txt`，不作为应用数据或公开源码提交。
 
 ## 验证范围
 
@@ -32,6 +32,7 @@ PYTHONPATH=server/src python -B -m unittest discover -s server/tests -v
 | 受管进程 | 启停、stdin/EOF、超时、分页输出、退出清理及凭据环境隔离通过 |
 | HTTP | 非法 Host 与 Origin 拒绝；合法本机请求通过 |
 | 诊断 IPC | 请求大小、并发上限、所有权、超时与关闭清理通过 |
+| 会话活动 | 真实 stdio 元数据、并发去重、未知来源、时间窗口、容量与重启边界、私有 IPC 通过 |
 | macOS 权限 | 仅检查不弹窗、明确请求、未知状态和异常脱敏通过 |
 | Office 检测 | 环境分离、格式分别选择解释器、缓存、取消与超时通过 |
 

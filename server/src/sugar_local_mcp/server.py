@@ -9,13 +9,14 @@ from functools import partial
 from typing import Annotated, Callable, Literal
 
 import anyio
-from mcp.server.mcpserver import MCPServer
+from mcp.server.mcpserver import Context, MCPServer
 from mcp.server.mcpserver.exceptions import ToolError
 from mcp.server.transport_security import TransportSecuritySettings
 from mcp.types import ToolAnnotations
 from pydantic import Field
 
 from . import __version__
+from .activity import ActivityTracker
 from .audit import AuditLog
 from .config import Config
 from .filesystem import FileService
@@ -79,6 +80,7 @@ def build_server(config: Config) -> MCPServer:
     processes = ProcessManager()
     audit = AuditLog(config.state_dir)
     office = OfficeEnvironment(config.state_dir)
+    activity = ActivityTracker()
     job_workspaces: dict[str, str] = {}
     job_lock = threading.Lock()
 
@@ -100,7 +102,12 @@ def build_server(config: Config) -> MCPServer:
             return result
         return handler
 
+    def activity_snapshot() -> dict:
+        # Local polling is never routed through invoke or the audit log.
+        return activity.snapshot(running_tasks=processes.running_count())
+
     diagnostics = RuntimeDiagnostics(config.state_dir, {
+        "activity_snapshot": activity_snapshot,
         "permissions_status": gui_operation(
             "desktop_permissions_status", macos_permissions.status,
             requires_execution=False),
@@ -132,25 +139,33 @@ def build_server(config: Config) -> MCPServer:
                        log_level="WARNING")
 
     async def invoke(operation: str, function: Callable, *args,
-                     workspace: str | None = None, **kwargs) -> dict:
+                     context: Context, workspace: str | None = None, **kwargs) -> dict:
+        # Only configured IDs are diagnostic metadata. Invalid user input may
+        # contain paths or arbitrary content and must not reach activity/audit.
+        workspace = workspace if isinstance(workspace, str) and workspace in config.workspaces else None
+        call = activity.begin(context, operation, workspace)
         try:
-            result = await anyio.to_thread.run_sync(partial(function, *args, **kwargs))
-        except Exception as error:
+            try:
+                result = await anyio.to_thread.run_sync(partial(function, *args, **kwargs))
+            except Exception as error:
+                await anyio.to_thread.run_sync(partial(
+                    audit.record, operation, success=False, workspace=workspace,
+                    error_type=type(error).__name__))
+                if isinstance(error, (ValueError, OSError)):
+                    raise ToolError(f"{type(error).__name__}: {str(error)[:1600]}") from error
+                raise
             await anyio.to_thread.run_sync(partial(
-                audit.record, operation, success=False, workspace=workspace,
-                error_type=type(error).__name__))
-            if isinstance(error, (ValueError, OSError)):
-                raise ToolError(f"{type(error).__name__}: {str(error)[:1600]}") from error
-            raise
-        await anyio.to_thread.run_sync(partial(
-            audit.record, operation, success=result.get("ok") is not False,
-            workspace=workspace))
-        return result
+                audit.record, operation, success=result.get("ok") is not False,
+                workspace=workspace))
+            return result
+        finally:
+            # Also runs for protocol cancellation, BaseException and audit errors.
+            activity.finish(call)
 
     @server.tool(annotations=READ)
-    async def workspace_list() -> dict:
+    async def workspace_list(context: Context) -> dict:
         """List configured project IDs, file access and execution permissions."""
-        result = await invoke("workspace_list", files.workspaces)
+        result = await invoke("workspace_list", files.workspaces, context=context)
         result["server_version"] = __version__
         result["execution_is_os_sandboxed"] = False
         result["execution_note"] = "Commands use this process's OS permissions; use an isolated container or VM for confinement."
@@ -162,47 +177,47 @@ def build_server(config: Config) -> MCPServer:
         return result
 
     @server.tool(annotations=READ)
-    async def list_directory(workspace: str, path: str = ".",
+    async def list_directory(workspace: str, context: Context, path: str = ".",
                              offset: Annotated[int, Field(ge=0)] = 0,
                              limit: Annotated[int, Field(ge=1, le=500)] = 200) -> dict:
         """List one project directory in bounded pages; excluded paths are omitted."""
         return await invoke("list_directory", files.list_directory, workspace, path,
-                            offset=offset, limit=limit, workspace=workspace)
+                            offset=offset, limit=limit, workspace=workspace, context=context)
 
     @server.tool(annotations=READ)
-    async def read_file(workspace: str, path: str,
+    async def read_file(workspace: str, path: str, context: Context,
                         start_line: Annotated[int, Field(ge=1)] = 1,
                         max_lines: Annotated[int, Field(ge=1, le=1000)] = 200) -> dict:
         """Read a bounded UTF-8 file segment and its complete-file SHA-256."""
         return await invoke("read_file", files.read_file, workspace, path,
-                            start_line=start_line, max_lines=max_lines, workspace=workspace)
+                            start_line=start_line, max_lines=max_lines, workspace=workspace, context=context)
 
     @server.tool(annotations=READ)
-    async def search_text(workspace: str, query: str, path: str = ".",
+    async def search_text(workspace: str, query: str, context: Context, path: str = ".",
                           offset: Annotated[int, Field(ge=0)] = 0,
                           limit: Annotated[int, Field(ge=1, le=500)] = 100) -> dict:
         """Search literal text in bounded project traversal; inspect truncation fields."""
         return await invoke("search_text", files.search_text, workspace, query,
-                            path=path, offset=offset, limit=limit, workspace=workspace)
+                            path=path, offset=offset, limit=limit, workspace=workspace, context=context)
 
     if config.any_write:
         @server.tool(annotations=WRITE)
         async def write_file(workspace: str, path: str, content: str,
-                             expected_sha256: str) -> dict:
+                             expected_sha256: str, context: Context) -> dict:
             """Create or replace UTF-8 text with backup and optimistic concurrency check.
 
             Pass the current complete-file SHA-256, or 'missing' to create only.
             This mutates the user's project and requires allow_write locally.
             """
             return await invoke("write_file", files.write_file, workspace, path,
-                                content, expected_sha256, workspace=workspace)
+                                content, expected_sha256, workspace=workspace, context=context)
 
         @server.tool(annotations=WRITE)
         async def edit_file(workspace: str, path: str, old_text: str, new_text: str,
-                            expected_sha256: str) -> dict:
+                            expected_sha256: str, context: Context) -> dict:
             """Replace exactly one text occurrence after checking the whole-file hash."""
             return await invoke("edit_file", files.edit_file, workspace, path,
-                                old_text, new_text, expected_sha256, workspace=workspace)
+                                old_text, new_text, expected_sha256, workspace=workspace, context=context)
 
     if config.any_exec:
         def check_workspace(workspace: str):
@@ -223,7 +238,7 @@ def build_server(config: Config) -> MCPServer:
             return workspace
 
         @server.tool(annotations=EXEC)
-        async def run_command(workspace: str, argv: list[str], cwd: str = ".",
+        async def run_command(workspace: str, argv: list[str], context: Context, cwd: str = ".",
                               timeout_seconds: Annotated[int, Field(ge=1, le=86400)] = 300) -> dict:
             """Start a local program and return a job ID immediately.
 
@@ -247,13 +262,13 @@ def build_server(config: Config) -> MCPServer:
                 result["workspace"] = workspace
                 return result
 
-            return await invoke("run_command", start, workspace=workspace)
+            return await invoke("run_command", start, workspace=workspace, context=context)
 
         @server.tool(annotations=READ)
-        async def process_list(offset: Annotated[int, Field(ge=0, le=100)] = 0,
+        async def process_list(context: Context, offset: Annotated[int, Field(ge=0, le=100)] = 0,
                                limit: Annotated[int, Field(ge=1, le=50)] = 20) -> dict:
             """List retained jobs in bounded pages; jobs do not survive a restart."""
-            result = await invoke("process_list", processes.list)
+            result = await invoke("process_list", processes.list, context=context)
             total = len(result["jobs"])
             result["jobs"] = result["jobs"][offset:offset + limit]
             result["total"] = total
@@ -264,33 +279,44 @@ def build_server(config: Config) -> MCPServer:
             return result
 
         @server.tool(annotations=READ)
-        async def read_process(job_id: str,
+        async def read_process(job_id: str, context: Context,
                                cursor: Annotated[int, Field(ge=0)] = 0,
                                max_bytes: Annotated[int, Field(ge=4, le=65536)] = 16384) -> dict:
             """Read bounded stdout/stderr and job status; continue with next_cursor."""
-            workspace = check_job(job_id)
-            return await invoke("read_process", processes.read, job_id,
-                                cursor=cursor, max_bytes=max_bytes, workspace=workspace)
+            with job_lock:
+                workspace = job_workspaces.get(job_id)
+            def read() -> dict:
+                check_job(job_id)
+                return processes.read(job_id, cursor=cursor, max_bytes=max_bytes)
+            return await invoke("read_process", read,
+                                workspace=workspace, context=context)
 
         @server.tool(annotations=EXEC)
-        async def send_process_input(job_id: str, text: str = "", close: bool = False) -> dict:
+        async def send_process_input(job_id: str, context: Context, text: str = "", close: bool = False) -> dict:
             """Send text to a managed process's stdin pipe, optionally closing input.
 
             This can trigger writes or arbitrary process behavior. Not a PTY.
             Do not send credentials through chat.
             """
-            workspace = check_job(job_id)
-            return await invoke("send_process_input", processes.write_stdin, job_id,
-                                text=text, close=close, workspace=workspace)
+            with job_lock:
+                workspace = job_workspaces.get(job_id)
+            def send() -> dict:
+                check_job(job_id)
+                return processes.write_stdin(job_id, text=text, close=close)
+            return await invoke("send_process_input", send, workspace=workspace, context=context)
 
         @server.tool(annotations=EXEC)
-        async def stop_process(job_id: str) -> dict:
+        async def stop_process(job_id: str, context: Context) -> dict:
             """Terminate a managed job, escalating if necessary; POSIX includes its group."""
-            workspace = check_job(job_id)
-            return await invoke("stop_process", processes.stop, job_id, workspace=workspace)
+            with job_lock:
+                workspace = job_workspaces.get(job_id)
+            def stop() -> dict:
+                check_job(job_id)
+                return processes.stop(job_id)
+            return await invoke("stop_process", stop, workspace=workspace, context=context)
 
         @server.tool(annotations=READ)
-        async def office_status(refresh: bool = False) -> dict:
+        async def office_status(context: Context, refresh: bool = False) -> dict:
             """Detect this machine's Office apps and usable Python document libraries.
 
             Uses bounded local probes, not user documents. Select the Python in
@@ -298,10 +324,10 @@ def build_server(config: Config) -> MCPServer:
             The MCP venv may lack document libraries.
             Detected applications do not prove layout, conversion or GUI access.
             """
-            return await invoke("office_status", office.status, refresh=refresh)
+            return await invoke("office_status", office.status, refresh=refresh, context=context)
 
         @server.tool(annotations=READ)
-        async def office_verify(include_libreoffice: bool = False) -> dict:
+        async def office_verify(context: Context, include_libreoffice: bool = False) -> dict:
             """Verify synthetic XLSX/DOCX/PPTX round trips in local Python memory.
 
             Does not open user documents. The optional LibreOffice probe uses
@@ -309,21 +335,21 @@ def build_server(config: Config) -> MCPServer:
             document conversion, formula recalculation or visual fidelity.
             """
             return await invoke("office_verify", office.verify,
-                                include_libreoffice=include_libreoffice)
+                                include_libreoffice=include_libreoffice, context=context)
 
         @server.tool(annotations=READ)
-        async def macos_permissions_status() -> dict:
+        async def macos_permissions_status(context: Context) -> dict:
             """Check Accessibility, screen capture and event posting in this MCP process.
 
             Read-only: never prompts or captures the screen. False is the OS
             preflight result; null means unsupported or not determined. This
             describes the MCP process, not every application on the Mac.
             """
-            return await invoke("macos_permissions_status", macos_permissions.status)
+            return await invoke("macos_permissions_status", macos_permissions.status, context=context)
 
         @server.tool(annotations=EXEC)
         async def macos_permissions_request(
-            kind: Literal["screen_capture", "accessibility", "post_event"],
+            kind: Literal["screen_capture", "accessibility", "post_event"], context: Context,
         ) -> dict:
             """Ask macOS for a permission explicitly requested by the user.
 
@@ -332,7 +358,7 @@ def build_server(config: Config) -> MCPServer:
             finishes, and restart the service if macOS requires it. This never
             modifies the TCC database or bypasses OS consent.
             """
-            return await invoke("macos_permissions_request", macos_permissions.request, kind)
+            return await invoke("macos_permissions_request", macos_permissions.request, kind, context=context)
 
     return server
 

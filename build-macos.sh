@@ -13,7 +13,7 @@ if [ -e "$output_app" ] || [ -L "$output_app" ]; then
 fi
 source_root=$(cd "$(dirname "$0")" && pwd -P)
 [ "$(/usr/bin/uname -s)" = Darwin ] || { printf '%s\n' '原生应用需要在 macOS 构建。' >&2; exit 2; }
-for required in desktop_api.py desktop.py security_store.py workspace_config.py bootstrap.sh dependency-manifest.json tools/generate-app-icon.swift; do
+for required in desktop_api.py desktop.py security_store.py workspace_config.py bootstrap.sh dependency-manifest.json tools/generate-app-icon.swift macos/Localizations.json; do
   [ -f "$source_root/$required" ] || { printf '缺少构建文件：%s\n' "$required" >&2; exit 2; }
 done
 swift_sources=("$source_root"/macos/*.swift)
@@ -90,6 +90,11 @@ plist_string CFBundleVersion "$version"
 plist_string CFBundleShortVersionString "$version"
 plist_string CFBundlePackageType APPL
 plist_string CFBundleIconFile AppIcon.icns
+plist_string CFBundleDevelopmentRegion en
+/usr/libexec/PlistBuddy -c 'Add :CFBundleLocalizations array' "$plist"
+for language in en zh-Hans zh-Hant ja; do
+  /usr/libexec/PlistBuddy -c "Add :CFBundleLocalizations: string $language" "$plist"
+done
 plist_string LSMinimumSystemVersion 13.0
 plist_string LSApplicationCategoryType public.app-category.developer-tools
 plist_string NSPrincipalClass NSApplication
@@ -106,6 +111,7 @@ cat >"$resources/codex-build-info.json" <<JSON
   "source_modified": $dirty,
   "resource_sha256": "$digest",
   "minimum_macos": "13.0",
+  "interface_languages": ["en", "zh-Hans", "zh-Hant", "ja"],
   "architectures": "$(/usr/bin/lipo -archs "$app/Contents/MacOS/CodexLocalMCP")"
 }
 JSON

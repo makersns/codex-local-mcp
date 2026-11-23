@@ -63,6 +63,7 @@ struct DesktopSnapshot {
     var connection: JSONObject { object(raw["connection"]) }
     var status: JSONObject { object(raw["status"]) }
     var runtime: JSONObject { object(raw["runtime"]) }
+    var activity: ActivitySnapshot { ActivitySnapshot(raw: object(raw["activity"]), connectionState: state) }
     var workspaceDocument: JSONObject { object(raw["workspace_document"]) }
     var workspaces: [WorkspaceRecord] { objects(workspaceDocument["workspaces"]).map(WorkspaceRecord.init) }
     var revision: String { string(raw["revision"]) }
@@ -104,7 +105,7 @@ struct DesktopSnapshot {
         var value = empty.raw
         value["connection"] = [
             "configured": state != "needs_setup",
-            "computer_name": state == "needs_setup" ? "" : "我的 MacBook",
+            "computer_name": state == "needs_setup" ? "" : L("我的 MacBook"),
             "tunnel_id": state == "needs_setup" ? "" : "tunnel_0123456789abcdef0123456789abcdef",
             "credential_status": state == "needs_setup" ? "missing" : "stored"
         ]
@@ -116,13 +117,15 @@ struct DesktopSnapshot {
         ]
         value["workspace_document"] = [
             "workspaces": state == "needs_setup" ? [] : [
-                ["id": "project", "root": "/Users/demo/Projects/创作项目", "allow_write": true, "allow_exec": true],
-                ["id": "documents", "root": "/Users/demo/Documents/工作资料", "allow_write": false, "allow_exec": false]
+                ["id": "project", "root": "/Users/demo/Projects/" + L("创作项目"), "allow_write": true, "allow_exec": true],
+                ["id": "documents", "root": "/Users/demo/Documents/" + L("工作资料"), "allow_write": false, "allow_exec": false]
             ],
             "state_dir": "/preview/state", "max_file_bytes": 1048576
         ]
         value["revision"] = String(repeating: "0", count: 64)
         value["runtime"] = ["available": true, "message": "界面预览"]
+        value["activity"] = state == "ready" ? ActivitySnapshot.preview() : ActivitySnapshot.unavailable(
+            reason: "not_running", message: "启动连接后，就能在这里查看会话活动。")
         return DesktopSnapshot(raw: value)
     }
 }
@@ -161,6 +164,7 @@ struct LaunchOptions {
     var exercise = false
     var initialPage = AppPage.overview
     var previewState = "ready"
+    var previewLanguage: AppLanguage?
     var support: URL
     var customSupport = false
     var resources: URL
@@ -175,7 +179,7 @@ struct LaunchOptions {
         resources = Bundle.main.resourceURL ?? URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
         var i = 1
         func next(_ name: String) throws -> String {
-            guard i + 1 < arguments.count else { throw BridgeError.message("\(name) 缺少参数。") }
+            guard i + 1 < arguments.count else { throw BridgeError.message(LF("%@ 缺少参数。", name)) }
             i += 1
             return arguments[i]
         }
@@ -188,6 +192,10 @@ struct LaunchOptions {
                 let value = try next("--page")
                 guard let page = AppPage(rawValue: value) else { throw BridgeError.message("未知的页面。") }
                 initialPage = page
+            case "--preview-language":
+                let value = try next("--preview-language")
+                guard let language = AppLanguage.parse(value) else { throw BridgeError.message("未知的预览语言。") }
+                previewLanguage = language
             case "--preview-state":
                 let value = try next("--preview-state")
                 guard ["ready", "needs_setup", "stopped", "port_conflict", "error"].contains(value) else { throw BridgeError.message("未知的预览状态。") }
@@ -217,6 +225,7 @@ struct LaunchOptions {
             }
             i += 1
         }
+        if previewLanguage != nil && !preview { throw BridgeError.message("预览语言选项只允许在明确的预览模式使用。") }
         if exercise && !preview { throw BridgeError.message("交互自检只允许在明确的预览模式运行。") }
         if quitAfterScreenshot && screenshot == nil { throw BridgeError.message("请先指定截图文件。") }
     }

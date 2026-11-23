@@ -60,6 +60,16 @@ enum NativeSelfTests {
         let preview = try LaunchOptions(arguments: ["app", "--preview", "--page", "folders", "--window-width", "920", "--window-height", "640"])
         try check(preview.preview && preview.initialPage == .folders, "preview-options")
         try check(!preview.customSupport, "preview-does-not-select-real-support")
+        let traditional = try LaunchOptions(arguments: ["app", "--preview", "--preview-language", "zh-TW"])
+        try check(traditional.previewLanguage == .zhHant, "preview-language-region-alias")
+        var rejectedLiveLanguage = false
+        do { _ = try LaunchOptions(arguments: ["app", "--preview-language", "en"]) }
+        catch { rejectedLiveLanguage = true }
+        try check(rejectedLiveLanguage, "preview-language-option-cannot-affect-normal-launch")
+        var rejectedLanguage = false
+        do { _ = try LaunchOptions(arguments: ["app", "--preview", "--preview-language", "unrecognized"]) }
+        catch { rejectedLanguage = true }
+        try check(rejectedLanguage, "invalid-preview-language-is-rejected")
         var rejectedExercise = false
         do { _ = try LaunchOptions(arguments: ["app", "--exercise"]) }
         catch { rejectedExercise = true }
@@ -71,6 +81,7 @@ enum NativeSelfTests {
         try check(DesktopSnapshot.preview(state: "needs_setup").workspaces.isEmpty, "setup-preview-has-no-user-folders")
         try check(DesktopSnapshot.preview().credentialStatus == "stored", "credential-status-without-secret")
         try check(!DesktopSnapshot.preview().raw.keys.contains("runtime_key"), "snapshot-has-no-secret")
+        checks += try runActivity()
         return checks
     }
 }

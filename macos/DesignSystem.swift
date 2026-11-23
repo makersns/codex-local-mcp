@@ -57,16 +57,18 @@ extension View {
 }
 
 struct PageTitle: View {
+    @ObservedObject private var localization = Localization.shared
     let title: String
     let subtitle: String
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(title).font(.system(size: 27, weight: .bold)).tracking(-0.5).foregroundColor(Palette.ink)
-            Text(subtitle).font(.system(size: 13)).foregroundColor(Palette.secondary).fixedSize(horizontal: false, vertical: true)
+            Text(L(title)).font(.system(size: 27, weight: .bold)).tracking(-0.5).foregroundColor(Palette.ink)
+            Text(L(subtitle)).font(.system(size: 13)).foregroundColor(Palette.secondary).fixedSize(horizontal: false, vertical: true)
         }
     }
 }
 struct FieldBlock<Content: View>: View {
+    @ObservedObject private var localization = Localization.shared
     let title: String
     let hint: String?
     let error: String?
@@ -76,20 +78,21 @@ struct FieldBlock<Content: View>: View {
     }
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(title).font(.system(size: 13, weight: .semibold)).foregroundColor(Palette.ink)
+            Text(L(title)).font(.system(size: 13, weight: .semibold)).foregroundColor(Palette.ink)
             content
-            if let error, !error.isEmpty { Text(error).font(.system(size: 12)).foregroundColor(.red).fixedSize(horizontal: false, vertical: true) }
-            else if let hint, !hint.isEmpty { Text(hint).font(.system(size: 12)).foregroundColor(Palette.secondary).fixedSize(horizontal: false, vertical: true) }
+            if let error, !error.isEmpty { Text(L(error, fallback: "请检查这一项设置。")).font(.system(size: 12)).foregroundColor(.red).fixedSize(horizontal: false, vertical: true) }
+            else if let hint, !hint.isEmpty { Text(L(hint)).font(.system(size: 12)).foregroundColor(Palette.secondary).fixedSize(horizontal: false, vertical: true) }
         }
     }
 }
 struct AccessPill: View {
+    @ObservedObject private var localization = Localization.shared
     let text: String
     var enabled = true
     var body: some View {
         HStack(spacing: 4) {
             Image(systemName: enabled ? "checkmark" : "minus").font(.system(size: 9, weight: .semibold))
-            Text(text).font(.system(size: 11, weight: .medium))
+            Text(L(text)).font(.system(size: 11, weight: .medium))
         }.padding(.horizontal, 8).padding(.vertical, 5)
             .foregroundColor(enabled ? Palette.success : Palette.secondary)
             .background(enabled ? Palette.success.opacity(0.08) : Palette.sidebar)
@@ -97,6 +100,7 @@ struct AccessPill: View {
     }
 }
 struct PermissionToggle: View {
+    @ObservedObject private var localization = Localization.shared
     let title: String
     let detail: String
     @Binding var value: Bool
@@ -104,33 +108,35 @@ struct PermissionToggle: View {
     var body: some View {
         HStack(alignment: .center, spacing: 18) {
             VStack(alignment: .leading, spacing: 5) {
-                Text(title).font(.system(size: 13, weight: .semibold)).foregroundColor(Palette.ink)
-                Text(detail).font(.system(size: 12)).foregroundColor(Palette.secondary).fixedSize(horizontal: false, vertical: true)
+                Text(L(title)).font(.system(size: 13, weight: .semibold)).foregroundColor(Palette.ink)
+                Text(L(detail)).font(.system(size: 12)).foregroundColor(Palette.secondary).fixedSize(horizontal: false, vertical: true)
             }.frame(maxWidth: .infinity, alignment: .leading)
-            Toggle(title, isOn: $value).labelsHidden().toggleStyle(.switch).tint(Palette.accent)
-                .accessibilityLabel(title).accessibilityIdentifier(identifier)
+            Toggle(L(title), isOn: $value).labelsHidden().toggleStyle(.switch).tint(Palette.accent)
+                .accessibilityLabel(L(title)).accessibilityIdentifier(identifier)
         }.padding(.vertical, 11)
     }
 }
 struct InformationLine: View {
+    @ObservedObject private var localization = Localization.shared
     let text: String
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
             Image(systemName: "info.circle").foregroundColor(Palette.accent)
-            Text(text).font(.system(size: 12)).foregroundColor(Palette.secondary).fixedSize(horizontal: false, vertical: true)
+            Text(L(text)).font(.system(size: 12)).foregroundColor(Palette.secondary).fixedSize(horizontal: false, vertical: true)
         }.padding(12).frame(maxWidth: .infinity, alignment: .leading)
             .background(Palette.tint).clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }
 struct EmptyState: View {
+    @ObservedObject private var localization = Localization.shared
     let symbol: String
     let title: String
     let detail: String
     var body: some View {
         VStack(spacing: 13) {
             Image(systemName: symbol).font(.system(size: 32, weight: .light)).foregroundColor(Palette.accent)
-            Text(title).font(.system(size: 17, weight: .semibold)).foregroundColor(Palette.ink)
-            Text(detail).font(.system(size: 13)).foregroundColor(Palette.secondary)
+            Text(L(title)).font(.system(size: 17, weight: .semibold)).foregroundColor(Palette.ink)
+            Text(L(detail)).font(.system(size: 13)).foregroundColor(Palette.secondary)
                 .multilineTextAlignment(.center).frame(maxWidth: 340).fixedSize(horizontal: false, vertical: true)
         }.padding(28).frame(maxWidth: .infinity, maxHeight: .infinity)
     }
