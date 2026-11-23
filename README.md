@@ -1,5 +1,7 @@
 # Codex Local MCP
 
+<img src="docs/images/app-icon-0.6.0.png" alt="Codex Local MCP 应用图标" width="96" height="96">
+
 **让 AI 使用你自己的 Mac，处理文件、运行项目和完成本机任务。**
 
 作者：**Sugar** · 桌面版本：**0.6.0** · macOS 13 及以上

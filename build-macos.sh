@@ -54,6 +54,10 @@ source_entries=(desktop_api.py desktop.py workspace_config.py permission_guide.p
 for optional in README.md INSTALL.html RELEASE_NOTES.md VALIDATION.md docs_BOOTSTRAP.md docs tests; do
   [ ! -e "$source_root/$optional" ] || source_entries+=("$optional")
 done
+# Current validation documents link to these preserved root-level histories.
+for history in "$source_root"/VALIDATION_*_HISTORY.md; do
+  [ ! -f "$history" ] || source_entries+=("${history##*/}")
+done
 (
   cd "$source_root"
   /usr/bin/tar --exclude='.git' --exclude='.venv' --exclude='venv' --exclude='__pycache__' \
